@@ -41,8 +41,7 @@ namespace Web.Controllers
             return Json(resp);
         }
 
-        [HttpPost("GetDepartmanlarListesi")]
-        public JsonResult GetDepartmanlarListesi([FromBody]RequestDepartmanlarListesiDto req)
+        public JsonResult GetDepartmanlarListesi(RequestDepartmanlarListesiDto req)
         {
             var resp = _apiService.GetDepartmanlarListesi<ResponseDepartmanlarListesiDto, RequestDepartmanlarListesiDto>(_serviceUrlList.GetDepartmanlarListesi, req);
             return Json(resp);         

@@ -30,10 +30,8 @@ namespace Web
             services.AddControllersWithViews();
 
             services.AddSingleton<ServiceUrlList>();
-
-            //services.AddSingleton<RequestParameter>();
-            services.AddTransient<RequestParameter>();
-
+            services.AddSingleton<RequestParameter>();
+            //services.AddTransient<RequestParameter>();
             services.AddSingleton<IServiceManager, ServiceManager>();
             services.AddSingleton<IApiService, ApiService>();
         }
