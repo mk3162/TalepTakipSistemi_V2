@@ -31,7 +31,6 @@ namespace Web.Controllers
             var req = new RequestDepartmanlarListesiDto();
             req.SirketSiraNo = 1;
             var resp = _apiService.GetSirketlerListesi<ResponseSirketlerListesiDto>(_serviceUrlList.GetSirketlerListesi);
-            var resp2 = _apiService.GetDepartmanlarListesi<ResponseDepartmanlarListesiDto, RequestDepartmanlarListesiDto>(_serviceUrlList.GetDepartmanlarListesi,req);
             return View(resp);
         }
 
@@ -41,11 +40,19 @@ namespace Web.Controllers
             return Json(resp);
         }
 
+        public JsonResult GetTedarikcilerListesi()
+        {
+            var resp = _apiService.GetTedarikcilerListesi<ResponseTedarikcilerListesiDto>(_serviceUrlList.GetTedarikcilerListesi);
+            return Json(resp);
+        }
+
         public JsonResult GetDepartmanlarListesi(RequestDepartmanlarListesiDto req)
         {
             var resp = _apiService.GetDepartmanlarListesi<ResponseDepartmanlarListesiDto, RequestDepartmanlarListesiDto>(_serviceUrlList.GetDepartmanlarListesi, req);
             return Json(resp);         
         }
+
+
         public IActionResult Privacy()
         {
             return View();
