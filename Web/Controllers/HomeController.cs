@@ -46,6 +46,18 @@ namespace Web.Controllers
             return Json(resp);
         }
 
+        public JsonResult GetTiplerListesi()
+        {
+            var resp = _apiService.GetTiplerListesi<ResponseTiplerListesiDto>(_serviceUrlList.GetTiplerListesi);
+            return Json(resp);
+        }
+
+        public JsonResult GetUrunlerListesi()
+        {
+            var resp = _apiService.GetUrunlerListesi<ResponseUrunlerListesiDto>(_serviceUrlList.GetUrunlerListesi);
+            return Json(resp);
+        }
+
         public JsonResult GetDepartmanlarListesi(RequestDepartmanlarListesiDto req)
         {
             var resp = _apiService.GetDepartmanlarListesi<ResponseDepartmanlarListesiDto, RequestDepartmanlarListesiDto>(_serviceUrlList.GetDepartmanlarListesi, req);
