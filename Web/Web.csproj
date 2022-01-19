@@ -5,9 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="fonts\**" />
     <Compile Remove="TalepWeb\**" />
+    <Content Remove="fonts\**" />
     <Content Remove="TalepWeb\**" />
+    <EmbeddedResource Remove="fonts\**" />
     <EmbeddedResource Remove="TalepWeb\**" />
+    <None Remove="fonts\**" />
     <None Remove="TalepWeb\**" />
   </ItemGroup>
 
@@ -34,8 +38,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="images\" />
-    <Folder Include="fonts\" />
+    <None Include="wwwroot\images\tts_logo.png" />
+    <None Include="wwwroot\images\tts_logo2.svg" />
   </ItemGroup>
 
 </Project>
