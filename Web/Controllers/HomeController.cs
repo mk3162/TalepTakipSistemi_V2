@@ -27,43 +27,24 @@ namespace Web.Controllers
 
         public IActionResult Index()
         {
-
-            var req = new RequestDepartmanlarListesiDto();
-            req.SirketSiraNo = 1;
-            var resp = _apiService.GetSirketlerListesi<ResponseSirketlerListesiDto>(_serviceUrlList.GetSirketlerListesi);
-            return View(resp);
+            //var req = new RequestDepartmanlarListesiDto();
+            //req.SirketSiraNo = 1;
+            //var resp = _apiService.GetSirketlerListesi<ResponseSirketlerListesiDto>(_serviceUrlList.GetSirketlerListesi);
+            return View();
         }
 
-        public JsonResult GetSirketlerListesi()
+        public IActionResult About()
         {
-            var resp = _apiService.GetSirketlerListesi<ResponseSirketlerListesiDto>(_serviceUrlList.GetSirketlerListesi);
-            return Json(resp);
+            ViewBag.Message = "Your application description page.";
+            return View();
         }
 
-        public JsonResult GetTedarikcilerListesi()
+        public IActionResult Contact()
         {
-            var resp = _apiService.GetTedarikcilerListesi<ResponseTedarikcilerListesiDto>(_serviceUrlList.GetTedarikcilerListesi);
-            return Json(resp);
-        }
+            ViewBag.Message = "Your contact page.";
 
-        public JsonResult GetTiplerListesi()
-        {
-            var resp = _apiService.GetTiplerListesi<ResponseTiplerListesiDto>(_serviceUrlList.GetTiplerListesi);
-            return Json(resp);
+            return View();
         }
-
-        public JsonResult GetUrunlerListesi()
-        {
-            var resp = _apiService.GetUrunlerListesi<ResponseUrunlerListesiDto>(_serviceUrlList.GetUrunlerListesi);
-            return Json(resp);
-        }
-
-        public JsonResult GetDepartmanlarListesi(RequestDepartmanlarListesiDto req)
-        {
-            var resp = _apiService.GetDepartmanlarListesi<ResponseDepartmanlarListesiDto, RequestDepartmanlarListesiDto>(_serviceUrlList.GetDepartmanlarListesi, req);
-            return Json(resp);         
-        }
-
 
         public IActionResult Privacy()
         {

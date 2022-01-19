@@ -1,6 +1,8 @@
 using Common.Models.Request;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -10,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Web.Context;
 using Web.Models;
 using Web.Service.Implementation;
 using Web.Service.Interface;
@@ -32,9 +35,22 @@ namespace Web
 
             services.AddSingleton<ServiceUrlList>();
             services.AddSingleton<RequestParameter>();
-            //services.AddTransient<RequestParameter>();
+            //services.AddScoped<RequestParameter>();
             services.AddSingleton<IServiceManager, ServiceManager>();
             services.AddSingleton<IApiService, ApiService>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<IUserRepository, UserRepository>();
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+            });
+
+            services.AddDbContext<DatabaseContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("Connection")));
+
+            services.AddScoped<DatabaseContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,18 +68,24 @@ namespace Web
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
+
+            app.UseWebSockets();
 
             app.UseRouting();
 
             app.UseAuthorization();
 
+            app.UseSession();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Login}/{action=Index}/{id?}");
+                    pattern: "{controller=Dashboard}/{action=Index}/{id?}");
             });
         }
     }
