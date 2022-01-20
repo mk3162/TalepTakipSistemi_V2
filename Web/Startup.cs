@@ -40,7 +40,7 @@ namespace Web
             services.AddSingleton<IApiService, ApiService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
 
             services.AddSession(options =>
             {

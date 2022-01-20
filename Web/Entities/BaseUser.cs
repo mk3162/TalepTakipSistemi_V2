@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Web.Entities
 {
-    public class BaseEntity
+    public class BaseUser
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int UserId { get; set; }
     }
 }

@@ -9,7 +9,7 @@ using Web.Context;
 namespace Web.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20220119200711_v2")]
+    [Migration("20220120105002_v2")]
     partial class v2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,28 +20,34 @@ namespace Web.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Web.Entities.Kullanici", b =>
+            modelBuilder.Entity("Web.Entities.User", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("AdiSoyadi")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(48)")
+                        .HasMaxLength(48);
 
                     b.Property<string>("Kodu")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(12)")
+                        .HasMaxLength(12);
 
                     b.Property<string>("Sifre")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(12)")
+                        .HasMaxLength(12);
 
                     b.Property<int>("Yetki")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("UserId");
 
-                    b.ToTable("Kullanicilar");
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

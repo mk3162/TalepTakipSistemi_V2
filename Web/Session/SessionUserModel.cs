@@ -18,19 +18,18 @@ namespace Web.Session
 
         }
 
-        public static SessionUserModel CurrentUser
+        public static string CurrentUser
         {
             get
             {
-                return null;
-                //if (HttpContext.Current.Session[_cookieUserKey] == null)
-                //{
-                //    return null;
-                //}
-                //else
-                //{
-                //    return HttpContext.Current.Session[_cookieUserKey] as SessionUserModel;
-                //}
+                if (_cookieUserKey == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return _cookieUserKey;
+                }
             }
             set
             {

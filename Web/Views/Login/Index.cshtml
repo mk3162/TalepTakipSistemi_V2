@@ -1,7 +1,7 @@
-﻿@model Web.Entities.Kullanici
-@{ 
-    Layout = null; 
-    }
+﻿@model Web.Entities.User
+@{
+    Layout = null;
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -132,41 +132,41 @@
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div class="card card-signin">
                 <div class="card-body">
-                    <h2 class="card-title text-center"><b>Giriş Paneli</b></h2>
+                    <h3 class="card-title text-center"><b><u>Giriş Paneli</u></b></h3>
 
                     <div class="row">
-                        <div class="text-danger">@ViewBag.LoginError</div>
+                        <div class="text-danger" style="margin:auto">@ViewBag.LoginError</div>
                     </div>
                     <div class="row">
-                        <div class="text-success">@ViewBag.Login</div>
+                        <div class="text-success" style="margin:auto">@ViewBag.Login</div>
                     </div>
+                    <br />
 
-             
                     @using (Html.BeginForm("Index", "Login", FormMethod.Post))
                     {
-        <form class="form-signin">
-            <div class="form-label-group">
-                <input type="text" id="inputEmail" class="form-control" placeholder="Kullanıcı Kodu" name="EPosta"
-                       required autofocus>
-                @*<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>*@
-                <label for="inputEmail">Kullanıcı Kodu</label>
-            </div>
+                        <form class="form-signin">
+                            <div class="form-label-group">
+                                <input type="text" id="inputEmail" class="form-control" placeholder="Kullanıcı Kodu" name="Kodu"
+                                       required autofocus>
+                                @*<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>*@
+                                <label for="inputEmail">Kullanıcı Kodu</label>
+                            </div>
 
-            <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control c" placeholder="Şifre" name="Password"
-                       required>
-                <label for="inputPassword">Şifre</label>
-            </div>
+                            <div class="form-label-group">
+                                <input type="password" id="inputPassword" class="form-control" placeholder="Şifre" name="Sifre"
+                                       required>
+                                <label for="inputPassword">Şifre</label>
+                            </div>
 
-                <h6 class="text-center">Lütfen Giriş Yapınız</h6>
+                            <h6 class="text-center">Lütfen Giriş Yapınız</h6>
 
-            <button class="btn btn-lg btn-info btn-block  mt-3" type="submit">Giriş</button>
-            @*<div class="d-flex justify-content-around mt-2 ">
-                <a href="/Login/Index">Kayıt Ol</a>
+                            <button class="btn btn-lg btn-info btn-block  mt-3" type="submit">Giriş</button>
+                            @*<div class="d-flex justify-content-around mt-2 ">
+                                    <a href="/Login/Index">Kayıt Ol</a>
 
-                <a href="/Login/ForgotPassword">Şifremi Unuttum. </a>
-            </div>*@
-        </form>}
+                                    <a href="/Login/ForgotPassword">Şifremi Unuttum. </a>
+                                </div>*@
+                        </form>}
                 </div>
             </div>
         </div>

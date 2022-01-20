@@ -29,9 +29,9 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(Kullanici kullanici)
+        public IActionResult Index(User user)
         {
-            var log = _context.Kullanicilar.FirstOrDefault(x => x.Kodu == kullanici.Kodu && x.Sifre == kullanici.Sifre);
+            var log = _context.Users.FirstOrDefault(x => x.Kodu == user.Kodu && x.Sifre == user.Sifre);
 
             if (log != null)
             {
@@ -40,8 +40,9 @@ namespace Web.Controllers
                     Kodu = log.Kodu,
                     Sifre = log.Sifre,
                     AdiSoyadi = log.AdiSoyadi,
-                    Yetki = log.Yetki
-                };
+                    Yetki=log.Yetki
+                }.ToString();
+
                 ViewBag.Login = "Giriş Başarılı Yönlendiriliyorsunuz..";
                 //Todo -- set cookie --(For remember me)
                 //FormsAuthentication.SetAuthCookie(log.Sifre, false);

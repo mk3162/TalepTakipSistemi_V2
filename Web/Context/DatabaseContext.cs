@@ -7,13 +7,13 @@ using Web.Entities;
 
 namespace Web.Context
 {
-    public class DatabaseContext:DbContext
+    public class DatabaseContext : DbContext
     {
-        public DatabaseContext(DbContextOptions options) :base(options)
+        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base (options)
         {
 
         }
 
-        public DbSet<Kullanici> Kullanicilar { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

@@ -9,7 +9,7 @@ using Web.Context;
 namespace Web.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20220119063102_v1")]
+    [Migration("20220120104755_v1")]
     partial class v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,9 +20,9 @@ namespace Web.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Web.Entities.Kullanici", b =>
+            modelBuilder.Entity("Web.Entities.User", b =>
                 {
-                    b.Property<int>("KullaniciId")
+                    b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -39,9 +39,9 @@ namespace Web.Migrations
                     b.Property<int>("Yetki")
                         .HasColumnType("int");
 
-                    b.HasKey("KullaniciId");
+                    b.HasKey("UserId");
 
-                    b.ToTable("Kullanicilar");
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

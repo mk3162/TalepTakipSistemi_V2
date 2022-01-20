@@ -14,4 +14,10 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CrossCuttingConcern\Caching\Interface\" />
+    <Folder Include="CrossCuttingConcern\Caching\Implementation\" />
+    <Folder Include="CrossCuttingConcern\Validations\FluentValidation\" />
+  </ItemGroup>
+
 </Project>

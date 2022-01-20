@@ -130,17 +130,16 @@
 
                     </li>*@
                 <li class="user-panel image">
-                    @*<img src="~/VisitorWeb/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">*@
                     <img src="~/TalepWeb/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
                 </li>
                 <li class="nav-item dropdown mr-1">
                     @if (Web.Session.SessionUserModel.CurrentUser != null)
                     {
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Web.Session.SessionUserModel.CurrentUser.AdiSoyadi</a>}
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Web.Session.SessionUserModel.CurrentUser</a>}
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#"><i class="fas fa-user mr-1"></i>Profil</a>
-                        <a class="dropdown-item" href="/Login/LogOut"><i class="fas fa-sign-out-alt mr-1"></i>Oturumu Kapat</a>
+                        <a class="dropdown-item" href="/Profile/Index"><i class="fas fa-user mr-1"></i>Profil</a>
+                        <a class="dropdown-item" href="/Login/LogOut"><i class="fas fa-sign-out-alt mr-1"></i>Çıkış Yap</a>
                     </div>
                 </li>
                 @*<li class="nav-item">
@@ -196,7 +195,7 @@
                 <!-- SidebarSearch Form -->
                 <div class="form-inline mt-3">
                     <div class="input-group" data-widget="sidebar-search">
-                        <input class="form-control form-control-sidebar" type="search" placeholder="Ara" aria-label="Search" title="Arama">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Ara..." aria-label="Search" title="Arama">
                         <div class="input-group-append">
 
                         </div>
@@ -309,11 +308,11 @@
                                     </a>
                                 </li>
                                 @*<li class="nav-item">
-                                        <a href="/Visitor/VisitorListDetails" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Ziyaret Detay Listesi</p>
-                                        </a>
-                                    </li>*@
+                    <a href="/Visitor/VisitorListDetails" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Ziyaret Detay Listesi</p>
+                    </a>
+                </li>*@
 
                             </ul>
                         </li>
@@ -335,11 +334,11 @@
                                     </a>
                                 </li>
                                 @*<li class="nav-item">
-                                        <a href="/ComingSoon/Index" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>  Kayıt Düzenle</p>
-                                        </a>
-                                    </li>*@
+                    <a href="/ComingSoon/Index" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>  Kayıt Düzenle</p>
+                    </a>
+                </li>*@
 
                             </ul>
                         </li>
@@ -401,11 +400,11 @@
                                     </a>
                                 </li>
                                 @*<li class="nav-item">
-                                        <a href="/User/Index" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Kullanıcı</p>
-                                        </a>
-                                    </li>*@
+                    <a href="/User/Index" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Kullanıcı</p>
+                    </a>
+                </li>*@
 
                                 <li class="nav-item">
                                     <a href="/ComingSoon/Index" class="nav-link">
@@ -537,34 +536,34 @@
                             </ul>
                         </li>
                         <!-- <li class="nav-item">
-                          <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-table"></i>
-                            <p>
-                              Tables
-                              <i class="fas fa-angle-left right"></i>
-                            </p>
-                          </a>
-                          <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                              <a href="pages/tables/simple.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Simple Tables</p>
-                              </a>
-                            </li>
-                            <li class="nav-item">
-                              <a href="pages/tables/data.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>DataTables</p>
-                              </a>
-                            </li>
-                            <li class="nav-item">
-                              <a href="pages/tables/jsgrid.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>jsGrid</p>
-                              </a>
-                            </li>
-                          </ul>
-                        </li> -->
+      <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-table"></i>
+        <p>
+          Tables
+          <i class="fas fa-angle-left right"></i>
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+        <li class="nav-item">
+          <a href="pages/tables/simple.html" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Simple Tables</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="pages/tables/data.html" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>DataTables</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="pages/tables/jsgrid.html" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>jsGrid</p>
+          </a>
+        </li>
+      </ul>
+    </li> -->
                         <li class="nav-header">Ekstra</li>
                         <li class="nav-item">
                             <a href="/Calender/Calender" class="nav-link">
@@ -577,14 +576,14 @@
                         </li>
 
                         <!--<li class="nav-item">
-                            <a href="/Calendar/Calendar" class="nav-link">
-                                <i class="nav-icon far fa-calendar-alt" title="Takvim Bazında Ziyaretleri İzleyebilirsiniz"></i>
-                                <p>
-                                    Takvim-Calender-->
+        <a href="/Calendar/Calendar" class="nav-link">
+            <i class="nav-icon far fa-calendar-alt" title="Takvim Bazında Ziyaretleri İzleyebilirsiniz"></i>
+            <p>
+                Takvim-Calender-->
                         @*<span class="badge badge-info right">2</span>*@
                         <!--</p>
-                            </a>
-                        </li>-->
+        </a>
+    </li>-->
 
                         <li class="nav-item">
                             <a href="/ComingSoon/Index" class="nav-link">
@@ -608,27 +607,12 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
-
-                        @*<li class="nav-header">Durum Grafikleri</li>
-                            <li class="nav-item">
-                                <a href="/ComingSoon/Index" class="nav-link">
-                                    <i class="nav-icon far fa-circle text-danger"></i>
-                                    <p class="text">Aktif Ziyaretçi Durumu</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/ComingSoon/Index" class="nav-link">
-                                    <i class="nav-icon far fa-circle text-warning"></i>
-                                    <p>Pasif Ziyaretçi Durumu</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/ComingSoon/Index" class="nav-link">
-                                    <i class="nav-icon far fa-circle text-info"></i>
-                                    <p>Aktif Firma Durumu</p>
-                                </a>
-                            </li>*@
+                        @*<li class="nav-item">
+                            <a href="/Login/Logout" class="nav-link">
+                                <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
+                                <p>Çıkış Yap</p>
+                            </a>
+                        </li>*@
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

@@ -7,6 +7,6 @@ namespace Web.Service.Interface
 {
     public interface IUserRepository
     {
-        void LogCurrentUser();
+        string LogCurrentUser();
     }
 }

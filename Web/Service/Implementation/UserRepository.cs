@@ -18,11 +18,9 @@ namespace Web.Service.Implementation
             _session = _httpContextAccessor.HttpContext.Session;
         }
 
-
-        public void LogCurrentUser()
+        public string LogCurrentUser()
         {
-            var userName = _session.GetString("Kodu");
-
+            return _httpContextAccessor.HttpContext.User.Identity.Name;
         }
     }
 }

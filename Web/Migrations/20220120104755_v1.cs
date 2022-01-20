@@ -7,10 +7,10 @@ namespace Web.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Kullanicilar",
+                name: "Users",
                 columns: table => new
                 {
-                    KullaniciId = table.Column<int>(nullable: false)
+                    UserId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Kodu = table.Column<string>(nullable: true),
                     Sifre = table.Column<string>(nullable: true),
@@ -19,14 +19,14 @@ namespace Web.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Kullanicilar", x => x.KullaniciId);
+                    table.PrimaryKey("PK_Users", x => x.UserId);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Kullanicilar");
+                name: "Users");
         }
     }
 }
