@@ -17,5 +17,11 @@ namespace Web.Entities
         public string AdiSoyadi { get; set; }
         [Required]
         public int Yetki { get; set; }
+
+        public enum Authority
+        {
+            Admin,
+            Kullanici
+        }
     }
 }

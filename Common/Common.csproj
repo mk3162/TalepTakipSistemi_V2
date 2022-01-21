@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CrossCuttingConcern\Caching\Interface\" />
-    <Folder Include="CrossCuttingConcern\Caching\Implementation\" />
+    <Folder Include="CrossCuttingConcern\Caching\Abstract\" />
+    <Folder Include="CrossCuttingConcern\Caching\Concrete\" />
     <Folder Include="CrossCuttingConcern\Validations\FluentValidation\" />
   </ItemGroup>
 

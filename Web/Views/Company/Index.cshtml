@@ -1,0 +1,113 @@
+﻿@model IEnumerable<Web.Entities.Sirket>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/_AdminLayout.cshtml";
+}
+
+<hr />
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 mx-auto ">
+                <partial name="_AddExportPartialView" />
+
+                <div class="card-body ">
+                    <div id="example1_wrapper " class="dataTables_wrapper dt-bootstrap4 ">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+                                    <thead>
+                                        <tr role="row">
+                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Sıra No</th>
+                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Tanımı</th>
+                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">İşlemler</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                @*<td class="dtr-control sorting_1 text-center" tabindex="0">
+                                                        @if (!String.IsNullOrWhiteSpace(item.Branch.Company.CompanyImageFile))
+                                                        {<img class="img-fluid" src="@item.Branch.Company.CompanyImageFile" style="width:100px;" />}
+                                                    </td>*@
+                                                <td class="dtr-control sorting_1" tabindex="0">@item.SiraNo</td>
+                                                <td class="dtr-control sorting_1" tabindex="0">@item.Tanimi</td>
+                                                <td>
+                                                    <a href="/Company/GetCompany/@item.SiraNo" class="btn btn-info fas fa-edit"></a>
+                                                    @Html.ActionLink(" ", "SoftDelete", new { id = item.SiraNo }, new { @class = "btn btn-danger fas fa-trash-alt", onclick = "return confirm('Silmek İstiyor musunuz ? ');" })
+
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="Add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Şirket Bilgileri</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    @using (Html.BeginForm("AddCompany", "Company", FormMethod.Post))
+                                    {
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label for="message-text" class="col-form-label">Şirket Bilgisi :</label>
+                                                <input type="text" name="Tanimi" placeholder="Adı" class="form-control" required />
+                                            </div>
+                                        </div>
+                                        @*<label>Şirket Bilgisi<span style="color:red">*</span></label>*@
+                                        @*<select class="form-control" name="Companies" id="Companies" for="Regions" required>
+                                            </select>*@
+                                        @*<div class="form-group col-12">
+                                                <label>Şube Bilgisi<span style="color:red">*</span></label>
+                                                <select class="form-control" name="BranchId" id="Branches" for="Regions" required disabled>
+                                                    <option>Bir Şube Seçiniz</option>
+                                                </select>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                <div class="form-group">
+                                                    <label for="message-text" class="col-form-label">Departman Adı :<span style="color:red">*</span></label>
+                                                    <input type="text" name="DepartmentName" placeholder="Departman Adı" class="form-control" required />
+                                                </div>
+
+                                            </div>*@
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                            <button type="submit" class="btn btn-primary">Ekle</button>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="row">
+                                <div class="col-sm-12 col-md-5">
+                                    <div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
+                                </div>
+                                <div class="col-sm-12 col-md-7">
+                                    <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
+                                        <ul class="pagination">
+                                            <li class="paginate_button page-item previous disabled" id="example1_previous"><a href="#" aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+                                            <li class="paginate_button page-item active"><a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                                            <li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+                                            <li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
+                                            <li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="4" tabindex="0" class="page-link">4</a></li>
+                                            <li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="5" tabindex="0" class="page-link">5</a></li>
+                                            <li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="6" tabindex="0" class="page-link">6</a></li>
+                                            <li class="paginate_button page-item next" id="example1_next"><a href="#" aria-controls="example1" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

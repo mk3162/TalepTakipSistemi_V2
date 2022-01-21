@@ -1,0 +1,27 @@
+﻿@model Web.Entities.Sirket
+@{
+    ViewData["Title"] = "GetCompany";
+    Layout = "~/Views/_AdminLayout.cshtml";
+}
+
+<hr />
+<h3 class="d-flex justify-content-center">Şirket Bilgisi Güncelleme Ekranı</h3>
+@using (Html.BeginForm("UpdateCompany", "Company", FormMethod.Post))
+{
+<div class="col-sm-12">
+    <div class="form-group">
+        <div class="form-group">
+            @Html.HiddenFor(m => m.SiraNo, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label for="message-text" class="col-form-label">Şirket Adı :</label>
+            @Html.TextBoxFor(m => m.Tanimi, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="/Company/Index" class="btn btn-secondary">Kapat</a>
+        <button class="btn btn-primary" type="submit">Kaydet</button>
+    </div>
+</div>
+}
+
