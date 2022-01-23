@@ -36,7 +36,7 @@
                                                 <td class="dtr-control sorting_1" tabindex="0">@item.Tanimi</td>
                                                 <td>
                                                     <a href="/Type/GetType/@item.SiraNo" class="btn btn-info fas fa-edit"></a>
-                                                    @Html.ActionLink(" ", "SoftDelete", new { id = item.SiraNo }, new { @class = "btn btn-danger fas fa-trash-alt", onclick = "return confirm('Silmek İstiyor musunuz ? ');" })
+                                                    @Html.ActionLink(" ", "SoftDelete", new { SiraNo = item.SiraNo }, new { @class = "btn btn-danger fas fa-trash-alt", onclick = "return confirm('Silmek İstiyor musunuz ? ');" })
                                                 </td>
                                             </tr>
                                         }
@@ -53,12 +53,13 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    @using (Html.BeginForm("Add", "Type", FormMethod.Post))
+                                    @using (Html.BeginForm("AddType", "Type", FormMethod.Post))
                                     {
-                                        <div class="form-group col-12">
-                                            <label>Tip Bilgisi<span style="color:red">*</span></label>
-                                            <select class="form-control" name="Types" id="Types" for="Regions" required>
-                                            </select>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label for="message-text" class="col-form-label">Tip Bilgisi :</label>
+                                                <input type="text" name="Tanimi" placeholder="Adı" class="form-control" required />
+                                            </div>
                                         </div>
                                         @*<div class="form-group col-12">
                                                 <label>Şube Bilgisi<span style="color:red">*</span></label>
@@ -89,7 +90,7 @@
     </div>
 </section>
 <script src="~/TalepWeb/plugins/jquery/jquery.min.js"></script>
-<script>
+@*<script>
     $(document).ready(function () {
         $.ajax({
             type: "GET",
@@ -120,5 +121,5 @@
             });
         });
     });
-</script>
+</script>*@
 

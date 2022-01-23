@@ -42,4 +42,8 @@
     <None Include="wwwroot\images\tts_logo2.svg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\TalepWeb\AutoComplete\" />
+  </ItemGroup>
+
 </Project>

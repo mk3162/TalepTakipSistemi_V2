@@ -35,7 +35,7 @@
                                                 <td class="dtr-control sorting_1" tabindex="0">@item.Tanimi</td>
                                                 <td>
                                                     <a href="/Company/GetCompany/@item.SiraNo" class="btn btn-info fas fa-edit"></a>
-                                                    @Html.ActionLink(" ", "SoftDelete", new { id = item.SiraNo }, new { @class = "btn btn-danger fas fa-trash-alt", onclick = "return confirm('Silmek İstiyor musunuz ? ');" })
+                                                    @Html.ActionLink(" ", "SoftDelete", "Company", new { SiraNo = item.SiraNo }, new { @class = "btn btn-danger fas fa-trash-alt", onclick = "return confirm('Silmek İstiyor musunuz ? ');" })
 
                                                 </td>
                                             </tr>
@@ -111,3 +111,4 @@
         </div>
     </div>
 </section>
+<script src="~/TalepWeb/plugins/jquery/jquery.min.js"></script>

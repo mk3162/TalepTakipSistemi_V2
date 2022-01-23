@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Web.Context;
 using Web.Entities;
@@ -26,7 +28,7 @@ namespace Web.Controllers
         [HttpGet]
         public IActionResult GetCompany(int SiraNo)
         {
-            var company = _context.Sirketler.FirstOrDefault(x => x.SiraNo == SiraNo);
+            var company = _context.Sirketler.Find(SiraNo);
             return View("GetCompany", company);
         }
 
@@ -49,14 +51,15 @@ namespace Web.Controllers
         public IActionResult UpdateCompany(Sirket sirket)
         {
             _context.Sirketler.Update(sirket);
-            //_context.SaveChanges();
+            _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public ActionResult SoftDelete(Sirket sirket)
+        public IActionResult SoftDelete(int siraNo)
         {
-            _context.Sirketler.Remove(sirket);
+            var deletedCompany = _context.Sirketler.FirstOrDefault(x => x.SiraNo == siraNo);
+            _context.Sirketler.Remove(deletedCompany);
+            _context.SaveChanges();
             return RedirectToAction("Index");
         }
     }

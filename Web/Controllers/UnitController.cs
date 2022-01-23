@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Web.Context;
+using Web.Entities;
 
 namespace Web.Controllers
 {
@@ -18,6 +19,44 @@ namespace Web.Controllers
         public IActionResult Index()
         {
             return View(_context.Birimler.ToList());
+        }
+
+        [HttpGet]
+        public IActionResult GetUnit(int SiraNo)
+        {
+            var unit = _context.Birimler.Find(SiraNo);
+            return View("GetUnit", unit);
+        }
+
+        [HttpPost]
+        public IActionResult AddUnit(Birim birim)
+        {
+            try
+            {
+                _context.Birimler.Add(birim);
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult UpdateUnit(Birim birim)
+        {
+            _context.Birimler.Update(birim);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult SoftDelete(int siraNo)
+        {
+            var deletedUnit = _context.Birimler.FirstOrDefault(x => x.SiraNo == siraNo);
+            _context.Birimler.Remove(deletedUnit);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
