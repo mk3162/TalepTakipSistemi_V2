@@ -10,7 +10,7 @@ namespace Web.Entities
 {
     public class Sirket : IEntity
     {
-        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public int SiraNo { get; set; }
         [StringLength(48)]
         public string Tanimi { get; set; }

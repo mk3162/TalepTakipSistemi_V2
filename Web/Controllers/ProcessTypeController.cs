@@ -20,22 +20,22 @@ namespace Web.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View(_context.IslemTipleri.ToList());
+            return View(_context.Islemler.ToList());
         }
 
         [HttpGet]
         public IActionResult GetProcessType(int SiraNo)
         {
-            var processType = _context.IslemTipleri.Find(SiraNo);
+            var processType = _context.Islemler.Find(SiraNo);
             return View("GetProcessType", processType);
         }
 
         [HttpPost]
-        public IActionResult AddProcessType(IslemTip ıslemTip)
+        public IActionResult AddProcessType(Islem ıslem)
         {
             try
             {
-                _context.IslemTipleri.Add(ıslemTip);
+                _context.Islemler.Add(ıslem);
                 _context.SaveChanges();
             }
             catch (Exception)
@@ -46,17 +46,17 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult UpdateProcessType(IslemTip ıslemTip)
+        public IActionResult UpdateProcessType(Islem islem)
         {
-            _context.IslemTipleri.Update(ıslemTip);
+            _context.Islemler.Update(islem);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public IActionResult SoftDelete(int siraNo)
         {
-            var deletedProcess = _context.IslemTipleri.FirstOrDefault(x => x.SiraNo == siraNo);
-            _context.IslemTipleri.Remove(deletedProcess);
+            var deletedProcess = _context.Islemler.FirstOrDefault(x => x.SiraNo == siraNo);
+            _context.Islemler.Remove(deletedProcess);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }

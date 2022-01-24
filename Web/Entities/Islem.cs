@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Web.Entities
 {
-    public class IslemTip
+    public class Islem
     {
         [Key]
         public int SiraNo { get; set; }

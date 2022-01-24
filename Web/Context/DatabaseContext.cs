@@ -15,11 +15,11 @@ namespace Web.Context
         }
 
         public DbSet<User> Users { get; set; }
-        public DbSet<Sirket> Sirketler { get; set; }
-        public DbSet<Urun> Urunler { get; set; }
-        public DbSet<Tip> Tipler { get; set; }
-        public DbSet<Tedarikci> Suppliers { get; set; }
-        public DbSet<Birim> Birimler { get; set; }
-        public DbSet<IslemTip> IslemTipleri { get; set; }
+        public DbSet<Sirket> Companies { get; set; }
+        public DbSet<Urun> Products { get; set; }
+        public DbSet<Tip> Tip { get; set; }
+        public DbSet<Tedarikci> Supplierss { get; set; }
+        public DbSet<Birim> Units { get; set; }
+        public DbSet<Islem> Islemler { get; set; }
     }
 }

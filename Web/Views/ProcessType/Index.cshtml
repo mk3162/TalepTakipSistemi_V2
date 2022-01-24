@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Web.Entities.IslemTip>
+﻿@model IEnumerable<Web.Entities.Islem>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/_AdminLayout.cshtml";
@@ -35,7 +35,7 @@
                                                 <td class="dtr-control sorting_1" tabindex="0">@item.Tanimi</td>
                                                 <td>
                                                     <a href="/ProcessType/GetProcessType/@item.SiraNo" class="btn btn-info fas fa-edit"></a>
-                                                    @Html.ActionLink(" ", "SoftDelete", new { siraNo = item.SiraNo }, new { @class = "btn btn-danger fas fa-trash-alt", onclick = "return confirm('Silmek İstiyor musunuz ? ');" })
+                                                    @Html.ActionLink(" ", "SoftDelete","ProcessType", new { siraNo = item.SiraNo }, new { @class = "btn btn-danger fas fa-trash-alt", onclick = "return confirm('Silmek İstiyor musunuz ? ');" })
                                                 </td>
                                             </tr>
                                         }

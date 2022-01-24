@@ -10,7 +10,7 @@ namespace Web.Entities
     {
         [Key]
         public int SiraNo { get; set; }
-        [StringLength(48)]
+        [StringLength(32)]
         public string Tanimi { get; set; }
     }
 }

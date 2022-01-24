@@ -17,13 +17,13 @@ namespace Web.Controllers
         }
         public IActionResult Index()
         {
-            return View(_context.Tipler.ToList());
+            return View(_context.Tip.ToList());
         }
 
         [HttpGet]
         public IActionResult GetType(int SiraNo)
         {
-            var type = _context.Tipler.Find(SiraNo);
+            var type = _context.Tip.Find(SiraNo);
             return View("GetType", type);
         }
 
@@ -32,7 +32,7 @@ namespace Web.Controllers
         {
             try
             {
-                _context.Tipler.Add(tip);
+                _context.Tip.Add(tip);
                 _context.SaveChanges();
             }
             catch (Exception)
@@ -45,15 +45,15 @@ namespace Web.Controllers
         [HttpPost]
         public IActionResult UpdateType(Tip tip)
         {
-            _context.Tipler.Update(tip);
+            _context.Tip.Update(tip);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public IActionResult SoftDelete(int siraNo)
         {
-            var deletedType = _context.Tipler.FirstOrDefault(x => x.SiraNo == siraNo);
-            _context.Tipler.Remove(deletedType);
+            var deletedType = _context.Tip.FirstOrDefault(x => x.SiraNo == siraNo);
+            _context.Tip.Remove(deletedType);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }

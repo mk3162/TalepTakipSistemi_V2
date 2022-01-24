@@ -22,13 +22,13 @@ namespace Web.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View(_context.Sirketler.ToList());
+            return View(_context.Companies.ToList());
         }
 
         [HttpGet]
         public IActionResult GetCompany(int SiraNo)
         {
-            var company = _context.Sirketler.Find(SiraNo);
+            var company = _context.Companies.Find(SiraNo);
             return View("GetCompany", company);
         }
 
@@ -37,7 +37,7 @@ namespace Web.Controllers
         {
             try
             {
-                _context.Sirketler.Add(sirket);
+                _context.Companies.Add(sirket);
                 _context.SaveChanges();
             }
             catch (Exception)
@@ -50,15 +50,15 @@ namespace Web.Controllers
         [HttpPost]
         public IActionResult UpdateCompany(Sirket sirket)
         {
-            _context.Sirketler.Update(sirket);
+            _context.Companies.Update(sirket);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public IActionResult SoftDelete(int siraNo)
         {
-            var deletedCompany = _context.Sirketler.FirstOrDefault(x => x.SiraNo == siraNo);
-            _context.Sirketler.Remove(deletedCompany);
+            var deletedCompany = _context.Companies.FirstOrDefault(x => x.SiraNo == siraNo);
+            _context.Companies.Remove(deletedCompany);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }

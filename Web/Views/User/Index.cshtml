@@ -37,11 +37,19 @@
                                                 <td class="dtr-control sorting_1" tabindex="0">@item.UserId</td>
                                                 <td class="dtr-control sorting_1" tabindex="0">@item.AdiSoyadi</td>
                                                 <td class="dtr-control sorting_1" tabindex="0">@item.Kodu</td>
-                                                <td class="dtr-control sorting_1" tabindex="0">@item.Sifre</td>                                        
+                                                <td class="dtr-control sorting_1" tabindex="0">@item.Sifre</td>
+                                                @*@if (item.Yetki == 0)
+                                                    {
+                                                        <td class="dtr-control sorting_1" tabindex="0">@Enum.GetNames(typeof(Web.Entities.User.Aut)).FirstOrDefault()</td>
+                                                    }
+                                                    else
+                                                    {
+                                                        <td class="dtr-control sorting_1" tabindex="0">@Enum.GetNames(typeof(Web.Entities.User.Aut)).ToString()</td>
+                                                    }*@
                                                 <td class="dtr-control sorting_1" tabindex="0">@item.Yetki</td>
                                                 <td>
                                                     <a href="/User/GetUser/@item.UserId" class="btn btn-info fas fa-edit"></a>
-                                                    @Html.ActionLink(" ", "SoftDelete", new { id = item.UserId }, new { @class = "btn btn-danger fas fa-trash-alt", onclick = "return confirm('Silmek İstiyor musunuz ? ');" })
+                                                    @Html.ActionLink(" ", "SoftDelete", "User", new { siraNo = item.UserId }, new { @class = "btn btn-danger fas fa-trash-alt", onclick = "return confirm('Silmek İstiyor musunuz ? ');" })
 
                                                 </td>
                                             </tr>
@@ -59,13 +67,33 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    @using (Html.BeginForm("Add", "User", FormMethod.Post))
+                                    @using (Html.BeginForm("AddUser", "User", FormMethod.Post))
                                     {
-                                        <div class="form-group col-12">
-                                            <label>Kullanıcı Bilgisi<span style="color:red">*</span></label>
-                                            <select class="form-control" name="Users" id="Users" for="Regions" required>
-                                            </select>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label for="message-text" class="col-form-label">Kullanıcı Adı Soyadı :</label>
+                                                <input type="text" name="AdiSoyadi" placeholder="Adı" class="form-control" required />
+                                            </div>
                                         </div>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label for="message-text" class="col-form-label">Kullanıcı Kodu :</label>
+                                                <input type="text" name="Kodu" placeholder="Adı" class="form-control" required />
+                                            </div>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label for="message-text" class="col-form-label">Kullanıcı Şifresi :</label>
+                                                <input type="text" name="Sifre" placeholder="Adı" class="form-control" required />
+                                            </div>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label for="message-text" class="col-form-label">Kullanıcı Yetkisi :</label>
+                                                <input type="text" name="Yetki" placeholder="Adı" class="form-control" required />
+                                            </div>
+                                        </div>
+
                                         @*<div class="form-group col-12">
                                                 <label>Şube Bilgisi<span style="color:red">*</span></label>
                                                 <select class="form-control" name="BranchId" id="Branches" for="Regions" required disabled>

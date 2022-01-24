@@ -18,8 +18,8 @@ namespace Web.Entities
         [Required]
         public int Yetki { get; set; }
 
-        public enum Authority
-        {
+        public enum Aut 
+        { 
             Admin,
             Kullanici
         }

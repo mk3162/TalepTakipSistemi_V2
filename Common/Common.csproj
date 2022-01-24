@@ -5,20 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="CrossCuttingConcern\**" />
-    <Content Remove="CrossCuttingConcern\**" />
-    <EmbeddedResource Remove="CrossCuttingConcern\**" />
-    <None Remove="CrossCuttingConcern\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FastMember" Version="1.5.0" />
+    <PackageReference Include="FluentValidation" Version="10.3.6" />
     <PackageReference Include="M2MqttDotnetCore" Version="1.1.0" />
     <PackageReference Include="MQTTnet" Version="3.0.16" />
     <PackageReference Include="MQTTnet.AspNetCore" Version="3.0.16" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Npgsql" Version="5.0.5" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+    <PackageReference Include="System.Runtime.Caching" Version="6.0.0" />
   </ItemGroup>
 
 </Project>
