@@ -10,7 +10,7 @@ namespace Web.Entities
 {
     public class Departman: IEntity
     {
-        [Key,Required,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SiraNo { get; set; }
         [StringLength(48),Required]
         public string Tanimi { get; set; }

@@ -33,7 +33,7 @@
                                                     </td>*@
                                                 @*<td class="dtr-control sorting_1" tabindex="0">@item.UrunId</td>*@
                                                 <td class="dtr-control sorting_1" tabindex="0">@item.Tanimi</td>
-                                                <td class="dtr-control sorting_1" tabindex="0">@item.SirketSiraNo</td>
+                                                <td class="dtr-control sorting_1" tabindex="0">@item.Sirket.Tanimi</td>
                                                 @*<td>
                                                         <a href="/Product/GetProduct/@item.UrunId" class="btn btn-info fas fa-edit"></a>
                                                         @Html.ActionLink(" ", "SoftDelete", "Product", new { siraNo = item.UrunId }, new { @class = "btn btn-danger fas fa-trash-alt", onclick = "return confirm('Silmek İstiyor musunuz ? ');" })
