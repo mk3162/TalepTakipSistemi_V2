@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Common.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,13 +19,13 @@ namespace Web.Controllers
         }
         public IActionResult Index()
         {
-            return View(_context.Tip.ToList());
+            return View(_context.Tipler.FromSqlRaw(GlobalEnum.StoredProcedure.TiplerListesi.ToString()).ToList());
         }
 
         [HttpGet]
         public IActionResult GetType(int SiraNo)
         {
-            var type = _context.Tip.Find(SiraNo);
+            var type = _context.Tipler.Find(SiraNo);
             return View("GetType", type);
         }
 
@@ -32,7 +34,7 @@ namespace Web.Controllers
         {
             try
             {
-                _context.Tip.Add(tip);
+                _context.Tipler.Add(tip);
                 _context.SaveChanges();
             }
             catch (Exception)
@@ -45,15 +47,15 @@ namespace Web.Controllers
         [HttpPost]
         public IActionResult UpdateType(Tip tip)
         {
-            _context.Tip.Update(tip);
+            _context.Tipler.Update(tip);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public IActionResult SoftDelete(int siraNo)
         {
-            var deletedType = _context.Tip.FirstOrDefault(x => x.SiraNo == siraNo);
-            _context.Tip.Remove(deletedType);
+            var deletedType = _context.Tipler.FirstOrDefault(x => x.SiraNo == siraNo);
+            _context.Tipler.Remove(deletedType);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }

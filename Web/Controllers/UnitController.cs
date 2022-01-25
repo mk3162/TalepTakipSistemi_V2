@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Common.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,13 +20,13 @@ namespace Web.Controllers
         }
         public IActionResult Index()
         {
-            return View(_context.Units.ToList());
+            return View(_context.Birimler.FromSqlRaw(GlobalEnum.StoredProcedure.BirimlerListesi.ToString()).ToList());
         }
 
         [HttpGet]
         public IActionResult GetUnit(int SiraNo)
         {
-            var unit = _context.Units.Find(SiraNo);
+            var unit = _context.Birimler.Find(SiraNo);
             return View("GetUnit", unit);
         }
 
@@ -33,7 +35,7 @@ namespace Web.Controllers
         {
             try
             {
-                _context.Units.Add(birim);
+                _context.Birimler.Add(birim);
                 _context.SaveChanges();
             }
             catch (Exception)
@@ -46,15 +48,15 @@ namespace Web.Controllers
         [HttpPost]
         public IActionResult UpdateUnit(Birim birim)
         {
-            _context.Units.Update(birim);
+            _context.Birimler.Update(birim);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public IActionResult SoftDelete(int siraNo)
         {
-            var deletedUnit = _context.Units.FirstOrDefault(x => x.SiraNo == siraNo);
-            _context.Units.Remove(deletedUnit);
+            var deletedUnit = _context.Birimler.FirstOrDefault(x => x.SiraNo == siraNo);
+            _context.Birimler.Remove(deletedUnit);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }

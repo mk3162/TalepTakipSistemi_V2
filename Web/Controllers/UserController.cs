@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Common.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,22 +19,22 @@ namespace Web.Controllers
         }
         public IActionResult Index()
         {
-            return View(_context.Users.ToList());
+            return View(_context.Kullanicilar.FromSqlRaw(GlobalEnum.StoredProcedure.KullanicilarListesi.ToString()).ToList());
         }
 
         [HttpGet]
         public IActionResult GetUser(int SiraNo)
         {
-            var user = _context.Users.Find(SiraNo);
+            var user = _context.Kullanicilar.Find(SiraNo);
             return View("GetUser", user);
         }
 
         [HttpPost]
-        public IActionResult AddUser(User user)
+        public IActionResult AddUser(Kullanici kullanici)
         {
             try
             {
-                _context.Users.Add(user);
+                _context.Kullanicilar.Add(kullanici);
                 _context.SaveChanges();
             }
             catch (Exception)
@@ -43,19 +45,19 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult UpdateUser(User user)
+        public IActionResult UpdateUser(Kullanici kullanici)
         {
-            _context.Users.Update(user);
+            _context.Kullanicilar.Update(kullanici);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        public IActionResult SoftDelete(int siraNo)
-        {
-            var deletedUser = _context.Users.FirstOrDefault(x => x.UserId == siraNo);
-            _context.Users.Remove(deletedUser);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //public IActionResult SoftDelete(int siraNo)
+        //{
+        //    var deletedUser = _context.Kullanicilar.FirstOrDefault(x => x.UserId == siraNo);
+        //    _context.Kullanicilar.Remove(deletedUser);
+        //    _context.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
     }
 }

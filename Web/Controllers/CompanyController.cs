@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Common.Models;
+using Intercom.Data;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
@@ -22,13 +25,14 @@ namespace Web.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View(_context.Companies.ToList());
+            //return View(_context.Companies.ToList());
+            return View(_context.Sirketler.FromSqlRaw(GlobalEnum.StoredProcedure.SirketlerListesi.ToString()).ToList());
         }
 
         [HttpGet]
         public IActionResult GetCompany(int SiraNo)
         {
-            var company = _context.Companies.Find(SiraNo);
+            var company = _context.Sirketler.Find(SiraNo);
             return View("GetCompany", company);
         }
 
@@ -37,7 +41,7 @@ namespace Web.Controllers
         {
             try
             {
-                _context.Companies.Add(sirket);
+                _context.Sirketler.Add(sirket);
                 _context.SaveChanges();
             }
             catch (Exception)
@@ -50,15 +54,15 @@ namespace Web.Controllers
         [HttpPost]
         public IActionResult UpdateCompany(Sirket sirket)
         {
-            _context.Companies.Update(sirket);
+            _context.Sirketler.Update(sirket);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public IActionResult SoftDelete(int siraNo)
         {
-            var deletedCompany = _context.Companies.FirstOrDefault(x => x.SiraNo == siraNo);
-            _context.Companies.Remove(deletedCompany);
+            var deletedCompany = _context.Sirketler.FirstOrDefault(x => x.SiraNo == siraNo);
+            _context.Sirketler.Remove(deletedCompany);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -8,12 +8,15 @@ using Web.Service.Interface;
 
 namespace Web.Entities
 {
-    public class Sirket : IEntity
+    public class Departman: IEntity
     {
-        [Key]
+        [Key,Required,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SiraNo { get; set; }
-        [StringLength(48)]
+        [StringLength(48),Required]
         public string Tanimi { get; set; }
-        public List<Departman> Departmanlar { get; set; }
+        [Required]
+        public int SirketSiraNo { get; set; }
+        public Sirket Sirket { get; set; }
+
     }
 }

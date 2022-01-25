@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Common.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,13 +19,13 @@ namespace Web.Controllers
         }
         public IActionResult Index()
         {
-            return View(_context.Supplierss.ToList().OrderBy(x => x.TedarikciId));
+            return View(_context.Tedarikciler.FromSqlRaw(GlobalEnum.StoredProcedure.TedarikcilerListesi.ToString()).ToList());
         }
 
         [HttpGet]
         public IActionResult GetSupplier(int SiraNo)
         {
-            var supplier = _context.Supplierss.Find(SiraNo);
+            var supplier = _context.Tedarikciler.Find(SiraNo);
             return View("GetSupplier", supplier);
         }
 
@@ -32,7 +34,7 @@ namespace Web.Controllers
         {
             try
             {
-                _context.Supplierss.Add(tedarikci);
+                _context.Tedarikciler.Add(tedarikci);
                 _context.SaveChanges();
             }
             catch (Exception)
@@ -45,17 +47,17 @@ namespace Web.Controllers
         [HttpPost]
         public IActionResult UpdateSupplier(Tedarikci tedarikci)
         {
-            _context.Supplierss.Update(tedarikci);
+            _context.Tedarikciler.Update(tedarikci);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        public IActionResult SoftDelete(int siraNo)
-        {
-            var deletedSupplier = _context.Supplierss.FirstOrDefault(x => x.TedarikciId == siraNo);
-            _context.Supplierss.Remove(deletedSupplier);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //public IActionResult SoftDelete(int siraNo)
+        //{
+        //    var deletedSupplier = _context.Tedarikciler.FirstOrDefault(x => x.TedarikciId == siraNo);
+        //    _context.Tedarikciler.Remove(deletedSupplier);
+        //    _context.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
     }
 }

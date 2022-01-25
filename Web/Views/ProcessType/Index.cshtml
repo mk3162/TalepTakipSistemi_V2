@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Web.Entities.Islem>
+﻿@model IEnumerable<Web.Entities.IslemTip>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/_AdminLayout.cshtml";
@@ -20,7 +20,7 @@
                                         <tr role="row">
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Sıra No</th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Tanımı</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">İşlemler</th>
+                                            @*<th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">İşlemler</th>*@
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -33,10 +33,10 @@
                                                     </td>*@
                                                 <td class="dtr-control sorting_1" tabindex="0">@item.SiraNo</td>
                                                 <td class="dtr-control sorting_1" tabindex="0">@item.Tanimi</td>
-                                                <td>
+                                                @*<td>
                                                     <a href="/ProcessType/GetProcessType/@item.SiraNo" class="btn btn-info fas fa-edit"></a>
                                                     @Html.ActionLink(" ", "SoftDelete","ProcessType", new { siraNo = item.SiraNo }, new { @class = "btn btn-danger fas fa-trash-alt", onclick = "return confirm('Silmek İstiyor musunuz ? ');" })
-                                                </td>
+                                                </td>*@
                                             </tr>
                                         }
                                     </tbody>
@@ -89,35 +89,4 @@
     </div>
 </section>
 <script src="~/TalepWeb/plugins/jquery/jquery.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $.ajax({
-            type: "GET",
-            url: "../Department/GetCompany",
-            dataType: "json",
-            success: function (response) {
-                $("#Companies").empty().append('<option value="0"> Firma Seçiniz </option>');
-                for (let company of response) {
-                    $("#Companies").append('<option value="' + company.Id + '"> ' + company.Name + ' </option>');
-                }
-            },
-        });
-        $('#Companies').change(function () {
-            let CompanyId = $('#Companies option:selected').val();
-            $.ajax({
-                type: "POST",
-                url: "../Department/GetBranch",
-                data: { companyId: CompanyId },
-                dataType: "json",
-                success: function (response) {
-                    $("#Branches").removeAttr('disabled');
-                    $("#Branches").empty().append('<option value="0"> Şube Seçiniz </option>');
 
-                    for (let branch of response) {
-                        $("#Branches").append('<option value="' + branch.Id + '"> ' + branch.BranchName + ' </option>');
-                    }
-                },
-            });
-        });
-    });
-</script>

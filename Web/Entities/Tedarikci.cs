@@ -9,7 +9,7 @@ namespace Web.Entities
 {
     public class Tedarikci : BaseTedarikci, IEntity
     {
-        [StringLength(25)]
+        [StringLength(25),Key]
         public string TedarikciKodu { get; set; }
         [StringLength(127)]
         public string TedarikciUnvani { get; set; }

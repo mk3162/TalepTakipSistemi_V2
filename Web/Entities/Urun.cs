@@ -9,7 +9,7 @@ namespace Web.Entities
 {
     public class Urun : BaseUrun , IEntity
     {
-        [StringLength(25)]
+        [StringLength(25),Key]
         public string UrunKodu { get; set; }
         [StringLength(127)]
         public string UrunTanimi { get; set; }

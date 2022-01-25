@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Common.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,13 +19,13 @@ namespace Web.Controllers
         }
         public IActionResult Index()
         {
-            return View(_context.Products.ToList());
+            return View(_context.Urunler.FromSqlRaw(GlobalEnum.StoredProcedure.UrunlerListesi.ToString()).ToList());
         }
 
         [HttpGet]
         public IActionResult GetProduct(int SiraNo)
         {
-            var product = _context.Products.Find(SiraNo);
+            var product = _context.Urunler.Find(SiraNo);
             return View("GetProduct", product);
         }
 
@@ -32,7 +34,7 @@ namespace Web.Controllers
         {
             try
             {
-                _context.Products.Add(urun);
+                _context.Urunler.Add(urun);
                 _context.SaveChanges();
             }
             catch (Exception)
@@ -45,17 +47,17 @@ namespace Web.Controllers
         [HttpPost]
         public IActionResult UpdateProduct(Urun urun)
         {
-            _context.Products.Update(urun);
+            _context.Urunler.Update(urun);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        public IActionResult SoftDelete(int siraNo)
-        {
-            var deletedProduct = _context.Products.FirstOrDefault(x => x.UrunId == siraNo);
-            _context.Products.Remove(deletedProduct);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //public IActionResult SoftDelete(int siraNo)
+        //{
+        //    var deletedProduct = _context.Urunler.FirstOrDefault(x => x.UrunId == siraNo);
+        //    _context.Urunler.Remove(deletedProduct);
+        //    _context.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
     }
 }

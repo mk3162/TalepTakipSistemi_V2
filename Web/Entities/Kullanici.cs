@@ -7,9 +7,9 @@ using Web.Service.Interface;
 
 namespace Web.Entities
 {
-    public class User : BaseUser, IEntity
+    public class Kullanici : BaseKullanici, IEntity
     {
-        [StringLength(12),Required]
+        [StringLength(12),Required,Key]
         public string Kodu { get; set; }
         [StringLength(12), Required]
         public string Sifre { get; set; }

@@ -30,6 +30,12 @@ namespace Common.Models
             TiplerListesi,
             [Display(Name = "dbo")]
             UrunlerListesi,
+            [Display(Name = "dbo")]
+            IslemTipleriListesi,
+            [Display(Name = "dbo")]
+            BirimlerListesi,
+            [Display(Name = "dbo")]
+            KullanicilarListesi,
             #endregion
 
         }

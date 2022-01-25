@@ -9,7 +9,7 @@ namespace Web.Entities
 {
     public class BaseTedarikci
     {
-        [Key]
-        public int TedarikciId { get; set; }
+        //[Key]
+        //public int TedarikciId { get; set; }
     }
 }

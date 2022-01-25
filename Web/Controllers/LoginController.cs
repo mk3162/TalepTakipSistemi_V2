@@ -29,9 +29,9 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(User user)
+        public IActionResult Index(Kullanici kullanici)
         {
-            var log = _context.Users.FirstOrDefault(x => x.Kodu == user.Kodu && x.Sifre == user.Sifre);
+            var log = _context.Kullanicilar.FirstOrDefault(x => x.Kodu == kullanici.Kodu && x.Sifre == kullanici.Sifre);
 
             if (log != null)
             {

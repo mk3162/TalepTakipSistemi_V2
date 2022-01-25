@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Web.Entities
 {
-    public class BaseUser
+    public class IslemTip
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int UserId { get; set; }
+        [Key]
+        public int SiraNo { get; set; }
+        public string Tanimi { get; set; }
     }
 }
