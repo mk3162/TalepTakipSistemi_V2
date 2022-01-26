@@ -59,76 +59,25 @@
                     </a>
                 </li>
                 @*<li class="nav-item">
-            <a class="btn-sm intime-bg-navy text-white" href="/User/UserDailyVisitPanel">
-                <i class="fas fa-calendar-alt mr-1"></i> Günlük Ziyaret Takvimi
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="btn-sm intime-bg-turquoise text-white" href="/Visitor/DetailList">
+                        <a class="btn-sm intime-bg-navy text-white" href="/User/UserDailyVisitPanel">
+                            <i class="fas fa-calendar-alt mr-1"></i> Günlük Ziyaret Takvimi
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn-sm intime-bg-turquoise text-white" href="/Visitor/DetailList">
 
-                <i class="fas fa-door-open mr-1"></i>Ziyaret Giriş
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="btn-sm intime-bg-navy text-white" href="/Visitor/DetailList2">
-                <i class="fas fa-door-closed mr-1"></i> Ziyaret Çıkış
-            </a>
-        </li>*@
+                            <i class="fas fa-door-open mr-1"></i>Ziyaret Giriş
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn-sm intime-bg-navy text-white" href="/Visitor/DetailList2">
+                            <i class="fas fa-door-closed mr-1"></i> Ziyaret Çıkış
+                        </a>
+                    </li>*@
 
             </ul>
             <ul class="navbar-nav ml-auto">
 
-                @*<li class="nav-item">
-                        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-                            <i class="fas fa-search"></i>
-                        </a>
-                        <div class="navbar-search-block">
-                            <form class="form-inline">
-                                <div class="input-group input-group-sm">
-
-                                    <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-navbar" type="submit">
-                                            <i class="fas fa-search"></i>
-                                        </button>
-                                        <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                                            <i class="fas fa-times"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </li>*@
-
-
-                @*<li class="nav-item d-none d-sm-inline-block">
-                        <a href="http://www.intimeinfo.com.tr/Home/Contact" class="nav-link">Intime Info İletişim</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                            <i class="fas fa-expand-arrows-alt"></i>
-                        </a>
-                    </li>*@
-                @*<li class="nav-item">
-                        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                            <i class="fas fa-th-large"></i>
-                        </a>
-                    </li>*@
-                @*<li class="user-panel d-flex">
-                        <div class="image">
-                            <img src="~/VisitorWeb/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-                        </div>
-                        <div class="info">
-                            @if (IntimeVisitor.WebUI.Session.SessionUserModel.CurrentUser != null)
-                            {
-                                <a href="#" class="d-block">@IntimeVisitor.WebUI.Session.SessionUserModel.CurrentUser.Name @IntimeVisitor.WebUI.Session.SessionUserModel.CurrentUser.Surname</a>
-
-                            }
-                            <a href="#" class="d-block">Faruk Birkan</a>
-
-                        </div>
-
-                    </li>*@
                 <li class="user-panel image">
                     <img src="~/TalepWeb/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
                 </li>
@@ -182,17 +131,17 @@
                 #161e15
                 <!-- Sidebar user panel (optional) -->
                 @*<div class="user-panel">
-            <div class="image">
-                <img src="~/VisitorWeb/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-            </div>
-            <div class="info">
-                @if (IntimeVisitor.WebUI.Session.SessionUserModel.CurrentUser != null)
-                {
-                    <a href="#">@IntimeVisitor.WebUI.Session.SessionUserModel.CurrentUser.Name @IntimeVisitor.WebUI.Session.SessionUserModel.CurrentUser.Surname</a>
-                }
-            </div>
+                        <div class="image">
+                            <img src="~/VisitorWeb/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        </div>
+                        <div class="info">
+                            @if (IntimeVisitor.WebUI.Session.SessionUserModel.CurrentUser != null)
+                            {
+                                <a href="#">@IntimeVisitor.WebUI.Session.SessionUserModel.CurrentUser.Name @IntimeVisitor.WebUI.Session.SessionUserModel.CurrentUser.Surname</a>
+                            }
+                        </div>
 
-        </div>*@
+                    </div>*@
                 <!-- SidebarSearch Form -->
                 <div class="form-inline mt-3">
                     <div class="input-group" data-widget="sidebar-search">
@@ -233,7 +182,7 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false"">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" ">
                         <li class="nav-header" title="Ziyaretçi - Firma Verilerinin Yapılacağı Menu Listesi" style="font-weight: bold; color: bisque; background-color: #111513; ">Genel İşlemler</li>
 
                         <li class="nav-item">
@@ -244,6 +193,32 @@
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/Company/Index" class="nav-link">
+                                        <i class="far fa-clock nav-icon text-yellow"></i>
+                                        <p class="intime-text-turquoise" style="color:lightblue;">Bekleyen Taleplerim</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Product/Index" class="nav-link">
+                                        <i class="far fa-check-circle nav-icon text-green"></i>
+                                        <p class="intime-text-turquoise" style="color:lightblue;">Onaylanmış Taleplerim</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Supplier/Index" class="nav-link">
+                                        <i class="fa fa-times nav-icon text-red"></i>
+                                        <p class="intime-text-turquoise" style="color:lightblue;">Reddedilmiş Taleplerim</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Type/Index" class="nav-link">
+                                        <i class="fa fa-ban nav-icon text-red"></i>
+                                        <p class="intime-text-turquoise" style="color:lightblue;">İptal Edilmiş Taleplerim</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
                         <li class="nav-item">
@@ -311,6 +286,12 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
+                                    <a href="/PeriodType/Index" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p class="intime-text-turquoise" style="color:lightblue;">Süreç Tipleri</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="/Department/Index" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p class="intime-text-turquoise" style="color:lightblue;">Departmanlar</p>
@@ -355,7 +336,7 @@
                                 <li class="nav-item">
                                     <a href="/User/Index" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p  class="intime-text-turquoise" style="color:lightblue;">  Kullanıcılar</p>
+                                        <p class="intime-text-turquoise" style="color:lightblue;">  Kullanıcılar</p>
                                     </a>
                                 </li>
                             </ul>
@@ -396,44 +377,44 @@
                             </a>
                         </li>
                         <!-- <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-table"></i>
-                <p>
-                  Tables
-                  <i class="fas fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="pages/tables/simple.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Simple Tables</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/tables/data.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>DataTables</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/tables/jsgrid.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>jsGrid</p>
-                  </a>
-                </li>
-              </ul>
-            </li> -->
+                          <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-table"></i>
+                            <p>
+                              Tables
+                              <i class="fas fa-angle-left right"></i>
+                            </p>
+                          </a>
+                          <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                              <a href="pages/tables/simple.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Simple Tables</p>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a href="pages/tables/data.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>DataTables</p>
+                              </a>
+                            </li>
+                            <li class="nav-item">
+                              <a href="pages/tables/jsgrid.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>jsGrid</p>
+                              </a>
+                            </li>
+                          </ul>
+                        </li> -->
                         <li class="nav-header" style="font-weight: bold; background-color: #111513; color: bisque; ">Diğer</li>
                         <!--<li class="nav-item">
-            <a href="/Calendar/Calendar" class="nav-link">
-                <i class="nav-icon far fa-calendar-alt" title="Takvim Bazında Ziyaretleri İzleyebilirsiniz"></i>
-                <p>
-                    Takvim-Calender-->
+                        <a href="/Calendar/Calendar" class="nav-link">
+                            <i class="nav-icon far fa-calendar-alt" title="Takvim Bazında Ziyaretleri İzleyebilirsiniz"></i>
+                            <p>
+                                Takvim-Calender-->
                         @*<span class="badge badge-info right">2</span>*@
                         <!--</p>
-                </a>
-            </li>-->
+                            </a>
+                        </li>-->
                         <li class="nav-item">
                             <a href="/Login/Index" class="nav-link">
                                 <i class="nav-icon fas fa-sign-out-alt" style="color:red;" title="Oturumunuzu buradan kapatabilirsiniz.."></i>
@@ -443,25 +424,25 @@
                                 </p>
                             </a>
                             @*<ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/ComingSoon/Index" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Ranvevu Arama</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/ComingSoon/Index" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Detaylı Arama</p>
-                            </a>
-                        </li>
-                    </ul>*@
+                                    <li class="nav-item">
+                                        <a href="/ComingSoon/Index" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Ranvevu Arama</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/ComingSoon/Index" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Detaylı Arama</p>
+                                        </a>
+                                    </li>
+                                </ul>*@
                             @*<li class="nav-item">
-                        <a href="/Login/Logout" class="nav-link">
-                            <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
-                            <p>Çıkış Yap</p>
-                        </a>
-                    </li>*@
+                                    <a href="/Login/Logout" class="nav-link">
+                                        <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
+                                        <p>Çıkış Yap</p>
+                                    </a>
+                                </li>*@
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

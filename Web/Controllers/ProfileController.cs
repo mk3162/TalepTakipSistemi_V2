@@ -9,9 +9,17 @@ namespace Web.Controllers
 {
     public class ProfileController : Controller
     {
+
+        private readonly DatabaseContext _context;
+
+        public ProfileController(DatabaseContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            return View(_context.Personeller.Where(x => x.ServisSiraNo==2).ToList());
         }
     }
 }

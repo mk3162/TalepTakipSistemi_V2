@@ -9,7 +9,7 @@ namespace Web.Entities
 {
     public class Kullanici : BaseKullanici, IEntity
     {
-        [StringLength(12),Required,Key]
+        [StringLength(12),Key]
         public string Kodu { get; set; }
         [StringLength(12), Required]
         public string Sifre { get; set; }

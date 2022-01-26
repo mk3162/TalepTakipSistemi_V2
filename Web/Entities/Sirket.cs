@@ -10,10 +10,11 @@ namespace Web.Entities
 {
     public class Sirket : IEntity
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SiraNo { get; set; }
         [StringLength(48)]
         public string Tanimi { get; set; }
         public List<Departman> Departmanlar { get; set; }
+        public List<Lokasyon> Lokasyonlar { get; set; }
     }
 }

@@ -22,5 +22,8 @@ namespace Web.Context
         public DbSet<Birim> Birimler { get; set; }
         public DbSet<IslemTip> IslemTipleri { get; set; }
         public DbSet<Departman> Departmanlar { get; set; }
+        public DbSet<Lokasyon> Lokasyonlar { get; set; }
+        public DbSet<Personel> Personeller { get; set; }
+        public DbSet<SurecTip> SurecTipler { get; set; }
     }
 }

@@ -33,9 +33,13 @@ namespace Common.Models
             [Display(Name = "dbo")]
             IslemTipleriListesi,
             [Display(Name = "dbo")]
+            SurecTipleriListesi,
+            [Display(Name = "dbo")]
             BirimlerListesi,
             [Display(Name = "dbo")]
             KullanicilarListesi,
+            [Display(Name = "dbo")]
+            DepartmanlarListe,
             #endregion
 
         }

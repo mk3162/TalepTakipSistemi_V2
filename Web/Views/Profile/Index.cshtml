@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Web.Entities.Personel>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/_AdminLayout.cshtml";
@@ -21,10 +21,13 @@
         <div class="card" style="width:400px; margin-left:350px;">
             <img class="card-img-top" src="~/images/user_icon2.jpg" alt="Card image" style="width:100%">
             <div class="card-body">
-                @*<h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>*@
-                @*<a href="#" class="btn btn-primary">Şifreyi Değiştir</a>*@
-                <button class="btn btn-info buttons-copy buttons-html5" tabindex="0" aria-controls="example1" type="button" data-toggle="modal" data-target="#Change">
+                    @foreach (var item in Model)
+                    {
+
+                        <h4 class="card-title" style="margin-left:100px;">@item.AdiSoyadi</h4>
+                        <p class="card-text" style="margin-left:70px;">@item.Unvani</p>
+                    }
+                <button class="btn btn-info buttons-copy buttons-html5" tabindex="0" aria-controls="example1" type="button" data-toggle="modal" data-target="#Change" style="margin-left:100px;">
                     <span><i class="fas fa-lock-open mr-3"></i>Şifreyi Değiştir</span>
                 </button>
                 <div class="modal fade" id="Change" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -72,7 +75,7 @@
 
 </html>
 <script>
-    $("#change").click(function(){
+    $("#change").click(function () {
         alert('Şifreniz değiştirildi');
     })
 </script>
