@@ -5,14 +5,172 @@
 }
 
 
-        <ul class="navbar-nav">
-            <li class="nav-item" style="margin-top:10px;">
-                <a href="#" style="padding-right: 50px; margin-left: 50px;" class="btn btn-xs">Onayımda Bekleyen Talepler</a>
-                <a href="#" style="padding-right:50px;" class="btn btn-xs">Yeni Talep</a>
-                <a href="#" style="padding-right:50px;" class="btn btn-xs">Görevlerim</a>
-                <a href="#" class="btn btn-xs">İşlem Takibi</a>
+<ul class="navbar-nav">
+    <li class="nav-item" style="margin-top:10px;">
+        <a href="#" style="padding-right: 50px; margin-left: 50px;" class="btn btn-xs">Onayımda Bekleyen Talepler</a>
+        <a href="#" style="padding-right:50px;" class="btn btn-xs" onclick="Goster('liste');">Yeni Talep</a>
+        <a href="#" style="padding-right:50px;" class="btn btn-xs">Görevlerim</a>
+        <a href="#" class="btn btn-xs" style="padding-right:800px;">İşlem Takibi</a>
+        <a href="#" class="btn btn-info btn-xs">Yeni Talep</a>
+    </li>
+</ul>
+<hr style="border-color:bisque" />
+
+
+<ul id="liste" style="display:none;" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" ">
+    <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
+            <p class="intime-text-turquoise" style="color:cornflowerblue;">
+                AVANSLAR
+            </p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
+            <p class="intime-text-turquoise" style="color:cornflowerblue;">
+                DİĞER
+            </p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
+            <p class="intime-text-turquoise" style="color:cornflowerblue;">
+                FİNANSAL HİZMETLER
+            </p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
+            <p class="intime-text-turquoise" style="color:cornflowerblue;">
+                HAYVANCILIK
+            </p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
+            <p class="intime-text-turquoise" style="color:cornflowerblue;">
+                HİZMETLER
+            </p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
+            <p class="intime-text-turquoise" style="color:cornflowerblue;">
+                İNSAN KAYNAKLARI
+            </p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
+            <p class="intime-text-turquoise" style="color: cornflowerblue;">
+                MALZEME/EMTİA/DEMİRBAŞ
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <button class="btn btn-link buttons-copy buttons-html5 nav-link" tabindex="0" aria-controls="example1" type="button" data-toggle="modal" data-target="#Request">
+                    <i class="far fa-file-archive nav-icon text-black"></i>
+                    <p class="intime-text-turquoise" style="color:black;">MALZEME/EMTİA DEMİRBAŞ TALEBİ</p>
+                </button>
             </li>
         </ul>
-<hr style="border-color:lightblue" />
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
+            <p class="intime-text-turquoise" style="color:cornflowerblue;">
+                MASRAFLAR
+            </p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
+            <p class="intime-text-turquoise" style="color:cornflowerblue;">
+                PERSONEL DEPARTMANI ÖDEMELERİ
+            </p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
+            <p class="intime-text-turquoise" style="color:cornflowerblue;">
+                PERSONEL İZİN
+            </p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
+            <p class="intime-text-turquoise" style="color:cornflowerblue;">
+                PERSONEL ÖDEMELERİ
+            </p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
+            <p class="intime-text-turquoise" style="color:cornflowerblue;">
+                SEYAHAT TALEP FORMU
+            </p>
+        </a>
+    </li>
+</ul>
+
+
+<div class="modal fade" id="Request" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">MALZEME/EMTİA/DEMİRBAŞ TALEBİ</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("Index", "Profile", FormMethod.Post))
+            {
+
+                <div class="modal-body">
+                    <div class="form-group required">
+                        <label for="message-text" class="col-form-label" required="required">Eski Şifre :<span style="color:red">*</span></label>
+                        <input type="text" name="Password" placeholder="Şifre" class="form-control" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Yeni Şifre :<span style="color:red">*</span></label>
+                        <input type="text" name="Password" placeholder="Şifre" class="form-control" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Yeni Şifre Tekrar :<span style="color:red">*</span></label>
+                        <input type="text" name="Password" placeholder="Şifre" class="form-control" required="required" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="complete" type="submit" class="btn btn-primary">Tamam</button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Vazgeç</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function Goster(id) {
+        var secilenID = document.getElementById(id);
+        if (secilenID.style.display == "none") {
+            secilenID.style.display = "";
+        } else {
+            secilenID.style.display = "none";
+        }
+    }
+
+</script>
 
 
