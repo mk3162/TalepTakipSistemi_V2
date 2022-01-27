@@ -47,7 +47,7 @@ namespace Web.Controllers
                 //Todo -- set cookie --(For remember me)
                 //FormsAuthentication.SetAuthCookie(log.Sifre, false);
 
-                return RedirectToAction("Index", "Dashboard");
+                return RedirectToAction("Index", "Request");
             }
             else
             {
