@@ -6,7 +6,7 @@
 
 <ul class="navbar-nav">
     <li class="nav-item" style="margin-top:10px;">
-        <a href="/Dashboard/Index" style="padding-right: 50px; margin-left: 50px;" class="btn btn-xs">Onayımda Bekleyen Talepler</a>
+        <a href="/Request/Index" style="padding-right: 50px; margin-left: 50px;" class="btn btn-xs">Onayımda Bekleyen Talepler</a>
         <a href="#" style="padding-right:50px;" class="btn btn-xs" onclick="Goster('liste');">Yeni Talep</a>
         <a href="#" style="padding-right:50px;" class="btn btn-xs">Görevlerim</a>
         <a href="#" class="btn btn-xs" style="padding-right:800px;">İşlem Takibi</a>
@@ -16,9 +16,10 @@
 <hr style="border-color:bisque" />
 
 
-<table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+<table id="example1" class="table table-hover table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
     <thead>
         <tr role="row">
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending"></th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Talep No</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Kayıt Zamanı</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Kategori</th>
@@ -28,6 +29,25 @@
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td><i class="fa fa-arrow-right text-purple"></i></td>
+            <td>a</td>
+            <td>s</td>
+            <td>d</td>
+            <td>f</td>
+            <td>g</td>
+            <td>h</td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-arrow-right text-purple"></i></td>
+            <td>a</td>
+            <td>s</td>
+            <td>d</td>
+            <td>f</td>
+            <td>g</td>
+            <td>h</td>
+        </tr>
+    </tbody>
 </table>
 
 
@@ -147,28 +167,28 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            @using (Html.BeginForm("Index", "Dashboard", FormMethod.Post))
+            @using (Html.BeginForm("AddRequest", "Request", FormMethod.Post))
             {
 
                 <div class="modal-body">
                     <div class="form-group required">
                         <label for="message-text" class="col-form-label" required="required">Şirket :</label>
-                        <select class="form-control" name="Companies" id="Companies" for="Regions">
+                        <select style="width:500px;" class="form-control" name="Companies" id="Companies" for="Regions">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Departman :</label>
-                        <select class="form-control" name="Department" id="Department" for="Regions">
+                        <select style="width:500px;" class="form-control" name="Department" id="Department" for="Regions">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Bina :</label>
-                        <select class="form-control" name="Location" id="Location" for="Regions">
+                        <select style="width:500px;" class="form-control" name="Location" id="Location" for="Regions">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Servis :</label>
-                        <select class="form-control" name="Service" id="Service" for="Regions">
+                        <select style="width:500px;" class="form-control" name="Service" id="Service" for="Regions">
                         </select>
                     </div>
                     <hr />
@@ -179,11 +199,11 @@
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" style="margin-left:5px;">Kategori</label>
-                        <label for="message-text" class="col-form-label" style="margin-left:150px;">Talep Gün Aralığı</label>
+                        <label for="message-text" class="col-form-label" style="margin-left:550px;">Talep Gün Aralığı</label>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" style="margin-left:5px;">Malzeme</label>
-                        <label for="message-text" class="col-form-label" style="margin-left:150px;">Birim Fiyat</label>
+                        <label for="message-text" class="col-form-label" style="margin-left:550px;">Birim Fiyat</label>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" style="margin-left:5px;">Min./Max. Talep Miktar</label>
@@ -233,9 +253,10 @@
                         <button id="Add" type="submit" class="btn btn-primary" style="background-color: deepskyblue" ;>Listeye Ekle</button>
                         <button id="Edit" type="button" class="btn btn-primary" style="background-color: deepskyblue; margin-left: 910px;">Düzenle</button>
                         <br /><br />
-                        <table class="table table-striped table-bordered table-responsive">
+                        <table class="table table-hover table-striped table-bordered table-responsive">
                             <thead>
                                 <tr>
+                                    <th></th>
                                     <th>Malzeme/Emtia/Demirbaş Adı</th>
                                     <th>Miktar</th>
                                     <th>Birim</th>
@@ -249,6 +270,7 @@
                             </thead>
                             <tbody>
                                 <tr>
+                                    <td><i class="fa fa-times text-red"></i></td>
                                     <td>a</td>
                                     <td>b</td>
                                     <td>c</td>
@@ -266,8 +288,8 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button id="complete" type="submit" class="btn btn-primary" style="background-color: deepskyblue; font-weight: bold; margin-left: 450px; ">Tamam</button>
-                    <button type="button" class="btn btn-warning" data-dismiss="modal" style="background-color: gold; color: white; font-weight: bold; margin-right: 400px;">Vazgeç</button>
+                    <button id="complete" type="submit" class="btn btn-primary" style="background-color: deepskyblue; font-weight: bold;">Tamam</button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal" style="background-color: gold; color: white; font-weight: bold; margin-right: 475px;">Vazgeç</button>
                 </div>
             }
         </div>
@@ -281,6 +303,8 @@
         var secilenID = document.getElementById(id);
         if (secilenID.style.display == "none") {
             secilenID.style.display = "";
+            $('#example1').hide();
+            $('#example1_wrapper').hide();
         } else {
             secilenID.style.display = "none";
         }
@@ -292,10 +316,11 @@
 </script>
 
 <script>
+    //dropdownları doldurma
     $(document).ready(function () {
         $.ajax({
             type: "GET",
-            url: "/Dashboard/GetCompany",
+            url: "/Request/GetCompany",
             dataType: "json",
             success: function (response) {
                 $("#Companies").empty().append('<option value="0"> Şirket Seçiniz </option>');
@@ -309,7 +334,7 @@
             let CompanyId = $('#Companies option:selected').val();
             $.ajax({
                 type: "POST",
-                url: "../Dashboard/GetService",
+                url: "../Request/GetService",
                 data: { companyId: CompanyId },
                 dataType: "json",
                 success: function (response) {
@@ -324,3 +349,4 @@
         });
     });
 </script>
+

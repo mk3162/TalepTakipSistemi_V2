@@ -85,7 +85,7 @@ namespace Web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Dashboard}/{action=Index}/{siraNo?}");
+                    pattern: "{controller=Request}/{action=Index}/{siraNo?}");
             });
         }
     }
