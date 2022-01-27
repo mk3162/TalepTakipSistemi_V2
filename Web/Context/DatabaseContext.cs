@@ -9,7 +9,7 @@ namespace Web.Context
 {
     public class DatabaseContext : DbContext
     {
-        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base (options)
+        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         {
 
         }
@@ -25,5 +25,6 @@ namespace Web.Context
         public DbSet<Lokasyon> Lokasyonlar { get; set; }
         public DbSet<Personel> Personeller { get; set; }
         public DbSet<SurecTip> SurecTipler { get; set; }
+        public DbSet<Servis> Servisler { get; set; }
     }
 }

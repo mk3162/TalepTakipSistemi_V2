@@ -16,5 +16,6 @@ namespace Web.Entities
         public string Tanimi { get; set; }
         public List<Departman> Departmanlar { get; set; }
         public List<Lokasyon> Lokasyonlar { get; set; }
+        public List<Proje> Projeler { get; set; }
     }
 }

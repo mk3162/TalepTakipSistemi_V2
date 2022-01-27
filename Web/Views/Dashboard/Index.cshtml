@@ -4,17 +4,31 @@
     Layout = "~/Views/_AdminLayout.cshtml";
 }
 
-
 <ul class="navbar-nav">
     <li class="nav-item" style="margin-top:10px;">
-        <a href="#" style="padding-right: 50px; margin-left: 50px;" class="btn btn-xs">Onayımda Bekleyen Talepler</a>
+        <a href="/Dashboard/Index" style="padding-right: 50px; margin-left: 50px;" class="btn btn-xs">Onayımda Bekleyen Talepler</a>
         <a href="#" style="padding-right:50px;" class="btn btn-xs" onclick="Goster('liste');">Yeni Talep</a>
         <a href="#" style="padding-right:50px;" class="btn btn-xs">Görevlerim</a>
         <a href="#" class="btn btn-xs" style="padding-right:800px;">İşlem Takibi</a>
-        <a href="#" class="btn btn-info btn-xs">Yeni Talep</a>
+        <a href="#" class="btn btn-info btn-xs" tabindex="0" aria-controls="example1" type="button" data-toggle="modal" data-target=".bd-example-modal-lg">Yeni Talep</a>
     </li>
 </ul>
 <hr style="border-color:bisque" />
+
+
+<table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+    <thead>
+        <tr role="row">
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Talep No</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Kayıt Zamanı</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Kategori</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Talep Sahibi Adı Soyadı</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Sistem Açıklaması</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Açıklama</th>
+        </tr>
+    </thead>
+    <tbody>
+</table>
 
 
 <ul id="liste" style="display:none;" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" ">
@@ -67,15 +81,15 @@
         </a>
     </li>
     <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="#" class="nav-link" onclick="Gizle();">
             <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
             <p class="intime-text-turquoise" style="color: cornflowerblue;">
                 MALZEME/EMTİA/DEMİRBAŞ
             </p>
         </a>
-        <ul class="nav nav-treeview">
+        <ul class="nav nav-treeview" id="altListe">
             <li class="nav-item">
-                <button class="btn btn-link buttons-copy buttons-html5 nav-link" tabindex="0" aria-controls="example1" type="button" data-toggle="modal" data-target="#Request">
+                <button class="btn btn-link buttons-copy buttons-html5 nav-link" tabindex="0" aria-controls="example1" type="button" data-toggle="modal" data-target=".bd-example-modal-lg">
                     <i class="far fa-file-archive nav-icon text-black"></i>
                     <p class="intime-text-turquoise" style="color:black;">MALZEME/EMTİA DEMİRBAŞ TALEBİ</p>
                 </button>
@@ -124,9 +138,8 @@
     </li>
 </ul>
 
-
-<div class="modal fade" id="Request" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade bd-example-modal-lg" id="Request" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">MALZEME/EMTİA/DEMİRBAŞ TALEBİ</h5>
@@ -134,31 +147,133 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            @using (Html.BeginForm("Index", "Profile", FormMethod.Post))
+            @using (Html.BeginForm("Index", "Dashboard", FormMethod.Post))
             {
 
                 <div class="modal-body">
                     <div class="form-group required">
-                        <label for="message-text" class="col-form-label" required="required">Eski Şifre :<span style="color:red">*</span></label>
-                        <input type="text" name="Password" placeholder="Şifre" class="form-control" required="required" />
+                        <label for="message-text" class="col-form-label" required="required">Şirket :</label>
+                        <select class="form-control" name="Companies" id="Companies" for="Regions">
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="message-text" class="col-form-label">Yeni Şifre :<span style="color:red">*</span></label>
-                        <input type="text" name="Password" placeholder="Şifre" class="form-control" required="required" />
+                        <label for="message-text" class="col-form-label">Departman :</label>
+                        <select class="form-control" name="Department" id="Department" for="Regions">
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="message-text" class="col-form-label">Yeni Şifre Tekrar :<span style="color:red">*</span></label>
-                        <input type="text" name="Password" placeholder="Şifre" class="form-control" required="required" />
+                        <label for="message-text" class="col-form-label">Bina :</label>
+                        <select class="form-control" name="Location" id="Location" for="Regions">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Servis :</label>
+                        <select class="form-control" name="Service" id="Service" for="Regions">
+                        </select>
+                    </div>
+                    <hr />
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <button id="Choose" type="submit" class="btn btn-primary" style="background-color: deepskyblue; font-weight: bold;">Seç</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Kategori</label>
+                        <label for="message-text" class="col-form-label" style="margin-left:150px;">Talep Gün Aralığı</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Malzeme</label>
+                        <label for="message-text" class="col-form-label" style="margin-left:150px;">Birim Fiyat</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Min./Max. Talep Miktar</label>
                     </div>
                 </div>
+                <hr />
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Ait Olduğu Proje</label>
+                        <select class="form-control" name="Project" id="Project" for="Regions">
+                        </select>
+                    </div>
+                </div>
+                <hr />
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Miktar: </label>
+                        <input type="text" name="Amount" style="width:100px; margin-left:95px;" /> ,
+                        <input type="text" name="AmountComma" style="width:100px;" />
+                        <input type="text" name="AmountUnit" style="width:75px; background-color:gold; color:white;" disabled="disabled" value="ADET" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Tahmini Birim Fiyat: </label>
+                        <input type="text" name="Amount" style="width:100px;" /> ,
+                        <input type="text" name="AmountComma" style="width:100px;" />
+                        <select name="Price" id="Price" style="width:75px" ; for="Regions">
+                            <option value="TL">TL</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Toplam Tutar: </label>
+                        <input type="text" name="TotalPrice" style="width:100px; background-color:gold; margin-left:45px;" disabled="disabled" value="" />
+                        <input type="text" name="TotalUnit" style="width:100px; margin-left:10px;" value="TL" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Kullanım Başlangıç <br /> Zamanı: </label>
+                        <input type="date" name="StartDate" style="width:200px; margin-left:5px;" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Açıklama </label><br />
+                        <textarea class="form-control" id="Description" name="Description" style="width:450px; height:150px; margin-left:5px;" required></textarea>
+                    </div>
+                </div>
+                <hr />
+                <div class="modal-body">
+                    <div class="form-group">
+                        <button id="Add" type="submit" class="btn btn-primary" style="background-color: deepskyblue" ;>Listeye Ekle</button>
+                        <button id="Edit" type="button" class="btn btn-primary" style="background-color: deepskyblue; margin-left: 910px;">Düzenle</button>
+                        <br /><br />
+                        <table class="table table-striped table-bordered table-responsive">
+                            <thead>
+                                <tr>
+                                    <th>Malzeme/Emtia/Demirbaş Adı</th>
+                                    <th>Miktar</th>
+                                    <th>Birim</th>
+                                    <th>Tahmini Birim Fiyatı</th>
+                                    <th>Para Birimi</th>
+                                    <th>Tahmini Toplam</th>
+                                    <th>Kullanım Süresi</th>
+                                    <th>Periyot</th>
+                                    <th>Kategori</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>a</td>
+                                    <td>b</td>
+                                    <td>c</td>
+                                    <td>d</td>
+                                    <td>e</td>
+                                    <td>f</td>
+                                    <td>g</td>
+                                    <td>h</td>
+                                    <td>u</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
                 <div class="modal-footer">
-                    <button id="complete" type="submit" class="btn btn-primary">Tamam</button>
-                    <button type="button" class="btn btn-warning" data-dismiss="modal">Vazgeç</button>
+                    <button id="complete" type="submit" class="btn btn-primary" style="background-color: deepskyblue; font-weight: bold; margin-left: 450px; ">Tamam</button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal" style="background-color: gold; color: white; font-weight: bold; margin-right: 400px;">Vazgeç</button>
                 </div>
             }
         </div>
     </div>
 </div>
+<script src="~/TalepWeb/plugins/jquery/jquery.min.js"></script>
 
 
 <script>
@@ -171,6 +286,41 @@
         }
     }
 
+    function Gizle() {
+        $("#altListe").hide();
+    }
 </script>
 
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "/Dashboard/GetCompany",
+            dataType: "json",
+            success: function (response) {
+                $("#Companies").empty().append('<option value="0"> Şirket Seçiniz </option>');
+                for (let company of response) {
+                    $("#Companies").append('<option value="' + company.Id + '"> ' + company.Name + ' </option>');
+                }
+            },
+        });
 
+        $('#Companies').change(function () {
+            let CompanyId = $('#Companies option:selected').val();
+            $.ajax({
+                type: "POST",
+                url: "../Dashboard/GetService",
+                data: { companyId: CompanyId },
+                dataType: "json",
+                success: function (response) {
+                    $("#Service").removeAttr('disabled');
+                    $("#Service").empty().append('<option value="0"> Servis Seçiniz </option>');
+
+                    for (let service of response) {
+                        $("#Service").append('<option value="' + service.Id + '"> ' + service.BranchName + ' </option>');
+                    }
+                },
+            });
+        });
+    });
+</script>
