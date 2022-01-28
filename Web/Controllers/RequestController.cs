@@ -24,7 +24,6 @@ namespace Web.Controllers
         [HttpGet]
         public ActionResult GetCompany()
         {
-
             var entity = _context.Sirketler.Where(a => a.SiraNo > 0).ToList();
             return Json(entity);
         }
@@ -32,7 +31,21 @@ namespace Web.Controllers
         public ActionResult GetService(int depSiraNo)
         {
             //_context.Configuration.ProxyCreationEnabled = false;
-            var entity = _context.Servisler.Where(a => a.DepartmanSiraNo == depSiraNo).ToList();
+            var entity = _context.Servisler.Where(a => a.SiraNo == depSiraNo).ToList();
+            return Json(entity);
+        }
+
+        public ActionResult GetDepartment(int sirketSiraNo)
+        {
+            //_context.Configuration.ProxyCreationEnabled = false;
+            var entity = _context.Departmanlar.Where(a => a.SiraNo == sirketSiraNo).ToList();
+            return Json(entity);
+        }
+
+        public ActionResult GetLocation(int sirketSiraNo)
+        {
+            //_context.Configuration.ProxyCreationEnabled = false;
+            var entity = _context.Lokasyonlar.Where(a => a.SiraNo == sirketSiraNo).ToList();
             return Json(entity);
         }
     }

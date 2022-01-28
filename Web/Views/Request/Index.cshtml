@@ -4,44 +4,346 @@
     Layout = "~/Views/_AdminLayout.cshtml";
 }
 
+<style>
+    .form-group {
+    margin-bottom: 0.5rem;
+}
+</style>
 <partial name="_AddTopMenuPartialView" />
 
-<table id="example1" class="table table-hover table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
-    <thead>
-        <tr role="row">
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending"></th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Talep No</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Kayıt Zamanı</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Kategori</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Talep Sahibi Adı Soyadı</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Sistem Açıklaması</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Açıklama</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><i class="fa fa-arrow-right text-purple"></i></td>
-            <td>a</td>
-            <td>s</td>
-            <td>d</td>
-            <td>f</td>
-            <td>g</td>
-            <td>h</td>
-        </tr>
-        <tr>
-            <td><i class="fa fa-arrow-right text-purple"></i></td>
-            <td>a</td>
-            <td>s</td>
-            <td>d</td>
-            <td>f</td>
-            <td>g</td>
-            <td>h</td>
-        </tr>
-    </tbody>
-</table>
+
+<div class="panel-body">
+    <table id="example1" class="table table-condensed table-hover table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+        <thead>
+            <tr role="row">
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending"></th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Talep No</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Kayıt Zamanı</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Kategori</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Talep Sahibi Adı Soyadı</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Sistem Açıklaması</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Açıklama</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle">
+                <td><button class="btn btn-default btn-xs"><span class="fa fa-eye"></span></button></td>
+                <td>Carlos</td>
+                <td>Mathias</td>
+                <td>Leme</td>
+                <td>SP</td>
+                <td>new</td>
+                <td>new</td>
+            </tr>
+            <tr>
+                <td colspan="12" class="hiddenRow">
+                    <div class="accordian-body collapse" id="demo1">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr class="info">
+                                    <th>Job</th>
+                                    <th>Company</th>
+                                    <th>Salary</th>
+                                    <th>Date On</th>
+                                    <th>Date off</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-toggle="collapse" class="accordion-toggle" data-target="#demo10">
+                                    <td>Enginner Software</td>
+                                    <td>Google</td>
+                                    <td>U$8.00000 </td>
+                                    <td> 2016/09/27</td>
+                                    <td> 2017/09/27</td>
+                                    <td> 2017/09/27</td>
+                                </tr>
+                                <tr>
+                                    <td>Scrum Master</td>
+                                    <td>Google</td>
+                                    <td>U$8.00000 </td>
+                                    <td> 2016/09/27</td>
+                                    <td> 2017/09/27</td>
+                                    <td> 2017/09/27</td>
+                                </tr>
+                                <tr>
+                                    <td>Back-end</td>
+                                    <td>Google</td>
+                                    <td>U$8.00000 </td>
+                                    <td> 2016/09/27</td>
+                                    <td> 2017/09/27</td>
+                                    <td> 2017/09/27</td>
+                                </tr>
+                                <tr>
+                                    <td>Front-end</td>
+                                    <td>Google</td>
+                                    <td>U$8.00000 </td>
+                                    <td> 2016/09/27</td>
+                                    <td> 2017/09/27</td>
+                                    <td> 2017/09/27</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr data-toggle="collapse" data-target="#demo2" class="accordion-toggle">
+                <td><button class="btn btn-default btn-xs"><span class="fa fa-eye"></span></button></td>
+                <td>Silvio</td>
+                <td>Santos</td>
+                <td>São Paulo</td>
+                <td>SP</td>
+                <td>new</td>
+                <td>new</td>
+            </tr>
+            <tr>
+                <td colspan="12" class="hiddenRow">
+                    <div class="accordian-body collapse" id="demo2">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr class="info">
+                                    <th>Job</th>
+                                    <th>Company</th>
+                                    <th>Salary</th>
+                                    <th>Date On</th>
+                                    <th>Date off</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-toggle="collapse" class="accordion-toggle" data-target="#demo10">
+                                    <td>Enginner Software</td>
+                                    <td>Google</td>
+                                    <td>U$8.00000 </td>
+                                    <td> 2016/09/27</td>
+                                    <td> 2017/09/27</td>
+                                    <td> 2017/09/27</td>
+                                </tr>
+                                <tr>
+                                    <td>Scrum Master</td>
+                                    <td>Google</td>
+                                    <td>U$8.00000 </td>
+                                    <td> 2016/09/27</td>
+                                    <td> 2017/09/27</td>
+                                    <td> 2017/09/27</td>
+                                </tr>
+                                <tr>
+                                    <td>Back-end</td>
+                                    <td>Google</td>
+                                    <td>U$8.00000 </td>
+                                    <td> 2016/09/27</td>
+                                    <td> 2017/09/27</td>
+                                    <td> 2017/09/27</td>
+                                </tr>
+                                <tr>
+                                    <td>Front-end</td>
+                                    <td>Google</td>
+                                    <td>U$8.00000 </td>
+                                    <td> 2016/09/27</td>
+                                    <td> 2017/09/27</td>
+                                    <td> 2017/09/27</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr data-toggle="collapse" data-target="#demo3" class="accordion-toggle">
+                <td><button class="btn btn-default btn-xs"><span class="fa fa-eye"></span></button></td>
+                <td>John</td>
+                <td>Doe</td>
+                <td>Dracena</td>
+                <td>SP</td>
+                <td>New</td>
+                <td>New</td>
+            </tr>
+            <tr>
+                <td colspan="12" class="hiddenRow">
+                    <div class="accordian-body collapse" id="demo3">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr class="info">
+                                    <th>Job</th>
+                                    <th>Company</th>
+                                    <th>Salary</th>
+                                    <th>Date On</th>
+                                    <th>Date off</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-toggle="collapse" class="accordion-toggle" data-target="#demo10">
+                                    <td>Enginner Software</td>
+                                    <td>Google</td>
+                                    <td>U$8.00000 </td>
+                                    <td> 2016/09/27</td>
+                                    <td> 2017/09/27</td>
+                                    <td> 2017/09/27</td>
+                                </tr>
+                                <tr>
+                                    <td>Scrum Master</td>
+                                    <td>Google</td>
+                                    <td>U$8.00000 </td>
+                                    <td> 2016/09/27</td>
+                                    <td> 2017/09/27</td>
+                                    <td> 2017/09/27</td>
+                                </tr>
+                                <tr>
+                                    <td>Back-end</td>
+                                    <td>Google</td>
+                                    <td>U$8.00000 </td>
+                                    <td> 2016/09/27</td>
+                                    <td> 2017/09/27</td>
+                                    <td> 2017/09/27</td>
+                                </tr>
+                                <tr>
+                                    <td>Front-end</td>
+                                    <td>Google</td>
+                                    <td>U$8.00000 </td>
+                                    <td> 2016/09/27</td>
+                                    <td> 2017/09/27</td>
+                                    <td> 2017/09/27</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+    </table>
+</div>
 
 
-<ul id="liste" style="display:none;" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" ">
+<div class="row">
+    <a href="#" id="Process" class="btn btn-info btn-xs" tabindex="0" aria-controls="example1" type="button" data-toggle="modal" data-target=".bd-example2-modal-lg" style="margin-left:30px; margin-top:20px;">İşlem Yap</a>
+</div>
+
+<div class="modal fade bd-example2-modal-lg" id="Request" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ürün Talebi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("AddRequest", "Request", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Şirket: </label>
+                        <label for="message-text" class="col-form-label" style="margin-left:540px;">Talep No</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Bina: </label>
+                        <label for="message-text" class="col-form-label" style="margin-left:550px;">Kategori</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Departman: </label>
+                        <label for="message-text" class="col-form-label" style="margin-left:500px;">Malzeme</label>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Servis: </label>
+                        <label for="message-text" class="col-form-label" style="margin-left:540px;">Min./Max. Talep Miktar</label>
+                    </div>
+                    <div class="form-group">
+                        <button id="Request" type="button" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold;">Bu malzeme ile ilgili diğer talepler</button>
+                        <label for="message-text" class="col-form-label" style="margin-left:310px;">Birim Fiyat</label>
+                    </div>
+                </div>
+                <hr />
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Ait Olduğu Proje </label>
+                    </div>
+                </div>
+                <hr />
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Miktar: </label>
+                        <input type="text" name="Amount" style="width:100px; margin-left:95px;" /> ,
+                        <input type="text" name="AmountComma" style="width:100px;" />
+                        <input type="text" name="AmountUnit" style="width:75px; background-color:orange; color:white;" disabled="disabled" value="ADET" />
+                        <label for="message-text" class="col-form-label" style="margin-left:50px;">Eklenmiş Dosyalar </label>
+                    </div>
+                    @*<div class="form-group">
+                            <label for="message-text" class="col-form-label" style="margin-left:5px;">Tahmini Birim Fiyat: </label>
+                            <input type="text" name="Amount" style="width:100px;" /> ,
+                            <input type="text" name="AmountComma" style="width:100px;" />
+                            <select name="Price" id="Price" style="width:75px" ; for="Regions">
+                                <option value="TL">TL</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label" style="margin-left:5px;">Kullanım Süresi: </label>
+                            <input type="text" name="UsedTime" style="width:100px;  margin-left:45px;" value="" />
+                            <select name="Period" id="Period" style="width:75px" ; for="Regions">
+                                <option value="TL">YILLIK</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label" style="margin-left:5px;">Kullanım Başlangıç <br /> Zamanı: </label>
+                            <input type="date" name="StartDate" style="width:200px; margin-left:5px;" />
+                        </div>*@
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Açıklama </label><br />
+                        <textarea class="form-control" id="Description" name="Description" style="width:450px; height:50px; margin-left:5px;" required></textarea>
+
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <table class="table table-hover table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Kategori</th>
+                                    <th>Malzeme Adı</th>
+                                    <th>Miktar</th>
+                                    <th>Birim</th>
+                                    <th>Tahmini Birim Fiyatı</th>
+                                    <th>Para Birimi</th>
+                                    <th>Tahmini Toplam Fiyat</th>
+                                    <th>Açıklama</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox" class="form-check-input" style="width:45px; height:15px;" /></td>
+                                    <td>a</td>
+                                    <td>b</td>
+                                    <td>c</td>
+                                    <td>d</td>
+                                    <td>e</td>
+                                    <td>f</td>
+                                    <td>g</td>
+                                    <td>h</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Görüşleriniz</label><br />
+                        <textarea class="form-control" id="Opinion" name="Opinion" style="width:1100px; height:50px; margin-left:5px;"></textarea>
+                    </div>
+                    <hr />
+                    <div class="form-group">
+                        <button id="Approval" type="button" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; color:white; width:150px;">Onay</button>
+                        <button id="Refuse" type="button" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; color: white; width: 150px;">Red</button>
+                        <button id="Giveup" type="button" class="btn btn-warning" style="background-color: orange; font-weight: bold; color: white; width: 150px;">Vazgeç</button>
+                        <button id="Direct" type="button" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; color: white; width: 150px;">Yönlendir</button>
+                        <button id="SendToCheck" type="button" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; color: white; width: 160px;">Kontrole Gönder</button>
+                        <button id="Cancel" type="button" class="btn btn-danger" style="font-weight: bold; color: white; width: 160px;">Talebi İptal Et</button>
+                        <button id="Change" type="button" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; color: white; width: 150px;">Değiştir</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<ul id="liste" style="display:none;" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
     <li class="nav-item">
         <a href="#" class="nav-link">
             <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
@@ -152,7 +454,7 @@
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">MALZEME/EMTİA/DEMİRBAŞ TALEBİ</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Ürün Talebi</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -162,30 +464,26 @@
 
                 <div class="modal-body">
                     <div class="form-group required">
-                        <label for="message-text" class="col-form-label" required="required">Şirket :</label>
-                        <select style="width:500px;" class="form-control" name="Companies" id="Companies" for="Regions">
+                        <label for="message-text" class="col-form-label" required="required">Şirket</label>
+                        <select style="width:400px;display:inline-block; margin-left:10px;" class="form-control" id="Companies" for="Regions">
+                        </select>
+                        <label for="message-text" class="col-form-label" style="margin-left:30px;">Departman</label>
+                        <select style="width: 400px; display: inline-block; margin-left: 10px;"  class="form-control" id="Department" for="Regions">
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Departman :</label>
-                        <select style="width:500px;" class="form-control" name="Department" id="Department" for="Regions">
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Bina :</label>
-                        <select style="width:500px;" class="form-control" name="Location" id="Location" for="Regions">
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Servis :</label>
-                        <select style="width:500px;" class="form-control" name="Service" id="Service" for="Regions">
-                        </select>
-                    </div>
+                <div class="form-group">
+                    <label for="message-text" class="col-form-label">Bina</label>
+                    <select style="width: 400px; display: inline-block; margin-left: 20px;" class="form-control"  id="Location" for="Regions">
+                    </select>
+                    <label for="message-text" class="col-form-label" style="margin-left:70px;">Servis</label>
+                    <select style="width: 400px; display: inline-block; margin-left: 10px;" class="form-control" id="Service" for="Regions">
+                    </select>
+                </div>
                     <hr />
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <button id="Choose" type="submit" class="btn btn-primary" style="background-color: deepskyblue; font-weight: bold;">Seç</button>
+                        <button id="Choose" type="submit" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-top:10px;">Seç</button>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" style="margin-left:5px;">Kategori</label>
@@ -202,46 +500,24 @@
                 <hr />
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Ait Olduğu Proje</label>
-                        <select class="form-control" name="Project" id="Project" for="Regions">
-                        </select>
-                    </div>
-                </div>
-                <hr />
-                <div class="modal-body">
-                    <div class="form-group">
                         <label for="message-text" class="col-form-label" style="margin-left:5px;">Miktar: </label>
                         <input type="text" name="Amount" style="width:100px; margin-left:95px;" /> ,
                         <input type="text" name="AmountComma" style="width:100px;" />
-                        <input type="text" name="AmountUnit" style="width:75px; background-color:gold; color:white;" disabled="disabled" value="ADET" />
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Tahmini Birim Fiyat: </label>
-                        <input type="text" name="Amount" style="width:100px;" /> ,
-                        <input type="text" name="AmountComma" style="width:100px;" />
-                        <select name="Price" id="Price" style="width:75px" ; for="Regions">
-                            <option value="TL">TL</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Toplam Tutar: </label>
-                        <input type="text" name="TotalPrice" style="width:100px; background-color:gold; margin-left:45px;" disabled="disabled" value="" />
-                        <input type="text" name="TotalUnit" style="width:100px; margin-left:10px;" value="TL" />
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Kullanım Başlangıç <br /> Zamanı: </label>
-                        <input type="date" name="StartDate" style="width:200px; margin-left:5px;" />
+                        <input type="text" name="AmountUnit" style="width:75px; background-color:orange; color:white;" disabled="disabled" value="ADET" />
+                        <label for="message-text" class="col-form-label" style="margin-left:45px;">Dosya Ekle </label><br />
+                        <input type="text" name="ChooseFile" style="width:230px; margin-left:500px;" />
+                        <input type="file" />
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" style="margin-left:5px;">Açıklama </label><br />
-                        <textarea class="form-control" id="Description" name="Description" style="width:450px; height:150px; margin-left:5px;" required></textarea>
+                        <textarea class="form-control" id="Description" name="Description" style="width:450px; height:50px; margin-left:5px;" required></textarea>
                     </div>
                 </div>
                 <hr />
                 <div class="modal-body">
                     <div class="form-group">
-                        <button id="Add" type="submit" class="btn btn-primary" style="background-color: deepskyblue" ;>Listeye Ekle</button>
-                        <button id="Edit" type="button" class="btn btn-primary" style="background-color: deepskyblue; margin-left: 910px;">Düzenle</button>
+                        <button id="Add" type="submit" class="btn btn-primary" style="background-color: #17a2b8; font-weight:bold;">Listeye Ekle</button>
+                        <button id="Edit" type="button" class="btn btn-primary" style="background-color: #17a2b8; font-weight:bold; margin-left: 900px;">Düzenle</button>
                         <br /><br />
                         <table class="table table-hover table-striped table-bordered table-responsive">
                             <thead>
@@ -260,7 +536,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><i class="fa fa-times text-red"></i></td>
+                                    <td><button class="btn btn-outline-light"><i class="fa fa-times text-red"></i></button></td>
                                     <td>a</td>
                                     <td>b</td>
                                     <td>c</td>
@@ -278,8 +554,8 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button id="complete" type="submit" class="btn btn-primary" style="background-color: deepskyblue; font-weight: bold;">Tamam</button>
-                    <button type="button" class="btn btn-warning" data-dismiss="modal" style="background-color: gold; color: white; font-weight: bold; margin-right: 475px;">Vazgeç</button>
+                    <button id="complete" type="submit" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold;">Tamam</button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal" style="background-color: orange; color: white; font-weight: bold; margin-right: 475px;">Vazgeç</button>
                 </div>
             }
         </div>
@@ -295,6 +571,7 @@
             secilenID.style.display = "";
             $('#example1').hide();
             $('#example1_wrapper').hide();
+            $('#Process').hide();
         } else {
             secilenID.style.display = "none";
         }
@@ -315,24 +592,60 @@
             success: function (response) {
                 $("#Companies").empty().append('<option value="0"> Şirket Seçiniz </option>');
                 for (let company of response) {
-                    $("#Companies").append('<option value="' + company.Id + '"> ' + company.Name + ' </option>');
+                    $("#Companies").append('<option value="' + company.SiraNo + '"> ' + company.Tanimi + ' </option>');
                 }
             },
         });
 
-        $('#Companies').change(function () {
-            let CompanyId = $('#Companies option:selected').val();
+        $('#Department').change(function () {
+            let SiraNo = $('#Department option:selected').val();
             $.ajax({
                 type: "POST",
                 url: "../Request/GetService",
-                data: { companyId: CompanyId },
+                data: { SiraNo: SiraNo },
                 dataType: "json",
                 success: function (response) {
                     $("#Service").removeAttr('disabled');
                     $("#Service").empty().append('<option value="0"> Servis Seçiniz </option>');
 
                     for (let service of response) {
-                        $("#Service").append('<option value="' + service.Id + '"> ' + service.BranchName + ' </option>');
+                        $("#Service").append('<option value="' + service.SiraNo + '"> ' + service.Tanimi + ' </option>');
+                    }
+                },
+            });
+        });
+
+        $('#Companies').change(function () {
+            let SiraNo = $('#Companies option:selected').val();
+            $.ajax({
+                type: "POST",
+                url: "../Request/GetDepartment",
+                data: { SiraNo: SiraNo },
+                dataType: "json",
+                success: function (response) {
+                    $("#Department").removeAttr('disabled');
+                    $("#Department").empty().append('<option value="0"> Departman Seçiniz </option>');
+
+                    for (let department of response) {
+                        $("#Department").append('<option value="' + department.SiraNo + '"> ' + department.Tanimi + ' </option>');
+                    }
+                },
+            });
+        });
+
+        $('#Companies').change(function () {
+            let SiraNo = $('#Companies option:selected').val();
+            $.ajax({
+                type: "POST",
+                url: "../Request/GetLocation",
+                data: { SiraNo: SiraNo },
+                dataType: "json",
+                success: function (response) {
+                    $("#Location").removeAttr('disabled');
+                    $("#Location").empty().append('<option value="0"> Lokasyon Seçiniz </option>');
+
+                    for (let location of response) {
+                        $("#Location").append('<option value="' + location.SiraNo + '"> ' + location.Tanimi + ' </option>');
                     }
                 },
             });

@@ -3,6 +3,11 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/_AdminLayout.cshtml";
 }
+<style>
+    .form-group {
+        margin-bottom: 0.5rem;
+    }
+</style>
 
 <partial name="_AddTopMenuPartialView" />
 
@@ -117,7 +122,7 @@
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">MALZEME/EMTİA/DEMİRBAŞ TALEBİ</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Ürün Talebi</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -127,30 +132,26 @@
 
                 <div class="modal-body">
                     <div class="form-group required">
-                        <label for="message-text" class="col-form-label" required="required">Şirket :</label>
-                        <select style="width:500px;" class="form-control" name="Companies" id="Companies" for="Regions">
+                        <label for="message-text" class="col-form-label" required="required">Şirket</label>
+                        <select style="width:400px;display:inline-block; margin-left:10px;" class="form-control" name="Companies" id="Companies" for="Regions">
+                        </select>
+                        <label for="message-text" class="col-form-label" style="margin-left:30px;">Departman</label>
+                        <select style="width: 400px; display: inline-block; margin-left: 10px;" class="form-control" name="Department" id="Department" for="Regions">
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="message-text" class="col-form-label">Departman :</label>
-                        <select style="width:500px;" class="form-control" name="Department" id="Department" for="Regions">
+                        <label for="message-text" class="col-form-label">Bina</label>
+                        <select style="width: 400px; display: inline-block; margin-left: 20px;" class="form-control" name="Location" id="Location" for="Regions">
                         </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Bina :</label>
-                        <select style="width:500px;" class="form-control" name="Location" id="Location" for="Regions">
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Servis :</label>
-                        <select style="width:500px;" class="form-control" name="Service" id="Service" for="Regions">
+                        <label for="message-text" class="col-form-label" style="margin-left:70px;">Servis</label>
+                        <select style="width: 400px; display: inline-block; margin-left: 10px;" class="form-control" name="Service" id="Service" for="Regions">
                         </select>
                     </div>
                     <hr />
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <button id="Choose" type="submit" class="btn btn-primary" style="background-color: deepskyblue; font-weight: bold;">Seç</button>
+                        <button id="Choose" type="submit" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-top:10px;">Seç</button>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" style="margin-left:5px;">Kategori</label>
@@ -167,46 +168,24 @@
                 <hr />
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Ait Olduğu Proje</label>
-                        <select class="form-control" name="Project" id="Project" for="Regions">
-                        </select>
-                    </div>
-                </div>
-                <hr />
-                <div class="modal-body">
-                    <div class="form-group">
                         <label for="message-text" class="col-form-label" style="margin-left:5px;">Miktar: </label>
                         <input type="text" name="Amount" style="width:100px; margin-left:95px;" /> ,
                         <input type="text" name="AmountComma" style="width:100px;" />
-                        <input type="text" name="AmountUnit" style="width:75px; background-color:gold; color:white;" disabled="disabled" value="ADET" />
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Tahmini Birim Fiyat: </label>
-                        <input type="text" name="Amount" style="width:100px;" /> ,
-                        <input type="text" name="AmountComma" style="width:100px;" />
-                        <select name="Price" id="Price" style="width:75px" ; for="Regions">
-                            <option value="TL">TL</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Toplam Tutar: </label>
-                        <input type="text" name="TotalPrice" style="width:100px; background-color:gold; margin-left:45px;" disabled="disabled" value="" />
-                        <input type="text" name="TotalUnit" style="width:100px; margin-left:10px;" value="TL" />
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Kullanım Başlangıç <br /> Zamanı: </label>
-                        <input type="date" name="StartDate" style="width:200px; margin-left:5px;" />
+                        <input type="text" name="AmountUnit" style="width:75px; background-color:orange; color:white;" disabled="disabled" value="ADET" />
+                        <label for="message-text" class="col-form-label" style="margin-left:45px;">Dosya Ekle </label><br />
+                        <input type="text" name="ChooseFile" style="width:230px; margin-left:500px;" />
+                        <input type="file" />
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" style="margin-left:5px;">Açıklama </label><br />
-                        <textarea class="form-control" id="Description" name="Description" style="width:450px; height:150px; margin-left:5px;" required></textarea>
+                        <textarea class="form-control" id="Description" name="Description" style="width:450px; height:50px; margin-left:5px;" required></textarea>
                     </div>
                 </div>
                 <hr />
                 <div class="modal-body">
                     <div class="form-group">
-                        <button id="Add" type="submit" class="btn btn-primary" style="background-color: deepskyblue" ;>Listeye Ekle</button>
-                        <button id="Edit" type="button" class="btn btn-primary" style="background-color: deepskyblue; margin-left: 910px;">Düzenle</button>
+                        <button id="Add" type="submit" class="btn btn-primary" style="background-color: #17a2b8; font-weight:bold;">Listeye Ekle</button>
+                        <button id="Edit" type="button" class="btn btn-primary" style="background-color: #17a2b8; font-weight:bold; margin-left: 900px;">Düzenle</button>
                         <br /><br />
                         <table class="table table-hover table-striped table-bordered table-responsive">
                             <thead>
@@ -225,7 +204,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><i class="fa fa-times text-red"></i></td>
+                                    <td><button class="btn btn-outline-light"><i class="fa fa-times text-red"></i></button></td>
                                     <td>a</td>
                                     <td>b</td>
                                     <td>c</td>
@@ -243,8 +222,8 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button id="complete" type="submit" class="btn btn-primary" style="background-color: deepskyblue; font-weight: bold;">Tamam</button>
-                    <button type="button" class="btn btn-warning" data-dismiss="modal" style="background-color: gold; color: white; font-weight: bold; margin-right: 475px;">Vazgeç</button>
+                    <button id="complete" type="submit" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold;">Tamam</button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal" style="background-color: orange; color: white; font-weight: bold; margin-right: 475px;">Vazgeç</button>
                 </div>
             }
         </div>
