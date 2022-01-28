@@ -38,8 +38,6 @@ namespace Common.Models
             BirimlerListesi,
             [Display(Name = "dbo")]
             KullanicilarListesi,
-            [Display(Name = "dbo")]
-            DepartmanlarListe,
             #endregion
 
         }
