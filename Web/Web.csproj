@@ -46,6 +46,7 @@
 
   <ItemGroup>
     <Folder Include="Mapping\" />
+    <Folder Include="ViewModels\" />
     <Folder Include="wwwroot\TalepWeb\AutoComplete\" />
   </ItemGroup>
 
