@@ -7,18 +7,18 @@ using Web.Service.Interface;
 
 namespace Web.Entities
 {
-    public class Personel :IEntity
+    public class Personel : IEntity
     {
-        [Key,Required,StringLength(12)]
+        [Required,StringLength(12),Key]
         public string Kodu { get; set; }
         [Required,StringLength(48)]
         public string AdiSoyadi { get; set; }
         [Required,StringLength(48)  ]
         public string Unvani { get; set; }
         [Required]
-
-        public Servis Servis { get; set; }
         public int ServisSiraNo { get; set; }
+        public Servis Servis { get; set; }
+
         [Required]
         public int Oncelik { get; set; }
         [Required]

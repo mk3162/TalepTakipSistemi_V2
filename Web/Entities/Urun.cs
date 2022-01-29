@@ -7,11 +7,11 @@ using Web.Service.Interface;
 
 namespace Web.Entities
 {
-    public class Urun : BaseUrun , IEntity
+    public class Urun :  IEntity
     {
         [StringLength(25),Key]
         public string UrunKodu { get; set; }
-        [StringLength(127)]
+        [StringLength(127),Required]
         public string UrunTanimi { get; set; }
     }
 }

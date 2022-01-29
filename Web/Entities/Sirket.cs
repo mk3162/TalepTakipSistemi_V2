@@ -12,7 +12,7 @@ namespace Web.Entities
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SiraNo { get; set; }
-        [StringLength(48)]
+        [StringLength(48),Required]
         public string Tanimi { get; set; }
         public List<Departman> Departmanlar { get; set; }
         public List<Lokasyon> Lokasyonlar { get; set; }

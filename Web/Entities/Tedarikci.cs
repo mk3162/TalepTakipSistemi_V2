@@ -7,11 +7,11 @@ using Web.Service.Interface;
 
 namespace Web.Entities
 {
-    public class Tedarikci : BaseTedarikci, IEntity
+    public class Tedarikci :  IEntity
     {
         [StringLength(25),Key]
         public string TedarikciKodu { get; set; }
-        [StringLength(127)]
+        [StringLength(127),Required]
         public string TedarikciUnvani { get; set; }
     }
 }

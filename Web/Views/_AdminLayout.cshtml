@@ -1,4 +1,4 @@
-﻿
+﻿@model Web.ViewModels.KullaniciViewModel
 @{ Layout = null; }
 
 <html lang="en" style="height: auto;">
@@ -84,11 +84,13 @@
                 <li class="nav-item dropdown mr-1">
                     @if (Web.Session.SessionUserModel.CurrentUser != null)
                     {
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Web.Session.SessionUserModel.CurrentUser</a>}
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Web.Session.SessionUserModel.CurrentUser</a>
+                    }
+
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/Profile/Index"><i class="fas fa-user mr-1"></i>Profil Bilgileri</a>
-                        <a class="dropdown-item" href="/Login/LogOut"><i class="fas fa-sign-out-alt mr-1"></i>Çıkış Yap</a>
+                        <a class="dropdown-item" href="/Login/Logout"><i class="fas fa-sign-out-alt mr-1"></i>Çıkış Yap</a>
                     </div>
                 </li>
                 @*<li class="nav-item">
@@ -313,25 +315,25 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/Department/DepartmentList" class="nav-link">
+                                    <a href="/Location/Index" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p class="intime-text-turquoise" style="color:lightblue;">Lokasyonlar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/Department/DepartmentList" class="nav-link">
+                                    <a href="/ExpenseCenter/Index" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p class="intime-text-turquoise" style="color:lightblue;">Masraf Merkezleri</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/Department/DepartmentList" class="nav-link">
+                                    <a href="/Project/Index" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p class="intime-text-turquoise" style="color:lightblue;">Projeler</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/Department/DepartmentList" class="nav-link">
+                                    <a href="/Service/Index" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p class="intime-text-turquoise" style="color:lightblue;">Servisler</p>
                                     </a>
@@ -431,7 +433,7 @@
                             </a>
                         </li>-->
                         <li class="nav-item">
-                            <a href="/Login/Index" class="nav-link">
+                            <a href="/Login/Logout" class="nav-link">
                                 <i class="nav-icon fas fa-sign-out-alt" style="color:red;" title="Oturumunuzu buradan kapatabilirsiniz.."></i>
                                 <p class="intime-text-turquoise" style="color:lightblue;">
                                     Oturumu Kapat

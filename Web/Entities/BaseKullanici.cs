@@ -9,7 +9,7 @@ namespace Web.Entities
 {
     public class BaseKullanici
     {
-        //[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        //public int UserId { get; set; }
+        //[Key]
+        //public int KullaniciId { get; set; }
     }
 }
