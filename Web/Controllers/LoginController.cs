@@ -9,6 +9,7 @@ using Web.Context;
 using Web.Entities;
 using Web.Models;
 using Web.Session;
+using Web.ViewModels;
 
 namespace Web.Controllers
 {
@@ -29,7 +30,7 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(Kullanici kullanici)
+        public IActionResult Index(KullaniciViewModel kullanici)
         {
             var log = _context.Kullanicilar.FirstOrDefault(x => x.Kodu == kullanici.Kodu && x.Sifre == kullanici.Sifre);
 
