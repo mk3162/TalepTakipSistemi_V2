@@ -6,8 +6,8 @@
 
 <style>
     .form-group {
-    margin-bottom: 0.5rem;
-}
+        margin-bottom: 0.5rem;
+    }
 </style>
 <partial name="_AddTopMenuPartialView" />
 
@@ -18,16 +18,20 @@
             <tr role="row">
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending"></th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Talep No</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Kayıt Zamanı</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Kategori</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Talep Sahibi Adı Soyadı</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Sistem Açıklaması</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Açıklama</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Talep Sahibi</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Ürün</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Miktar</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Birim</th>
+                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Birim Fiyat</th>
             </tr>
         </thead>
         <tbody>
-            <tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle">
-                <td><button class="btn btn-default btn-xs"><span class="fa fa-eye"></span></button></td>
+            <tr>
+                <td style="width:300px;">
+                    <button href="#" id="Process" class="btn btn-primary btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-islem-modal-lg" style="color:white;">İşlem</button>
+                    <button data-toggle="collapse" data-target="#demo1" class="btn btn-default btn-xs accordion-toggle" style="color:white; background-color:burlywood;">Süreç Gör</button>
+                    <button href="#" id="Edit" class="btn btn-success btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-duzelt-modal-lg" style="color:white;">Düzelt</button>
+                </td>
                 <td>Carlos</td>
                 <td>Mathias</td>
                 <td>Leme</td>
@@ -38,15 +42,13 @@
             <tr>
                 <td colspan="12" class="hiddenRow">
                     <div class="accordian-body collapse" id="demo1">
-                        <table class="table table-striped">
-                            <thead>
+                        <table class="table table-striped dataTable dtr-inline" style="width:1600px;">
+                            <thead style="background-color:burlywood; color:white;">
                                 <tr class="info">
-                                    <th>Job</th>
-                                    <th>Company</th>
-                                    <th>Salary</th>
-                                    <th>Date On</th>
-                                    <th>Date off</th>
-                                    <th>Action</th>
+                                    <th style="width:300px;">Zaman</th>
+                                    <th style="width:300px;">İşlem Yapan</th>
+                                    <th style="width:300px;">Yapılan İşlem</th>
+                                    <th style="width:700px;">Açıklama/Yorum</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -55,40 +57,36 @@
                                     <td>Google</td>
                                     <td>U$8.00000 </td>
                                     <td> 2016/09/27</td>
-                                    <td> 2017/09/27</td>
-                                    <td> 2017/09/27</td>
                                 </tr>
                                 <tr>
                                     <td>Scrum Master</td>
                                     <td>Google</td>
                                     <td>U$8.00000 </td>
                                     <td> 2016/09/27</td>
-                                    <td> 2017/09/27</td>
-                                    <td> 2017/09/27</td>
                                 </tr>
                                 <tr>
                                     <td>Back-end</td>
                                     <td>Google</td>
                                     <td>U$8.00000 </td>
                                     <td> 2016/09/27</td>
-                                    <td> 2017/09/27</td>
-                                    <td> 2017/09/27</td>
                                 </tr>
                                 <tr>
                                     <td>Front-end</td>
                                     <td>Google</td>
                                     <td>U$8.00000 </td>
                                     <td> 2016/09/27</td>
-                                    <td> 2017/09/27</td>
-                                    <td> 2017/09/27</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </td>
             </tr>
-            <tr data-toggle="collapse" data-target="#demo2" class="accordion-toggle">
-                <td><button class="btn btn-default btn-xs"><span class="fa fa-eye"></span></button></td>
+            <tr>
+                <td>
+                    <button href="#" id="Process" class="btn btn-primary btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-islem-modal-lg" style="color:white;">İşlem</button>
+                    <button data-toggle="collapse" data-target="#demo2" class="btn btn-warning btn-xs accordion-toggle" style="color: white; background-color: burlywood;">Süreç Gör</button>
+                    <button href="#" id="Edit" class="btn btn-success btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-duzelt-modal-lg" style="color:white;">Düzelt</button>
+                </td>
                 <td>Silvio</td>
                 <td>Santos</td>
                 <td>São Paulo</td>
@@ -99,15 +97,13 @@
             <tr>
                 <td colspan="12" class="hiddenRow">
                     <div class="accordian-body collapse" id="demo2">
-                        <table class="table table-striped">
-                            <thead>
+                        <table class="table table-striped dataTable dtr-inline" style="width:1600px;">
+                            <thead style="background-color:burlywood; color:white;">
                                 <tr class="info">
-                                    <th>Job</th>
-                                    <th>Company</th>
-                                    <th>Salary</th>
-                                    <th>Date On</th>
-                                    <th>Date off</th>
-                                    <th>Action</th>
+                                    <th style="width:300px;">Zaman</th>
+                                    <th style="width:300px;">İşlem Yapan</th>
+                                    <th style="width:300px;">Yapılan İşlem</th>
+                                    <th style="width:700px;">Açıklama/Yorum</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -116,40 +112,37 @@
                                     <td>Google</td>
                                     <td>U$8.00000 </td>
                                     <td> 2016/09/27</td>
-                                    <td> 2017/09/27</td>
-                                    <td> 2017/09/27</td>
                                 </tr>
                                 <tr>
                                     <td>Scrum Master</td>
                                     <td>Google</td>
                                     <td>U$8.00000 </td>
                                     <td> 2016/09/27</td>
-                                    <td> 2017/09/27</td>
-                                    <td> 2017/09/27</td>
                                 </tr>
                                 <tr>
                                     <td>Back-end</td>
                                     <td>Google</td>
                                     <td>U$8.00000 </td>
                                     <td> 2016/09/27</td>
-                                    <td> 2017/09/27</td>
-                                    <td> 2017/09/27</td>
                                 </tr>
                                 <tr>
                                     <td>Front-end</td>
                                     <td>Google</td>
                                     <td>U$8.00000 </td>
                                     <td> 2016/09/27</td>
-                                    <td> 2017/09/27</td>
-                                    <td> 2017/09/27</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </td>
             </tr>
-            <tr data-toggle="collapse" data-target="#demo3" class="accordion-toggle">
-                <td><button class="btn btn-default btn-xs"><span class="fa fa-eye"></span></button></td>
+            <tr>
+                <td>
+                    <button href="#" id="Process" class="btn btn-primary btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-islem-modal-lg" style="color:white;">İşlem</button>
+                    <button data-toggle="collapse" data-target="#demo3" class="btn btn-warning btn-xs accordion-toggle" style="color: white; background-color: burlywood;">Süreç Gör</button>
+                    <button href="#" id="Edit" class="btn btn-success btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-duzelt-modal-lg" style="color:white;">Düzelt</button>
+
+                </td>
                 <td>John</td>
                 <td>Doe</td>
                 <td>Dracena</td>
@@ -160,15 +153,13 @@
             <tr>
                 <td colspan="12" class="hiddenRow">
                     <div class="accordian-body collapse" id="demo3">
-                        <table class="table table-striped">
-                            <thead>
+                        <table class="table table-striped dataTable dtr-inline" style="width:1600px;">
+                            <thead style="background-color:burlywood; color:white;">
                                 <tr class="info">
-                                    <th>Job</th>
-                                    <th>Company</th>
-                                    <th>Salary</th>
-                                    <th>Date On</th>
-                                    <th>Date off</th>
-                                    <th>Action</th>
+                                    <th style="width:300px;">Zaman</th>
+                                    <th style="width:300px;">İşlem Yapan</th>
+                                    <th style="width:300px;">Yapılan İşlem</th>
+                                    <th style="width:700px;">Açıklama/Yorum</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -177,32 +168,24 @@
                                     <td>Google</td>
                                     <td>U$8.00000 </td>
                                     <td> 2016/09/27</td>
-                                    <td> 2017/09/27</td>
-                                    <td> 2017/09/27</td>
                                 </tr>
                                 <tr>
                                     <td>Scrum Master</td>
                                     <td>Google</td>
                                     <td>U$8.00000 </td>
                                     <td> 2016/09/27</td>
-                                    <td> 2017/09/27</td>
-                                    <td> 2017/09/27</td>
                                 </tr>
                                 <tr>
                                     <td>Back-end</td>
                                     <td>Google</td>
                                     <td>U$8.00000 </td>
                                     <td> 2016/09/27</td>
-                                    <td> 2017/09/27</td>
-                                    <td> 2017/09/27</td>
                                 </tr>
                                 <tr>
                                     <td>Front-end</td>
                                     <td>Google</td>
                                     <td>U$8.00000 </td>
                                     <td> 2016/09/27</td>
-                                    <td> 2017/09/27</td>
-                                    <td> 2017/09/27</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -213,15 +196,13 @@
 </div>
 
 
-<div class="row">
-    <a href="#" id="Process" class="btn btn-info btn-xs" tabindex="0" aria-controls="example1" type="button" data-toggle="modal" data-target=".bd-example2-modal-lg" style="margin-left:30px; margin-top:20px;">İşlem Yap</a>
-</div>
 
-<div class="modal fade bd-example2-modal-lg" id="Request" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade bd-islem-modal-lg" id="Request" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ürün Talebi</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Talep İşlemi</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -230,113 +211,364 @@
             {
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Şirket: </label>
-                        <label for="message-text" class="col-form-label" style="margin-left:540px;">Talep No</label>
+                        <label for="message-text" class="col-form-label" required="required">Talep Sahibi</label>
+                        <select style="width:300px;display:inline-block; margin-left:43px;" class="form-control" id="Request" for="Regions"></select>
                     </div>
                     <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Bina: </label>
-                        <label for="message-text" class="col-form-label" style="margin-left:550px;">Kategori</label>
+                        <label for="message-text" class="col-form-label" required="required">Şirket</label>
+                        <select style="width:300px;display:inline-block; margin-left:90px;" class="form-control" id="Companies" for="Regions"></select>
+                        <label for="message-text" class="col-form-label" style="margin-left:140px;">Departman</label>
+                        <select style="width: 300px; display: inline-block; margin-left: 20px;" class="form-control" id="Department" for="Regions"></select>
                     </div>
                     <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Departman: </label>
-                        <label for="message-text" class="col-form-label" style="margin-left:500px;">Malzeme</label>
-
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Servis: </label>
-                        <label for="message-text" class="col-form-label" style="margin-left:540px;">Min./Max. Talep Miktar</label>
-                    </div>
-                    <div class="form-group">
-                        <button id="Request" type="button" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold;">Bu malzeme ile ilgili diğer talepler</button>
-                        <label for="message-text" class="col-form-label" style="margin-left:310px;">Birim Fiyat</label>
+                        <label for="message-text" class="col-form-label">Lokasyon</label>
+                        <select style="width: 300px; display: inline-block; margin-left:62px;" class="form-control" id="Location" for="Regions"></select>
+                        <label for="message-text" class="col-form-label" style="margin-left:145px;">Servis</label>
+                        <select style="width: 300px; display: inline-block; margin-left:55px;" class="form-control" id="Service" for="Regions"></select>
                     </div>
                 </div>
                 <hr />
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Ait Olduğu Proje </label>
+                        <label for="message-text" class="col-form-label" required="required">Masraf Merkezi</label>
+                        <select style="width:300px;display:inline-block; margin-left:20px;" class="form-control" id="Cost" for="Regions"></select>
+                        <label for="message-text" class="col-form-label" style="margin-left:140px;">Tipi</label>
+                        <select style="width: 300px; display: inline-block; margin-left: 75px;" class="form-control" id="Type" for="Regions"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Proje</label>
+                        <select style="width: 300px; display: inline-block; margin-left:95px;" class="form-control" id="Project" for="Regions"></select>
+                        <label for="message-text" class="col-form-label" style="margin-left:140px;">Teslim Yeri</label>
+                        <input type="text" name="Delivery" class="form-control-sm" style="width: 300px; margin-left:25px;" />
                     </div>
                 </div>
                 <hr />
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Miktar: </label>
-                        <input type="text" name="Amount" style="width:100px; margin-left:95px;" /> ,
-                        <input type="text" name="AmountComma" style="width:100px;" />
-                        <input type="text" name="AmountUnit" style="width:75px; background-color:orange; color:white;" disabled="disabled" value="ADET" />
-                        <label for="message-text" class="col-form-label" style="margin-left:50px;">Eklenmiş Dosyalar </label>
-                    </div>
-                    @*<div class="form-group">
-                            <label for="message-text" class="col-form-label" style="margin-left:5px;">Tahmini Birim Fiyat: </label>
-                            <input type="text" name="Amount" style="width:100px;" /> ,
-                            <input type="text" name="AmountComma" style="width:100px;" />
-                            <select name="Price" id="Price" style="width:75px" ; for="Regions">
-                                <option value="TL">TL</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message-text" class="col-form-label" style="margin-left:5px;">Kullanım Süresi: </label>
-                            <input type="text" name="UsedTime" style="width:100px;  margin-left:45px;" value="" />
-                            <select name="Period" id="Period" style="width:75px" ; for="Regions">
-                                <option value="TL">YILLIK</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message-text" class="col-form-label" style="margin-left:5px;">Kullanım Başlangıç <br /> Zamanı: </label>
-                            <input type="date" name="StartDate" style="width:200px; margin-left:5px;" />
-                        </div>*@
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Açıklama </label><br />
-                        <textarea class="form-control" id="Description" name="Description" style="width:450px; height:50px; margin-left:5px;" required></textarea>
-
-                    </div>
-                    <hr />
-                    <div class="form-group">
-                        <table class="table table-hover table-striped table-bordered">
-                            <thead>
+                        <table class="table table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
+                            <thead style="background-color:burlywood; color:white;">
                                 <tr>
                                     <th></th>
-                                    <th>Kategori</th>
-                                    <th>Malzeme Adı</th>
+                                    <th style="width:150px;">Ürün</th>
                                     <th>Miktar</th>
                                     <th>Birim</th>
-                                    <th>Tahmini Birim Fiyatı</th>
-                                    <th>Para Birimi</th>
-                                    <th>Tahmini Toplam Fiyat</th>
+                                    <th>Birim Fiyat</th>
+                                    <th style="width:50px;">Para Birimi</th>
+                                    <th>Toplam Fiyat</th>
+                                    <th>Tedarikçi</th>
+                                    <th>Hedef Teslim Tarihi</th>
                                     <th>Açıklama</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><input type="checkbox" class="form-check-input" style="width:45px; height:15px;" /></td>
-                                    <td>a</td>
-                                    <td>b</td>
-                                    <td>c</td>
-                                    <td>d</td>
-                                    <td>e</td>
-                                    <td>f</td>
-                                    <td>g</td>
-                                    <td>h</td>
+                                    <td><button id="Price" type="button" class="btn btn-success btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-fiyat-modal-lg" style="color:white; width:100px;">Fiyat Gir</button></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Bağlı Olan Diğer Talepler</label>
+                        <table class="table table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
+                            <thead style="background-color:burlywood; color:white;">
+                                <tr>
+                                    <th></th>
+                                    <th style="width:175px;">Ürün</th>
+                                    <th>Miktar</th>
+                                    <th>Birim</th>
+                                    <th>Birim Fiyat</th>
+                                    <th style="width:50px;">Para Birimi</th>
+                                    <th>Toplam Fiyat</th>
+                                    <th>Tedarikçi</th>
+                                    <th>Hedef Teslim Tarihi</th>
+                                    <th>Açıklama</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox" id="chkOtherRequest" /></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                     <hr />
+                    @*<div class="modal-body">*@
                     <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Görüşleriniz</label><br />
-                        <textarea class="form-control" id="Opinion" name="Opinion" style="width:1100px; height:50px; margin-left:5px;"></textarea>
+                        <label for="message-text" class="col-form-label">Eklenmiş Dosyalar</label>
+                        <table class="table table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
+                            <thead style="background-color:burlywood; color:white;">
+                                <tr>
+                                    <th></th>
+                                    <th style="width:500px;">Dosya</th>
+                                    <th style="width:500px;">Dosya Tanımı</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><button id="AddedFile" class="btn btn-success btn-xs" tabindex="0" aria-controls="example1" style=" width:75px;">Gör</button></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+                    @*</div>*@
                     <hr />
                     <div class="form-group">
-                        <button id="Approval" type="button" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; color:white; width:150px;">Onay</button>
-                        <button id="Refuse" type="button" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; color: white; width: 150px;">Red</button>
-                        <button id="Giveup" type="button" class="btn btn-warning" style="background-color: orange; font-weight: bold; color: white; width: 150px;">Vazgeç</button>
-                        <button id="Direct" type="button" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; color: white; width: 150px;">Yönlendir</button>
-                        <button id="SendToCheck" type="button" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; color: white; width: 160px;">Kontrole Gönder</button>
-                        <button id="Cancel" type="button" class="btn btn-danger" style="font-weight: bold; color: white; width: 160px;">Talebi İptal Et</button>
-                        <button id="Change" type="button" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; color: white; width: 150px;">Değiştir</button>
+                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Talep Süreci</label><br />
+                        <table class="table table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
+                            <thead style="background-color:burlywood; color:white;">
+                                <tr>
+                                    <th style="width:500px;">Zaman</th>
+                                    <th style="width:200px;">İşlem Yapan</th>
+                                    <th style="width:200px;">Yapılan İşlem</th>
+                                    <th style="width:200px;">Açıklama/Yorum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Test</td>
+                                    <td>Test</td>
+                                    <td>Test</td>
+                                    <td>Test</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr />
+                    <div class="modal-footer">
+                        <div class="form-group">
+                            <button id="Giveup" type="button" class="btn btn-danger" style="font-weight: bold; color: white; width: 120px; margin-right:400px;">Vazgeç</button>
+                            <button id="Approval" type="button" class="btn btn-success" style="font-weight: bold; color:white; width:120px" ;>Onayla</button>
+                            <button id="Refuse" type="button" class="btn btn-danger" style="font-weight: bold; color: white; width: 120px;">Reddet</button>
+                            <button id="SendToCheck" type="button" class="btn btn-default" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-yorum-modal-lg" style="background-color:saddlebrown; font-weight: bold; color: white; width: 160px;">Kontrole Gönder</button>
+                            <button id="Direct" type="button" class="btn btn-default" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-yorum-modal-lg" style="background-color: saddlebrown; font-weight: bold; color: white; width: 120px; ">Yönlendir</button>
+                        </div>
+                    </div>               
+                </div>
+            }
+        </div>
+    </div>
+
+
+
+</div>
+
+<div class="modal fade bd-fiyat-modal-lg" id="Request" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("AddRequest", "Request", FormMethod.Post))
+            {
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="message-text" class="col-form-label" required="required">Birim Fiyat</label>
+                <input type="text" name="UnitPrice" class="form-control-sm" style="width: 300px; margin-left:85px;" />
+                <select style="width:150px;display:inline-block; margin-left:10px;" class="form-control" id="UnitPrice" for="Regions"></select>
+            </div>
+            <div class="form-group">
+                <label for="message-text" class="col-form-label" required="required">Toplam Fiyat</label>
+                <input type="text" name="TotalPrice" class="form-control-sm" style="width: 300px; margin-left:70px;" disabled="disabled" />
+            </div>
+            <div class="form-group">
+                <label for="message-text" class="col-form-label">Tedarikçi</label>
+                <select style="width:460px; display: inline-block; margin-left:100px;" class="form-control" id="Supplier" for="Regions"></select>
+            </div>
+            <div class="form-group">
+                <label for="message-text" class="col-form-label">Hedef Teslim Tarihi</label>
+                <input type="text" name="DeliveryDate" class="form-control-sm" style="width: 300px; margin-left:25px;" />
+            </div>
+        </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade bd-yorum-modal-lg" id="Request" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("AddRequest", "Request", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" required="required">İşlem Yapacak</label>
+                        <select style="width:450px;display:inline-block; margin-left:10px;" class="form-control" id="Processor" for="Regions"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" required="required">Yorumunuz</label>
+                        <input type="text" name="TotalPrice" class="form-control-sm" style="width: 300px; margin-left:70px;" />
                     </div>
                 </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bd-duzelt-modal-lg" id="Request" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Talep Düzelt</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Html.BeginForm("EditRequest", "Request", FormMethod.Post))
+            {
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" required="required">Talep Sahibi</label>
+                        <select style="width:300px;display:inline-block; margin-left:43px;" class="form-control" id="Request" for="Regions">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" required="required">Şirket</label>
+                        <select style="width:300px;display:inline-block; margin-left:90px;" class="form-control" id="Companies" for="Regions">
+                        </select>
+                        <label for="message-text" class="col-form-label" style="margin-left:140px;">Departman</label>
+                        <select style="width: 300px; display: inline-block; margin-left: 20px;" class="form-control" id="Department" for="Regions">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Lokasyon</label>
+                        <select style="width: 300px; display: inline-block; margin-left:62px;" class="form-control" id="Location" for="Regions">
+                        </select>
+                        <label for="message-text" class="col-form-label" style="margin-left:145px;">Servis</label>
+                        <select style="width: 300px; display: inline-block; margin-left:55px;" class="form-control" id="Service" for="Regions">
+                        </select>
+                    </div>
+                    <hr />
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" required="required">Masraf Merkezi</label>
+                        <select style="width:300px;display:inline-block; margin-left:20px;" class="form-control" id="Companies" for="Regions">
+                        </select>
+                        <label for="message-text" class="col-form-label" style="margin-left:140px;">Tipi</label>
+                        <select style="width: 300px; display: inline-block; margin-left: 75px;" class="form-control" id="Type" for="Regions">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Projesi</label>
+                        <select style="width: 300px; display: inline-block; margin-left:85px;" class="form-control" id="Project" for="Regions">
+                        </select>
+                        <label for="message-text" class="col-form-label" style="margin-left:140px;">Teslim Yeri</label>
+                        <input type="text" name="Delivery" class="form-control-sm" style="width: 300px; margin-left:25px;" />
+                    </div>
+                    <hr />
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Ürün</label>
+                        <select style="width: 400px; display: inline-block; margin-left:95px;" class="form-control" id="Product" for="Regions">
+                        </select>
+                        <label for="message-text" class="col-form-label" style="margin-left:45px;">Miktar </label>
+                        <input type="text" class="form-control-sm" name="Amount" style="width:140px; margin-left:55px;" /> ,
+                        <select style="width: 140px; display: inline-block; margin-left:5px;" class="form-control" id="Amount" for="Regions">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Birim Fiyat </label>
+                        <input type="text" class="form-control-sm" name="Price" style="width:150px; margin-left:50px;" />
+                        <select style="width: 150px; display: inline-block; margin-left:5px;" class="form-control" id="Price" for="Regions">
+                        </select>
+                        <label for="message-text" class="col-form-label" style="margin-left:135px;">Toplam Fiyat </label>
+                        <input type="text" class="form-control-sm" name="TotalPrice" style="width:140px; margin-left:12px;" disabled="disabled" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Açıklama </label>
+                        <input type="text" class="form-control-sm" name="Description" style="width:860px; margin-left:63px;" required />
+                    </div>
+                </div>
+                <hr />
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="file" class="file-selector-button" value="Dosya Seç" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Dosya Tanımı</label>
+                        <input type="text" class="form-control-sm" name="File" style="width:805px; margin-left:25px;" value="" />
+                        <button type="submit" id="AddList" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:10px; width:150px; height:34px;">Listeye Ekle</button>
+                    </div>
+                    <div class="form-group">
+                        <table class="table table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
+                            <thead style="background-color:burlywood; color:white;">
+                                <tr>
+                                    <th style="width:50px;"></th>
+                                    <th style="width:525px;">Dosya</th>
+                                    <th style="width:525px;">Dosya Tanımı</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><button id="#" class="btn btn-danger">Sil</button></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr />
+                </div>
+                <hr />
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Talep Süreci</label>
+                        <table class="table table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
+                            <thead style="background-color:burlywood; color:white;">
+                                <tr>
+                                    <th style="width:200px;">Zaman</th>
+                                    <th style="width:200px;">İşlem Yapan</th>
+                                    <th style="width:200px;">Yapılan İşlem</th>
+                                    <th style="width:500px;">Açıklma/Yorum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" style="color: white; font-weight: bold; margin-right:880px;">Vazgeç</button>
+                    <button id="save" type="submit" class="btn btn-success" style="color:white; font-weight: bold; margin-right:30px;">Kaydet</button>
+                </div>
+
             }
         </div>
     </div>
@@ -401,7 +633,7 @@
         </a>
         <ul class="nav nav-treeview" id="altListe">
             <li class="nav-item">
-                <button class="btn btn-link buttons-copy buttons-html5 nav-link" tabindex="0" aria-controls="example1" type="button" data-toggle="modal" data-target=".bd-example-modal-lg">
+                <button class="btn btn-link buttons-copy buttons-html5 nav-link" tabindex="0" aria-controls="example1" type="button" data-toggle="modal" data-target=".bd-talep-modal-lg">
                     <i class="far fa-file-archive nav-icon text-black"></i>
                     <p class="intime-text-turquoise" style="color:black;">MALZEME/EMTİA DEMİRBAŞ TALEBİ</p>
                 </button>
@@ -450,93 +682,102 @@
     </li>
 </ul>
 
-<div class="modal fade bd-example-modal-lg" id="Request" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade bd-talep-modal-lg" id="Request" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ürün Talebi</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Yeni Talep</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             @using (Html.BeginForm("AddRequest", "Request", FormMethod.Post))
             {
-
                 <div class="modal-body">
-                    <div class="form-group required">
-                        <label for="message-text" class="col-form-label" required="required">Şirket</label>
-                        <select style="width:400px;display:inline-block; margin-left:10px;" class="form-control" id="Companies" for="Regions">
-                        </select>
-                        <label for="message-text" class="col-form-label" style="margin-left:30px;">Departman</label>
-                        <select style="width: 400px; display: inline-block; margin-left: 10px;"  class="form-control" id="Department" for="Regions">
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" required="required">Talep Sahibi</label>
+                        <select style="width:300px;display:inline-block; margin-left:43px;" class="form-control" id="Request" for="Regions">
                         </select>
                     </div>
-                <div class="form-group">
-                    <label for="message-text" class="col-form-label">Bina</label>
-                    <select style="width: 400px; display: inline-block; margin-left: 20px;" class="form-control"  id="Location" for="Regions">
-                    </select>
-                    <label for="message-text" class="col-form-label" style="margin-left:70px;">Servis</label>
-                    <select style="width: 400px; display: inline-block; margin-left: 10px;" class="form-control" id="Service" for="Regions">
-                    </select>
-                </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label" required="required">Şirket</label>
+                        <select style="width:300px;display:inline-block; margin-left:90px;" class="form-control" id="Companies" for="Regions">
+                        </select>
+                        <label for="message-text" class="col-form-label" style="margin-left:140px;">Departman</label>
+                        <select style="width: 300px; display: inline-block; margin-left: 20px;" class="form-control" id="Department" for="Regions">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Lokasyon</label>
+                        <select style="width: 300px; display: inline-block; margin-left:62px;" class="form-control" id="Location" for="Regions">
+                        </select>
+                        <label for="message-text" class="col-form-label" style="margin-left:145px;">Servis</label>
+                        <select style="width: 300px; display: inline-block; margin-left:55px;" class="form-control" id="Service" for="Regions">
+                        </select>
+                    </div>
                     <hr />
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <button id="Choose" type="submit" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-top:10px;">Seç</button>
+                        <label for="message-text" class="col-form-label" required="required">Masraf Merkezi</label>
+                        <select style="width:300px;display:inline-block; margin-left:20px;" class="form-control" id="Companies" for="Regions">
+                        </select>
+                        <label for="message-text" class="col-form-label" style="margin-left:140px;">Tipi</label>
+                        <select style="width: 300px; display: inline-block; margin-left: 75px;" class="form-control" id="Type" for="Regions">
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Kategori</label>
-                        <label for="message-text" class="col-form-label" style="margin-left:550px;">Talep Gün Aralığı</label>
+                        <label for="message-text" class="col-form-label">Projesi</label>
+                        <select style="width: 300px; display: inline-block; margin-left:85px;" class="form-control" id="Project" for="Regions">
+                        </select>
+                        <label for="message-text" class="col-form-label" style="margin-left:140px;">Teslim Yeri</label>
+                        <input type="text" name="Delivery" class="form-control-sm" style="width: 300px; margin-left:25px;" />
+                    </div>
+                    <hr />
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Ürün</label>
+                        <select style="width: 400px; display: inline-block; margin-left:95px;" class="form-control" id="Product" for="Regions">
+                        </select>
+                        <label for="message-text" class="col-form-label" style="margin-left:45px;">Miktar </label>
+                        <input type="text" class="form-control-sm" name="Amount" style="width:140px; margin-left:55px;" /> ,
+                        <select style="width: 140px; display: inline-block; margin-left:5px;" class="form-control" id="Amount" for="Regions">
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Malzeme</label>
-                        <label for="message-text" class="col-form-label" style="margin-left:550px;">Birim Fiyat</label>
+                        <label for="message-text" class="col-form-label">Birim Fiyat </label>
+                        <input type="text" class="form-control-sm" name="Price" style="width:150px; margin-left:50px;" />
+                        <select style="width: 150px; display: inline-block; margin-left:5px;" class="form-control" id="Price" for="Regions">
+                        </select>
+                        <label for="message-text" class="col-form-label" style="margin-left:135px;">Toplam Fiyat </label>
+                        <input type="text" class="form-control-sm" name="TotalPrice" style="width:140px; margin-left:12px;" disabled="disabled" />
                     </div>
                     <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Min./Max. Talep Miktar</label>
+                        <label for="message-text" class="col-form-label">Açıklama </label>
+                        <input type="text" class="form-control-sm" name="Description" style="width:800px; margin-left:63px;" required />
+                        <button type="submit" id="AddList" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:10px; width:150px; height:34px;">Listeye Ekle</button>
                     </div>
                 </div>
                 <hr />
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Miktar: </label>
-                        <input type="text" name="Amount" style="width:100px; margin-left:95px;" /> ,
-                        <input type="text" name="AmountComma" style="width:100px;" />
-                        <input type="text" name="AmountUnit" style="width:75px; background-color:orange; color:white;" disabled="disabled" value="ADET" />
-                        <label for="message-text" class="col-form-label" style="margin-left:45px;">Dosya Ekle </label><br />
-                        <input type="text" name="ChooseFile" style="width:230px; margin-left:500px;" />
-                        <input type="file" />
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label" style="margin-left:5px;">Açıklama </label><br />
-                        <textarea class="form-control" id="Description" name="Description" style="width:450px; height:50px; margin-left:5px;" required></textarea>
-                    </div>
-                </div>
-                <hr />
-                <div class="modal-body">
-                    <div class="form-group">
-                        <button id="Add" type="submit" class="btn btn-primary" style="background-color: #17a2b8; font-weight:bold;">Listeye Ekle</button>
-                        <button id="Edit" type="button" class="btn btn-primary" style="background-color: #17a2b8; font-weight:bold; margin-left: 900px;">Düzenle</button>
-                        <br /><br />
-                        <table class="table table-hover table-striped table-bordered table-responsive">
-                            <thead>
+                        <table class="table table-hover table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
+                            <thead style="background-color:burlywood; color:white;  ">
                                 <tr>
-                                    <th></th>
-                                    <th>Malzeme/Emtia/Demirbaş Adı</th>
-                                    <th>Miktar</th>
-                                    <th>Birim</th>
-                                    <th>Tahmini Birim Fiyatı</th>
-                                    <th>Para Birimi</th>
-                                    <th>Tahmini Toplam</th>
-                                    <th>Kullanım Süresi</th>
-                                    <th>Periyot</th>
-                                    <th>Kategori</th>
+                                    <th style="width:50px;"></th>
+                                    <th style="width:200px;">Ürün</th>
+                                    <th style="width:150px;">Miktar</th>
+                                    <th style="width:100px;">Birim</th>
+                                    <th style="width:150px;">Birim Fiyat</th>
+                                    <th style="width:50px;">Para Birimi</th>
+                                    <th style="width:150px;">Toplam Fiyat</th>
+                                    <th style="width:250px;">Açıklama</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><button class="btn btn-outline-light"><i class="fa fa-times text-red"></i></button></td>
+                                    <td><button id="#" class="btn btn-danger">Sil</button></td>
                                     <td>a</td>
                                     <td>b</td>
                                     <td>c</td>
@@ -544,23 +785,59 @@
                                     <td>e</td>
                                     <td>f</td>
                                     <td>g</td>
-                                    <td>h</td>
-                                    <td>u</td>
                                 </tr>
                             </tbody>
-
                         </table>
+                    </div>
+                </div>
+                <hr />
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="file" class="file-selector-button" value="Dosya Seç" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Dosya Tanımı</label>
+                        <input type="text" class="form-control-sm" name="File" style="width:805px; margin-left:25px;" value="" />
+                        <button type="submit" id="AddList" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:10px; width:150px; height:34px;">Listeye Ekle</button>
+                    </div>
+                    <div class="form-group">
+                        <table class="table table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
+                            <thead style="background-color:burlywood; color:white;">
+                                <tr>
+                                    <th style="width:50px;"></th>
+                                    <th style="width:525px;">Dosya</th>
+                                    <th style="width:525px;">Dosya Tanımı</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><button id="#" class="btn btn-danger">Sil</button></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr />
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Genel Açıklama</label>
+                        <input type="text" class="form-control-sm" name="GeneralDescription" style="width:960px; margin-left:15px;" />
                     </div>
                 </div>
 
                 <div class="modal-footer">
-                    <button id="complete" type="submit" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold;">Tamam</button>
-                    <button type="button" class="btn btn-warning" data-dismiss="modal" style="background-color: orange; color: white; font-weight: bold; margin-right: 475px;">Vazgeç</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" style="color: white; font-weight: bold; margin-right:880px;">Vazgeç</button>
+                    <button id="save" type="submit" class="btn btn-success" style="color:white; font-weight: bold; margin-right:30px;">Kaydet</button>
+
                 </div>
             }
         </div>
     </div>
 </div>
+
+
 <script src="~/TalepWeb/plugins/jquery/jquery.min.js"></script>
 
 
