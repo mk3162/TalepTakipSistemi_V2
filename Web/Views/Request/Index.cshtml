@@ -13,7 +13,7 @@
 
 
 <div class="panel-body">
-    <table id="example1" class="table table-condensed table-hover table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+    <table id="example1" class="table table-condensed table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
         <thead>
             <tr role="row">
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending"></th>
@@ -196,8 +196,6 @@
 </div>
 
 
-
-
 <div class="modal fade bd-islem-modal-lg" id="Request" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
@@ -212,37 +210,38 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Talep Sahibi</label>
-                        <select style="width:300px;display:inline-block; margin-left:43px;" class="form-control" id="Request" for="Regions"></select>
+                        <select style="width:300px;display:inline-block; margin-left:43px;" class="form-control" id="Request" for="Regions">
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Şirket</label>
-                        <select style="width:300px;display:inline-block; margin-left:90px;" class="form-control" id="Companies" for="Regions"></select>
+                        <select style="width:300px;display:inline-block; margin-left:90px;" class="form-control" id="CompaniesIslem" for="Regions"></select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Departman</label>
-                        <select style="width: 300px; display: inline-block; margin-left: 20px;" class="form-control" id="Department" for="Regions"></select>
+                        <select style="width: 300px; display: inline-block; margin-left: 20px;" class="form-control" id="DepartmentIslem" for="Regions"></select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Lokasyon</label>
-                        <select style="width: 300px; display: inline-block; margin-left:62px;" class="form-control" id="Location" for="Regions"></select>
+                        <select style="width: 300px; display: inline-block; margin-left:62px;" class="form-control" id="LocationIslem" for="Regions"></select>
                         <label for="message-text" class="col-form-label" style="margin-left:145px;">Servis</label>
-                        <select style="width: 300px; display: inline-block; margin-left:55px;" class="form-control" id="Service" for="Regions"></select>
+                        <select style="width: 300px; display: inline-block; margin-left:55px;" class="form-control" id="ServiceIslem" for="Regions"></select>
                     </div>
                 </div>
-                <hr />
+                <hr style="border-width:2.5px; color:darkgray;" />
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Masraf Merkezi</label>
-                        <select style="width:300px;display:inline-block; margin-left:20px;" class="form-control" id="Cost" for="Regions"></select>
+                        <select style="width:300px;display:inline-block; margin-left:20px;" class="form-control" id="CostIslem" for="Regions"></select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Tipi</label>
                         <select style="width: 300px; display: inline-block; margin-left: 75px;" class="form-control" id="Type" for="Regions"></select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Proje</label>
-                        <select style="width: 300px; display: inline-block; margin-left:95px;" class="form-control" id="Project" for="Regions"></select>
+                        <select style="width: 300px; display: inline-block; margin-left:98px;" class="form-control" id="ProjectIslem" for="Regions"></select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Teslim Yeri</label>
                         <input type="text" name="Delivery" class="form-control-sm" style="width: 300px; margin-left:25px;" />
                     </div>
                 </div>
-                <hr />
+                <hr style="border-width:2.5px; color:darkgray;" />
                 <div class="modal-body">
                     <div class="form-group">
                         <table class="table table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
@@ -295,7 +294,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><input type="checkbox" id="chkOtherRequest" /></td>
+                                    <td><input type="checkbox" class="form-control-lg" style="width:20px;" id="chkOtherRequest" /></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
@@ -309,7 +308,6 @@
                             </tbody>
                         </table>
                     </div>
-                    <hr />
                     @*<div class="modal-body">*@
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Eklenmiş Dosyalar</label>
@@ -331,7 +329,7 @@
                         </table>
                     </div>
                     @*</div>*@
-                    <hr />
+                    <hr style="border-width:2.5px; color:darkgray;" />
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" style="margin-left:5px;">Talep Süreci</label><br />
                         <table class="table table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
@@ -353,7 +351,6 @@
                             </tbody>
                         </table>
                     </div>
-                    <hr />
                     <div class="modal-footer">
                         <div class="form-group">
                             <button id="Giveup" type="button" class="btn btn-danger" data-dismiss="modal" style="font-weight: bold; color: white; width: 120px; margin-right:400px;">Vazgeç</button>
@@ -367,9 +364,6 @@
             }
         </div>
     </div>
-
-
-
 </div>
 
 <div class="modal fade bd-fiyat-modal-lg" id="Request" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -405,7 +399,7 @@
                 <div class="modal-footer">
                     <div class="form-group">
                         <button type="button" class="btn btn-danger" data-dismiss="modal" style="color: white; font-weight: bold; margin-right:380px;">Vazgeç</button>
-                        <button id="Send" type="submit" class="btn btn-success" style="color:white; font-weight: bold; margin-right:535px;">Kaydet</button>
+                        <button id="Send" type="submit" class="btn btn-success" style="color:white; font-weight: bold; margin-right:475px;">Kaydet</button>
                     </div>
                 </div>
             }
@@ -499,26 +493,26 @@
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Şirket</label>
-                        <select style="width:300px;display:inline-block; margin-left:90px;" class="form-control" id="Companies" for="Regions">
+                        <select style="width:300px;display:inline-block; margin-left:90px;" class="form-control" id="CompaniesDuzelt" for="Regions">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Departman</label>
-                        <select style="width: 300px; display: inline-block; margin-left: 20px;" class="form-control" id="Department" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left: 20px;" class="form-control" id="DepartmentDuzelt" for="Regions">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Lokasyon</label>
-                        <select style="width: 300px; display: inline-block; margin-left:62px;" class="form-control" id="Location" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left:62px;" class="form-control" id="LocationDuzelt" for="Regions">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:145px;">Servis</label>
-                        <select style="width: 300px; display: inline-block; margin-left:55px;" class="form-control" id="Service" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left:55px;" class="form-control" id="ServiceDuzelt" for="Regions">
                         </select>
                     </div>
-                    <hr />
                 </div>
+                <hr style="border-width:2.5px; color:darkgray;" />
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Masraf Merkezi</label>
-                        <select style="width:300px;display:inline-block; margin-left:20px;" class="form-control" id="Companies" for="Regions">
+                        <select style="width:300px;display:inline-block; margin-left:20px;" class="form-control" id="CostDuzelt" for="Regions">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Tipi</label>
                         <select style="width: 300px; display: inline-block; margin-left: 75px;" class="form-control" id="Type" for="Regions">
@@ -526,13 +520,13 @@
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Projesi</label>
-                        <select style="width: 300px; display: inline-block; margin-left:85px;" class="form-control" id="Project" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left:85px;" class="form-control" id="ProjectDuzelt" for="Regions">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Teslim Yeri</label>
                         <input type="text" name="Delivery" class="form-control-sm" style="width: 300px; margin-left:25px;" />
                     </div>
-                    <hr />
                 </div>
+                <hr style="border-width:2.5px; color:darkgray;" />
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Ürün</label>
@@ -548,18 +542,18 @@
                         <input type="text" class="form-control-sm" name="Price" style="width:150px; margin-left:50px;" />
                         <select style="width: 150px; display: inline-block; margin-left:5px;" class="form-control" id="Price" for="Regions">
                         </select>
-                        <label for="message-text" class="col-form-label" style="margin-left:135px;">Toplam Fiyat </label>
+                        <label for="message-text" class="col-form-label" style="margin-left:135px;">Toplam Fiyat</label>
                         <input type="text" class="form-control-sm" name="TotalPrice" style="width:140px; margin-left:12px;" disabled="disabled" />
                     </div>
                     <div class="form-group">
-                        <label for="message-text" class="col-form-label">Açıklama </label>
+                        <label for="message-text" class="col-form-label">Açıklama</label>
                         <input type="text" class="form-control-sm" name="Description" style="width:860px; margin-left:63px;" required />
                     </div>
                 </div>
-                <hr />
+                <hr style="border-width:2.5px; color:darkgray;" />
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="file" class="file-selector-button" value="Dosya Seç" />
+                        <input type="file" id="Upload" value="Dosya Seç" />
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Dosya Tanımı</label>
@@ -584,9 +578,8 @@
                             </tbody>
                         </table>
                     </div>
-                    <hr />
                 </div>
-                <hr />
+                <hr style="border-width:2.5px; color:darkgray;" />
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Talep Süreci</label>
@@ -596,7 +589,7 @@
                                     <th style="width:200px;">Zaman</th>
                                     <th style="width:200px;">İşlem Yapan</th>
                                     <th style="width:200px;">Yapılan İşlem</th>
-                                    <th style="width:500px;">Açıklma/Yorum</th>
+                                    <th style="width:500px;">Açıklama/Yorum</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -614,7 +607,6 @@
                     <button type="button" class="btn btn-danger" data-dismiss="modal" style="color: white; font-weight: bold; margin-right:880px;">Vazgeç</button>
                     <button id="save" type="submit" class="btn btn-success" style="color:white; font-weight: bold; margin-right:30px;">Kaydet</button>
                 </div>
-
             }
         </div>
     </div>
@@ -747,26 +739,26 @@
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Şirket</label>
-                        <select style="width:300px;display:inline-block; margin-left:90px;" class="form-control" id="Companies" for="Regions">
+                        <select style="width:300px;display:inline-block; margin-left:90px;" class="form-control" id="CompaniesTalep" for="Regions">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Departman</label>
-                        <select style="width: 300px; display: inline-block; margin-left: 20px;" class="form-control" id="Department" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left: 20px;" class="form-control" id="DepartmentTalep" for="Regions">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Lokasyon</label>
-                        <select style="width: 300px; display: inline-block; margin-left:62px;" class="form-control" id="Location" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left:62px;" class="form-control" id="LocationTalep" for="Regions">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:145px;">Servis</label>
-                        <select style="width: 300px; display: inline-block; margin-left:55px;" class="form-control" id="Service" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left:55px;" class="form-control" id="ServiceTalep" for="Regions">
                         </select>
                     </div>
-                    <hr />
                 </div>
+                <hr style="border-width:2.5px; color:darkgray;" />
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Masraf Merkezi</label>
-                        <select style="width:300px;display:inline-block; margin-left:20px;" class="form-control" id="Companies" for="Regions">
+                        <select style="width:300px;display:inline-block; margin-left:20px;" class="form-control" id="CostTalep" for="Regions">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Tipi</label>
                         <select style="width: 300px; display: inline-block; margin-left: 75px;" class="form-control" id="Type" for="Regions">
@@ -774,13 +766,13 @@
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Projesi</label>
-                        <select style="width: 300px; display: inline-block; margin-left:85px;" class="form-control" id="Project" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left:85px;" class="form-control" id="ProjectTalep" for="Regions">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Teslim Yeri</label>
                         <input type="text" name="Delivery" class="form-control-sm" style="width: 300px; margin-left:25px;" />
                     </div>
-                    <hr />
                 </div>
+                <hr style="border-width:2.5px; color:darkgray;" />
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Ürün</label>
@@ -805,7 +797,7 @@
                         <button type="submit" id="AddList" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:10px; width:150px; height:38px;">Listeye Ekle</button>
                     </div>
                 </div>
-                <hr />
+                <hr style="border-width:2.5px; color:darkgray;" />
                 <div class="modal-body">
                     <div class="form-group">
                         <table class="table table-hover table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
@@ -836,7 +828,7 @@
                         </table>
                     </div>
                 </div>
-                <hr />
+                <hr style="border-width:2.5px; color:darkgray;" />
                 <div class="modal-body">
                     <div class="form-group">
                         <input type="file" class="file-selector-button" value="Dosya Seç" />
@@ -864,19 +856,17 @@
                             </tbody>
                         </table>
                     </div>
-                    <hr />
                 </div>
+                <hr style="border-width:2.5px; color:darkgray;" />
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Genel Açıklama</label>
                         <input type="text" class="form-control-sm" name="GeneralDescription" style="width:960px; margin-left:15px;" />
                     </div>
                 </div>
-
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal" style="color: white; font-weight: bold; margin-right:880px;">Vazgeç</button>
                     <button id="save" type="submit" class="btn btn-success" style="color:white; font-weight: bold; margin-right:30px;">Kaydet</button>
-
                 </div>
             }
         </div>
@@ -885,6 +875,10 @@
 
 
 <script src="~/TalepWeb/plugins/jquery/jquery.min.js"></script>
+<script src="~/js/IslemDropDown.js"></script>
+<script src="~/js/DuzeltDropDown.js"></script>
+<script src="~/js/TalepDropDown.js"></script>
+
 
 
 <script>
@@ -905,74 +899,4 @@
     }
 </script>
 
-<script>
-    //dropdownları doldurma
-    $(document).ready(function () {
-        $.ajax({
-            type: "GET",
-            url: "/Request/GetCompany",
-            dataType: "json",
-            success: function (response) {
-                $("#Companies").empty().append('<option value="0"> Şirket Seçiniz </option>');
-                for (let company of response) {
-                    $("#Companies").append('<option value="' + company.SiraNo + '"> ' + company.Tanimi + ' </option>');
-                }
-            },
-        });
-
-        $('#Department').change(function () {
-            let SiraNo = $('#Department option:selected').val();
-            $.ajax({
-                type: "POST",
-                url: "../Request/GetService",
-                data: { SiraNo: SiraNo },
-                dataType: "json",
-                success: function (response) {
-                    $("#Service").removeAttr('disabled');
-                    $("#Service").empty().append('<option value="0"> Servis Seçiniz </option>');
-
-                    for (let service of response) {
-                        $("#Service").append('<option value="' + service.SiraNo + '"> ' + service.Tanimi + ' </option>');
-                    }
-                },
-            });
-        });
-
-        $('#Companies').change(function () {
-            let SiraNo = $('#Companies option:selected').val();
-            $.ajax({
-                type: "POST",
-                url: "../Request/GetDepartment",
-                data: { SiraNo: SiraNo },
-                dataType: "json",
-                success: function (response) {
-                    $("#Department").removeAttr('disabled');
-                    $("#Department").empty().append('<option value="0"> Departman Seçiniz </option>');
-
-                    for (let department of response) {
-                        $("#Department").append('<option value="' + department.SiraNo + '"> ' + department.Tanimi + ' </option>');
-                    }
-                },
-            });
-        });
-
-        $('#Companies').change(function () {
-            let SiraNo = $('#Companies option:selected').val();
-            $.ajax({
-                type: "POST",
-                url: "../Request/GetLocation",
-                data: { SiraNo: SiraNo },
-                dataType: "json",
-                success: function (response) {
-                    $("#Location").removeAttr('disabled');
-                    $("#Location").empty().append('<option value="0"> Lokasyon Seçiniz </option>');
-
-                    for (let location of response) {
-                        $("#Location").append('<option value="' + location.SiraNo + '"> ' + location.Tanimi + ' </option>');
-                    }
-                },
-            });
-        });
-    });
-</script>
 

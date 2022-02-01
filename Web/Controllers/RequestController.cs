@@ -22,31 +22,47 @@ namespace Web.Controllers
 
 
         [HttpGet]
-        public ActionResult GetCompany()
+        public JsonResult GetCompany()
         {
             var entity = _context.Sirketler.Where(a => a.SiraNo > 0).ToList();
             return Json(entity);
         }
 
-        public ActionResult GetService(int depSiraNo)
+        public ActionResult GetDepartment(int? sirketSiraNo)
         {
             //_context.Configuration.ProxyCreationEnabled = false;
-            var entity = _context.Servisler.Where(a => a.SiraNo == depSiraNo).ToList();
+            var entity = _context.Departmanlar.Where(a => a.SirketSiraNo == sirketSiraNo).ToList();
             return Json(entity);
         }
 
-        public ActionResult GetDepartment(int sirketSiraNo)
+        public ActionResult GetLocation(int? sirketSiraNo)
         {
             //_context.Configuration.ProxyCreationEnabled = false;
-            var entity = _context.Departmanlar.Where(a => a.SiraNo == sirketSiraNo).ToList();
+            var entity = _context.Lokasyonlar.Where(a => a.SirketSiraNo == sirketSiraNo).ToList();
             return Json(entity);
         }
 
-        public ActionResult GetLocation(int sirketSiraNo)
+        public ActionResult GetProject(int? sirketSiraNo)
         {
             //_context.Configuration.ProxyCreationEnabled = false;
-            var entity = _context.Lokasyonlar.Where(a => a.SiraNo == sirketSiraNo).ToList();
+            var entity = _context.Projeler.Where(a => a.SirketSiraNo == sirketSiraNo).ToList();
             return Json(entity);
         }
+
+        public ActionResult GetExpenseCenter(int? sirketSiraNo)
+        {
+            //_context.Configuration.ProxyCreationEnabled = false;
+            var entity = _context.MasrafMerkezleri.Where(a => a.SirketSiraNo == sirketSiraNo).ToList();
+            return Json(entity);
+        }
+
+        public ActionResult GetService(int? depSiraNo)
+        {
+            //_context.Configuration.ProxyCreationEnabled = false;
+            var entity = _context.Servisler.Where(a => a.DepartmanSiraNo == depSiraNo).ToList();
+            return Json(entity);
+        }
+
+      
     }
 }

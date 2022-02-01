@@ -26,5 +26,7 @@ namespace Web.Context
         public DbSet<Personel> Personeller { get; set; }
         public DbSet<SurecTip> SurecTipler { get; set; }
         public DbSet<Servis> Servisler { get; set; }
+        public DbSet<Proje> Projeler { get; set; }
+        public DbSet<MasrafMerkez> MasrafMerkezleri { get; set; }
     }
 }

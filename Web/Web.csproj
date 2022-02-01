@@ -29,6 +29,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
     <PackageReference Include="Moment.js" Version="2.29.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
@@ -47,6 +48,15 @@
   <ItemGroup>
     <Folder Include="Mapping\" />
     <Folder Include="wwwroot\TalepWeb\AutoComplete\" />
+    <Folder Include="wwwroot\TalepWeb\MediaFile\css\" />
+    <Folder Include="wwwroot\TalepWeb\MediaFile\js\plugins\" />
+    <Folder Include="wwwroot\TalepWeb\MediaFile\js\locales\" />
+    <Folder Include="wwwroot\TalepWeb\MediaFile\themes\explorer-fa\" />
+    <Folder Include="wwwroot\TalepWeb\MediaFile\themes\explorer-fas\" />
+    <Folder Include="wwwroot\TalepWeb\MediaFile\themes\fa\" />
+    <Folder Include="wwwroot\TalepWeb\MediaFile\themes\fas\" />
+    <Folder Include="wwwroot\TalepWeb\MediaFile\themes\gly\" />
+    <Folder Include="wwwroot\TalepWeb\MediaFile\themes\explorer\" />
   </ItemGroup>
 
 </Project>

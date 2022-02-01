@@ -137,18 +137,18 @@
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Şirket</label>
-                        <select style="width:300px;display:inline-block; margin-left:90px;" class="form-control" id="Companies" for="Regions">
+                        <select style="width:300px;display:inline-block; margin-left:90px;" class="form-control" id="CompaniesTalep" for="Regions">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Departman</label>
-                        <select style="width: 300px; display: inline-block; margin-left: 20px;" class="form-control" id="Department" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left: 20px;" class="form-control" id="DepartmentTalep" for="Regions">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Lokasyon</label>
-                        <select style="width: 300px; display: inline-block; margin-left:62px;" class="form-control" id="Location" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left:62px;" class="form-control" id="LocationTalep" for="Regions">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:145px;">Servis</label>
-                        <select style="width: 300px; display: inline-block; margin-left:55px;" class="form-control" id="Service" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left:55px;" class="form-control" id="ServiceTalep" for="Regions">
                         </select>
                     </div>
                     <hr />
@@ -156,7 +156,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Masraf Merkezi</label>
-                        <select style="width:300px;display:inline-block; margin-left:20px;" class="form-control" id="Companies" for="Regions">
+                        <select style="width:300px;display:inline-block; margin-left:20px;" class="form-control" id="CostTalep" for="Regions">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Tipi</label>
                         <select style="width: 300px; display: inline-block; margin-left: 75px;" class="form-control" id="Type" for="Regions">
@@ -164,7 +164,7 @@
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Projesi</label>
-                        <select style="width: 300px; display: inline-block; margin-left:85px;" class="form-control" id="Project" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left:85px;" class="form-control" id="ProjectTalep" for="Regions">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Teslim Yeri</label>
                         <input type="text" name="Delivery" class="form-control-sm" style="width: 300px; margin-left:25px;" />
@@ -272,7 +272,9 @@
         </div>
     </div>
 </div>
+
 <script src="~/TalepWeb/plugins/jquery/jquery.min.js"></script>
+<script src="~/js/TalepDropDown.js"></script>
 
 <script>
     function Goster(id) {
@@ -291,37 +293,3 @@
     }
 </script>
 
-<script>
-    //dropdownları doldurma
-    $(document).ready(function () {
-        $.ajax({
-            type: "GET",
-            url: "/Request/GetCompany",
-            dataType: "json",
-            success: function (response) {
-                $("#Companies").empty().append('<option value="0"> Şirket Seçiniz </option>');
-                for (let company of response) {
-                    $("#Companies").append('<option value="' + company.Id + '"> ' + company.Name + ' </option>');
-                }
-            },
-        });
-
-        $('#Companies').change(function () {
-            let CompanyId = $('#Companies option:selected').val();
-            $.ajax({
-                type: "POST",
-                url: "../Request/GetService",
-                data: { companyId: CompanyId },
-                dataType: "json",
-                success: function (response) {
-                    $("#Service").removeAttr('disabled');
-                    $("#Service").empty().append('<option value="0"> Servis Seçiniz </option>');
-
-                    for (let service of response) {
-                        $("#Service").append('<option value="' + service.Id + '"> ' + service.BranchName + ' </option>');
-                    }
-                },
-            });
-        });
-    });
-</script>
