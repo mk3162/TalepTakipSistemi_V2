@@ -8,16 +8,11 @@ using Web.Service.Interface;
 
 namespace Web.Entities
 {
-    public class Proje : IEntity
+    public class ParaBirim : IEntity
     {
-        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SiraNo { get; set; }
-        [Required]
-        public string Kodu { get; set; }
-        [Required]
+        [Required, StringLength(3)]
         public string Tanimi { get; set; }
-        [Required]
-        public int SirketSiraNo { get; set; }
-        public Sirket Sirket { get; set; }
     }
 }

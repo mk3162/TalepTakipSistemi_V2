@@ -27,7 +27,7 @@
         </thead>
         <tbody>
             <tr>
-                <td style="width:300px;">
+                <td style="width:250px;">
                     <button href="#" id="Process" class="btn btn-primary btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-islem-modal-lg" style="color:white;">İşlem</button>
                     <button data-toggle="collapse" data-target="#demo1" class="btn btn-default btn-xs accordion-toggle" style="color:white; background-color:burlywood;">Süreç Gör</button>
                     <button href="#" id="Edit" class="btn btn-success btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-duzelt-modal-lg" style="color:white;">Düzelt</button>
@@ -232,7 +232,7 @@
                         <label for="message-text" class="col-form-label" required="required">Masraf Merkezi</label>
                         <select style="width:300px;display:inline-block; margin-left:20px;" class="form-control" id="CostIslem" for="Regions"></select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Tipi</label>
-                        <select style="width: 300px; display: inline-block; margin-left: 75px;" class="form-control" id="Type" for="Regions"></select>
+                        <select style="width: 300px; display: inline-block; margin-left: 75px;" class="form-control" id="TypeIslem" for="Regions"></select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Proje</label>
@@ -381,7 +381,7 @@
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Birim Fiyat</label>
                         <input type="text" name="UnitPrice" class="form-control-sm" style="width: 300px; margin-left:85px;" />
-                        <select style="width:150px;display:inline-block; margin-left:10px;" class="form-control" id="UnitPrice" for="Regions"></select>
+                        <select style="width:150px;display:inline-block; margin-left:10px;" class="form-control" id="CurrencyIslem"></select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Toplam Fiyat</label>
@@ -389,11 +389,11 @@
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Tedarikçi</label>
-                        <select style="width:460px; display: inline-block; margin-left:100px;" class="form-control" id="Supplier" for="Regions"></select>
+                        <select style="width:460px; display: inline-block; margin-left:100px;" class="form-control" id="SupplierIslem"></select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Hedef Teslim Tarihi</label>
-                        <input type="text" name="DeliveryDate" class="form-control-sm" style="width: 300px; margin-left:25px;" />
+                        <input type="date" name="DeliveryDate" class="form-control-sm" style="width: 300px; margin-left:25px;" />
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -406,7 +406,6 @@
         </div>
     </div>
 </div>
-
 
 <div class="modal fade bd-yorum-modal-lg" id="Request" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
@@ -441,7 +440,6 @@
         </div>
     </div>
 </div>
-
 
 <div class="modal fade bd-onayred-modal-lg" id="Request" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
@@ -515,7 +513,7 @@
                         <select style="width:300px;display:inline-block; margin-left:20px;" class="form-control" id="CostDuzelt" for="Regions">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Tipi</label>
-                        <select style="width: 300px; display: inline-block; margin-left: 75px;" class="form-control" id="Type" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left: 75px;" class="form-control" id="TypeDuzelt" for="Regions">
                         </select>
                     </div>
                     <div class="form-group">
@@ -530,17 +528,17 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Ürün</label>
-                        <select style="width: 400px; display: inline-block; margin-left:95px;" class="form-control" id="Product" for="Regions">
+                        <select style="width: 400px; display: inline-block; margin-left:95px;" class="form-control" id="ProductDuzelt" for="Regions">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:45px;">Miktar </label>
                         <input type="text" class="form-control-sm" name="Amount" style="width:140px; margin-left:55px;" /> ,
-                        <select style="width: 140px; display: inline-block; margin-left:5px;" class="form-control" id="Amount" for="Regions">
+                        <select style="width: 140px; display: inline-block; margin-left:5px;" class="form-control" id="AmountDuzelt" for="Regions">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Birim Fiyat </label>
                         <input type="text" class="form-control-sm" name="Price" style="width:150px; margin-left:50px;" />
-                        <select style="width: 150px; display: inline-block; margin-left:5px;" class="form-control" id="Price" for="Regions">
+                        <select style="width: 150px; display: inline-block; margin-left:5px;" class="form-control" id="CurrencyDuzelt" for="Regions">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:135px;">Toplam Fiyat</label>
                         <input type="text" class="form-control-sm" name="TotalPrice" style="width:140px; margin-left:12px;" disabled="disabled" />
@@ -611,7 +609,6 @@
         </div>
     </div>
 </div>
-
 
 <ul id="liste" style="display:none;" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
     <li class="nav-item">
@@ -758,15 +755,15 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Masraf Merkezi</label>
-                        <select style="width:300px;display:inline-block; margin-left:20px;" class="form-control" id="CostTalep" for="Regions">
+                        <select style="width:300px;display:inline-block; margin-left:20px;" class="form-control" id="CostTalep">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Tipi</label>
-                        <select style="width: 300px; display: inline-block; margin-left: 75px;" class="form-control" id="Type" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left: 75px;" class="form-control" id="TypeTalep">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Projesi</label>
-                        <select style="width: 300px; display: inline-block; margin-left:85px;" class="form-control" id="ProjectTalep" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left:85px;" class="form-control" id="ProjectTalep">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Teslim Yeri</label>
                         <input type="text" name="Delivery" class="form-control-sm" style="width: 300px; margin-left:25px;" />
@@ -776,17 +773,17 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Ürün</label>
-                        <select style="width: 400px; display: inline-block; margin-left:95px;" class="form-control" id="Product" for="Regions">
+                        <select style="width: 400px; display: inline-block; margin-left:95px;" class="form-control" id="ProductTalep">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:45px;">Miktar </label>
                         <input type="text" class="form-control-sm" name="Amount" style="width:140px; margin-left:55px;" /> ,
-                        <select style="width: 140px; display: inline-block; margin-left:5px;" class="form-control" id="Amount" for="Regions">
+                        <select style="width: 140px; display: inline-block; margin-left:5px;" class="form-control" id="AmountTalep">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Birim Fiyat </label>
                         <input type="text" class="form-control-sm" name="Price" style="width:150px; margin-left:50px;" />
-                        <select style="width: 150px; display: inline-block; margin-left:5px;" class="form-control" id="Price" for="Regions">
+                        <select style="width: 150px; display: inline-block; margin-left:5px;" class="form-control" id="CurrencyTalep">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:135px;">Toplam Fiyat </label>
                         <input type="text" class="form-control-sm" name="TotalPrice" style="width:140px; margin-left:12px;" disabled="disabled" />
@@ -875,10 +872,26 @@
 
 
 <script src="~/TalepWeb/plugins/jquery/jquery.min.js"></script>
-<script src="~/js/IslemDropDown.js"></script>
-<script src="~/js/DuzeltDropDown.js"></script>
-<script src="~/js/TalepDropDown.js"></script>
 
+<script src="~/js/DropDownFill/Düzelt/DuzeltDropDown.js"></script>
+<script src="~/js/DropDownFill/Islem/IslemDropDown.js"></script>
+<script src="~/js/DropDownFill/Talep/TalepDropDown.js"></script>
+
+<script src="~/js/DropDownFill/Düzelt/DuzeltTipDropDown.js"></script>
+<script src="~/js/DropDownFill/Islem/IslemTipDropDown.js"></script>
+<script src="~/js/DropDownFill/Talep/TalepTipDropDown.js"></script>
+
+<script src="~/js/DropDownFill/Düzelt/DuzeltUrunDropDown.js"></script>
+<script src="~/js/DropDownFill/Talep/TalepUrunDropDown.js"></script>
+
+<script src="~/js/DropDownFill/Düzelt/DuzeltParaBirimDropDown.js"></script>
+<script src="~/js/DropDownFill/Islem/IslemParaBirimDropDown.js"></script>
+<script src="~/js/DropDownFill/Talep/TalepParaBirimDropDown.js"></script>
+
+<script src="~/js/DropDownFill/Düzelt/DuzeltBirimDropDown.js"></script>
+<script src="~/js/DropDownFill/Talep/TalepBirimDropDown.js"></script>
+
+<script src="~/js/DropDownFill/Islem/IslemTedarikciDropDown.js"></script>
 
 
 <script>

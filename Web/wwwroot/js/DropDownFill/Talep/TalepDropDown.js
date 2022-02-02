@@ -16,7 +16,7 @@
         let siraNo = $(this).val();
         $.ajax({
             type: "POST",
-            url: "../Request/GetDepartment",
+            url: "../Request/GetDepartments",
             data: { SiraNo: siraNo },
             dataType: "json",
             success: function (response) {
@@ -34,7 +34,7 @@
         let siraNo = $(this).val();
         $.ajax({
             type: "POST",
-            url: "../Request/GetLocation",
+            url: "../Request/GetLocations",
             data: { SiraNo: siraNo },
             dataType: "json",
             success: function (response) {
@@ -52,7 +52,7 @@
         let siraNo = $(this).val();
         $.ajax({
             type: "POST",
-            url: "../Request/GetProject",
+            url: "../Request/GetProjects",
             data: { SiraNo: siraNo },
             dataType: "json",
             success: function (response) {
@@ -70,7 +70,7 @@
         let siraNo = $(this).val();
         $.ajax({
             type: "POST",
-            url: "../Request/GetExpenseCenter",
+            url: "../Request/GetExpenseCenters",
             data: { SiraNo: siraNo },
             dataType: "json",
             success: function (response) {
@@ -89,7 +89,7 @@
         let siraNo = $(this).val();
         $.ajax({
             type: "POST",
-            url: "../Request/GetService",
+            url: "../Request/GetServices",
             data: { SiraNo: siraNo },
             dataType: "json",
             success: function (response) {

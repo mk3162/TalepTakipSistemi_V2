@@ -6,12 +6,16 @@
 
   <ItemGroup>
     <Compile Remove="fonts\**" />
+    <Compile Remove="Mapping\**" />
     <Compile Remove="TalepWeb\**" />
     <Content Remove="fonts\**" />
+    <Content Remove="Mapping\**" />
     <Content Remove="TalepWeb\**" />
     <EmbeddedResource Remove="fonts\**" />
+    <EmbeddedResource Remove="Mapping\**" />
     <EmbeddedResource Remove="TalepWeb\**" />
     <None Remove="fonts\**" />
+    <None Remove="Mapping\**" />
     <None Remove="TalepWeb\**" />
   </ItemGroup>
 
@@ -46,7 +50,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Mapping\" />
     <Folder Include="wwwroot\TalepWeb\AutoComplete\" />
     <Folder Include="wwwroot\TalepWeb\MediaFile\css\" />
     <Folder Include="wwwroot\TalepWeb\MediaFile\js\plugins\" />
