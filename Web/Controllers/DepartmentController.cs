@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Web.Context;
@@ -23,10 +23,10 @@ namespace Web.Controllers
             _context = context;
         }
 
-        public IActionResult Index(int sirketSiraNo)
+        public IActionResult Index()
         {
 
-            var param = new SqlParameter("@SirketSiraNo", sirketSiraNo);
+            var param = new SqlParameter("@SirketSiraNo",1);
 
 
             return View(_context.Departmanlar.FromSqlRaw("DepartmanlarListesi @SirketSiraNo ", param).ToList());

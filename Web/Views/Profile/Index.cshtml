@@ -17,16 +17,16 @@
 <body>
 
     <div class="container">
-        <h2 style="text-align:center">Personel Bilgileri</h2>
+        <h3 style="text-align:center">Personel Bilgileri</h3>
         <div class="card" style="width:400px; margin-left:350px;">
             <img class="card-img-top" src="~/images/user_icon2.jpg" alt="Card image" style="width:100%">
             <div class="card-body">
-                    @foreach (var item in Model)
-                    {
+                @foreach (var item in Model)
+                {
 
-                        <h4 class="card-title" style="margin-left:100px;">@item.AdiSoyadi</h4>
-                        <p class="card-text" style="margin-left:70px;">@item.Unvani</p>
-                    }
+                    <h4 class="card-title" style="margin-left:100px;">@item.AdiSoyadi</h4>
+                    <p class="card-text" style="margin-left:70px;">@item.Unvani</p>
+                }
                 <button class="btn btn-info buttons-copy buttons-html5" tabindex="0" aria-controls="example1" type="button" data-toggle="modal" data-target="#Change" style="margin-left:100px;">
                     <span><i class="fas fa-lock-open mr-3"></i>Şifreyi Değiştir</span>
                 </button>
@@ -57,8 +57,8 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-warning" data-dismiss="modal" style="background-color:gold; color:white; font-weight:bold;">Vazgeç</button>
-                                    <button id="change" type="submit" class="btn btn-primary" style="background-color: deepskyblue; font-weight: bold; margin-right: 150px;">Değiştir</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal" style="color:white; font-weight:bold;">Vazgeç</button>
+                                    <button type="submit" class="btn btn-success" id="change" style="color:white; font-weight:bold;">Değiştir</button>
                                 </div>
                             }
 
