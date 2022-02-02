@@ -17,5 +17,6 @@ namespace Web.Entities
         public List<Departman> Departmanlar { get; set; }
         public List<Lokasyon> Lokasyonlar { get; set; }
         public List<Proje> Projeler { get; set; }
+        public List<MasrafMerkez> MasrafMerkezler { get; set; }
     }
 }

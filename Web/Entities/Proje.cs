@@ -12,9 +12,9 @@ namespace Web.Entities
     {
         [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SiraNo { get; set; }
-        [Required]
+        [Required, StringLength(5)]
         public string Kodu { get; set; }
-        [Required]
+        [Required, StringLength(48)]
         public string Tanimi { get; set; }
         [Required]
         public int SirketSiraNo { get; set; }
