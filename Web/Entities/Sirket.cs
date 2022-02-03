@@ -14,9 +14,9 @@ namespace Web.Entities
         public int SiraNo { get; set; }
         [StringLength(48),Required]
         public string Tanimi { get; set; }
-        public List<Departman> Departmanlar { get; set; }
-        public List<Lokasyon> Lokasyonlar { get; set; }
-        public List<Proje> Projeler { get; set; }
-        public List<MasrafMerkez> MasrafMerkezler { get; set; }
+        public virtual ICollection<Departman> Departmanlar { get; set; }
+        public virtual ICollection<Lokasyon> Lokasyonlar { get; set; }
+        public virtual ICollection<Proje> Projeler { get; set; }
+        public virtual ICollection<MasrafMerkez> MasrafMerkezler { get; set; }
     }
 }

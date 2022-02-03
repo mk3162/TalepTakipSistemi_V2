@@ -18,6 +18,6 @@ namespace Web.Entities
         public string Tanimi { get; set; }
         [Required]
         public int SirketSiraNo { get; set; }
-        public Sirket Sirket { get; set; }
+        public virtual Sirket Sirket { get; set; }
     }
 }

@@ -10,26 +10,31 @@ using System.Linq;
 using System.Threading.Tasks;
 using Web.Context;
 using Web.Entities;
-
-
+using Web.ViewModels;
+using Web.Service.Interface;
+using Common.Models.Response;
+using Web.Models;
 
 namespace Web.Controllers
 {
     public class DepartmentController : Controller
     {
         private readonly DatabaseContext _context;
-        public DepartmentController(DatabaseContext context)
+        private readonly IApiService _apiService;
+        private readonly ServiceUrlList _serviceUrlList;
+        public DepartmentController(DatabaseContext context,IApiService apiService,ServiceUrlList serviceUrlList)
         {
             _context = context;
+            _apiService = apiService;
+            _serviceUrlList = serviceUrlList;
         }
 
         public IActionResult Index()
         {
-
-            var param = new SqlParameter("@SirketSiraNo",1);
-
-
-            return View(_context.Departmanlar.FromSqlRaw("DepartmanlarListesi @SirketSiraNo ", param).ToList());
-        }
+            //var req = new RequestDepartmanlarListesiDto();
+            //req.SirketSiraNo = 1;
+            //var resp = _apiService.GetDepartmanlarListesi<ResponseDepartmanlarListesiDto, RequestDepartmanlarListesiDto>(_serviceUrlList.GetDepartmanlarListesi, req);
+            return View();
+        }  
     }
 }

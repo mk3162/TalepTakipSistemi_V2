@@ -33,6 +33,20 @@ namespace Api.Controllers
         [HttpGet]
         [Route("GetUrunlerListesi")]
         public BaseResponseApi<ResponseUrunlerListesiDto> GetUrunlerListesi() => _dbService.ExecuteSqlQuery<ResponseUrunlerListesiDto>(GlobalEnum.StoredProcedure.UrunlerListesi, null);
+        [HttpGet]
+        [Route("GetBirimlerListesi")]
+        public BaseResponseApi<ResponseBirimlerListesiDto> GetBirimlerListesi() => _dbService.ExecuteSqlQuery<ResponseBirimlerListesiDto>(GlobalEnum.StoredProcedure.BirimlerListesi, null);
+        [HttpGet]
+        [Route("GetIslemTipleriListesi")]
+        public BaseResponseApi<ResponseIslemTipleriDto> GetIslemTipleriListesi() => _dbService.ExecuteSqlQuery<ResponseIslemTipleriDto>(GlobalEnum.StoredProcedure.IslemTipleriListesi, null);
+        [HttpGet]
+        [Route("GetSurecTipleriListesi")]
+        public BaseResponseApi<ResponseSurecTipleriDto> GetSurecTipleriListesi() => _dbService.ExecuteSqlQuery<ResponseSurecTipleriDto>(GlobalEnum.StoredProcedure.SurecTipleriListesi, null);
+        [HttpGet]
+        [Route("GetKullanicilarListesi")]
+        public BaseResponseApi<ResponseKullanicilarListesi> GetKullanicilarListesi() => _dbService.ExecuteSqlQuery<ResponseKullanicilarListesi>(GlobalEnum.StoredProcedure.KullanicilarListesi, null);
+
+
 
         [HttpPost]
         [Route("GetDepartmanlarListesi")]

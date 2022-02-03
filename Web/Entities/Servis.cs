@@ -16,8 +16,8 @@ namespace Web.Entities
         public string Tanimi { get; set; }
         [Required]
         public int DepartmanSiraNo { get; set; }
-        public Departman Departman { get; set; }
+        public virtual Departman Departman { get; set; }
 
-        public List<Personel> Personeller { get; set; }
+        public virtual ICollection<Personel> Personeller { get; set; }
     }
 }

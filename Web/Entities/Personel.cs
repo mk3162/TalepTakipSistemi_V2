@@ -17,7 +17,7 @@ namespace Web.Entities
         public string Unvani { get; set; }
         [Required]
         public int ServisSiraNo { get; set; }
-        public Servis Servis { get; set; }
+        public virtual Servis Servis { get; set; }
 
         [Required]
         public int Oncelik { get; set; }
