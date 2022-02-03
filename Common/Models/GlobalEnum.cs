@@ -39,6 +39,8 @@ namespace Common.Models
             [Display(Name = "dbo")]
             KullanicilarListesi,
             [Display(Name = "dbo")]
+            PersonellerListesi,
+            [Display(Name = "dbo")]
             TaleplerGuncelle,
             [Display(Name = "dbo")]
             TaleplerIslemListesi,

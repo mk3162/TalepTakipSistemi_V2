@@ -11,12 +11,11 @@
 </style>
 <partial name="_AddTopMenuPartialView" />
 
-
 <div class="panel-body">
-    <table id="example1" class="table table-condensed table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+    <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
         <thead>
             <tr role="row">
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending"></th>
+                <th></th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Talep No</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Talep Sahibi</th>
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Ürün</th>
@@ -196,6 +195,8 @@
 </div>
 
 
+
+
 <div class="modal fade bd-islem-modal-lg" id="Request" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
@@ -210,7 +211,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Talep Sahibi</label>
-                        <select style="width:300px;display:inline-block; margin-left:43px;" class="form-control" id="Request" for="Regions">
+                        <select style="width:300px;display:inline-block; margin-left:43px;" class="form-control" id="RequestIslem" for="Regions">
                         </select>
                     </div>
                     <div class="form-group">
@@ -421,7 +422,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">İşlem Yapacak</label>
-                        <select style="width:450px;display:inline-block; margin-left:10px;" class="form-control" id="Processor" for="Regions"></select>
+                        <select style="width:450px;display:inline-block; margin-left:10px;" class="form-control" id="ProcessorIslem"></select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Yorumunuz</label>
@@ -486,7 +487,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Talep Sahibi</label>
-                        <select style="width:300px;display:inline-block; margin-left:43px;" class="form-control" id="Request" for="Regions">
+                        <select style="width:300px;display:inline-block; margin-left:43px;" class="form-control" id="RequestDuzelt" for="Regions">
                         </select>
                     </div>
                     <div class="form-group">
@@ -556,7 +557,7 @@
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Dosya Tanımı</label>
                         <input type="text" class="form-control-sm" name="File" style="width:805px; margin-left:25px;" value="" />
-                        <button type="submit" id="AddList" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:10px; width:150px; height:38px;">Listeye Ekle</button>
+                        <button type="submit" id="AddList" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:10px; width:150px; height:36px;">Listeye Ekle</button>
                     </div>
                     <div class="form-group">
                         <table class="table table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
@@ -731,7 +732,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Talep Sahibi</label>
-                        <select style="width:300px;display:inline-block; margin-left:43px;" class="form-control" id="Request" for="Regions">
+                        <select style="width:300px;display:inline-block; margin-left:43px;" class="form-control" id="RequestTalep" for="Regions">
                         </select>
                     </div>
                     <div class="form-group">
@@ -776,22 +777,22 @@
                         <select style="width: 400px; display: inline-block; margin-left:95px;" class="form-control" id="ProductTalep">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:45px;">Miktar </label>
-                        <input type="text" class="form-control-sm" name="Amount" style="width:140px; margin-left:55px;" /> ,
+                        <input type="text" class="form-control-sm" id="Amount" name="Amount" style="width:140px; margin-left:55px;" /> ,
                         <select style="width: 140px; display: inline-block; margin-left:5px;" class="form-control" id="AmountTalep">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Birim Fiyat </label>
-                        <input type="text" class="form-control-sm" name="Price" style="width:150px; margin-left:50px;" />
+                        <input type="text" class="form-control-sm" id="Price" name="Price" style="width:150px; margin-left:50px;" />
                         <select style="width: 150px; display: inline-block; margin-left:5px;" class="form-control" id="CurrencyTalep">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:135px;">Toplam Fiyat </label>
-                        <input type="text" class="form-control-sm" name="TotalPrice" style="width:140px; margin-left:12px;" disabled="disabled" />
+                        <input type="text" class="form-control-sm" id="TotalPrice" name="TotalPrice" style="width:140px; margin-left:12px;" disabled="disabled" />
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Açıklama </label>
                         <input type="text" class="form-control-sm" name="Description" style="width:800px; margin-left:63px;" required />
-                        <button type="submit" id="AddList" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:10px; width:150px; height:38px;">Listeye Ekle</button>
+                        <button type="submit" id="AddList" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:10px; width:150px; height:36px;">Listeye Ekle</button>
                     </div>
                 </div>
                 <hr style="border-width:2.5px; color:darkgray;" />
@@ -833,7 +834,7 @@
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Dosya Tanımı</label>
                         <input type="text" class="form-control-sm" name="File" style="width:805px; margin-left:25px;" value="" />
-                        <button type="submit" id="AddList" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:10px; width:150px; height:38px;">Listeye Ekle</button>
+                        <button type="submit" id="AddList" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:10px; width:150px; height:36px;">Listeye Ekle</button>
                     </div>
                     <div class="form-group">
                         <table class="table table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
@@ -873,6 +874,7 @@
 
 <script src="~/TalepWeb/plugins/jquery/jquery.min.js"></script>
 
+
 <script src="~/js/DropDownFill/Düzelt/DuzeltDropDown.js"></script>
 <script src="~/js/DropDownFill/Islem/IslemDropDown.js"></script>
 <script src="~/js/DropDownFill/Talep/TalepDropDown.js"></script>
@@ -893,6 +895,10 @@
 
 <script src="~/js/DropDownFill/Islem/IslemTedarikciDropDown.js"></script>
 
+<script src="~/js/DropDownFill/Düzelt/DuzeltTalepDropDown.js"></script>
+<script src="~/js/DropDownFill/Islem/IslemTalepDropDown.js"></script>
+<script src="~/js/DropDownFill/Talep/TalepTalepDropdown.js"></script>
+<script src="~/js/DropDownFill/Islem/IslemKontrolYonlendirTalepDropDown.js"></script>
 
 <script>
     function Goster(id) {

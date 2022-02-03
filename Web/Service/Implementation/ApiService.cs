@@ -33,6 +33,22 @@ namespace Web.Service.Implementation
         {
             return _serviceManager.Get<T>(url);
         }
+        public RequestResponse<T> GetBirimlerListesi<T>(string url)
+        {
+            return _serviceManager.Get<T>(url);
+        }
+        public RequestResponse<T> GetIslemTipleriListesi<T>(string url)
+        {
+            return _serviceManager.Get<T>(url);
+        }
+        public RequestResponse<T> GetSurecTipleriListesi<T>(string url)
+        {
+            return _serviceManager.Get<T>(url);
+        }
+        public RequestResponse<T> GetKullanicilarListesi<T>(string url)
+        {
+            return _serviceManager.Get<T>(url);
+        }
 
         public RequestResponse<T> MetodPost<T, Y>(string url, Y model)
         {
@@ -61,6 +77,10 @@ namespace Web.Service.Implementation
         }
 
         public RequestResponse<T> GetProjelerListesi<T, Y>(string url, Y model)
+        {
+            return _serviceManager.Post<T, Y>(url, model);
+        }
+        public RequestResponse<T> GetPersonellerListesi<T, Y>(string url, Y model)
         {
             return _serviceManager.Post<T, Y>(url, model);
         }

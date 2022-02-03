@@ -12,12 +12,19 @@ namespace Web.Service.Interface
         RequestResponse<T> GetTedarikcilerListesi<T>(string url);
         RequestResponse<T> GetTiplerListesi<T>(string url);
         RequestResponse<T> GetUrunlerListesi<T>(string url);
+        RequestResponse<T> GetBirimlerListesi<T>(string url);
+        RequestResponse<T> GetIslemTipleriListesi<T>(string url);
+        RequestResponse<T> GetSurecTipleriListesi<T>(string url);
+        RequestResponse<T> GetKullanicilarListesi<T>(string url);
+
+
         RequestResponse<T> MetodPost<T, Y>(string url, Y model);
         RequestResponse<T> GetDepartmanlarListesi<T, Y>(string url, Y model);
         RequestResponse<T> GetServislerListesi<T, Y>(string url, Y model);
         RequestResponse<T> GetLokasyonlarListesi<T, Y>(string url, Y model);
         RequestResponse<T> GetMasrafMerkezleriListesi<T, Y>(string url, Y model);
         RequestResponse<T> GetProjelerListesi<T, Y>(string url, Y model);
+        RequestResponse<T> GetPersonellerListesi<T, Y>(string url, Y model);
 
     }
 }

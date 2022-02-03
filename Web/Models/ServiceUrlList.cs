@@ -12,11 +12,17 @@ namespace Web.Models
         public string GetTedarikcilerListesi { get; set; }
         public string GetTiplerListesi { get; set; }
         public string GetUrunlerListesi { get; set; }
+        public string GetBirimlerListesi { get; set; }
+        public string GetIslemTipleriListesi { get; set; }
+        public string GetSurecTipleriListesi { get; set; }
+        public string GetKullanicilarListesi { get; set; }
+
         public string GetDepartmanlarListesi { get; set; }
         public string GetServislerListesi { get; set; }
         public string GetLokasyonlarListesi { get; set; }
         public string GetMasrafMerkezleriListesi { get; set; }
         public string GetProjelerListesi { get; set; }
+        public string GetPersonellerListesi { get; set; }
 
     }
 }
