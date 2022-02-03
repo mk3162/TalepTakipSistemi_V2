@@ -84,5 +84,15 @@ namespace Web.Service.Implementation
         {
             return _serviceManager.Post<T, Y>(url, model);
         }
+
+        public RequestResponse<T> GetTaleplerIslemListesi<T, Y>(string url, Y model)
+        {
+            return _serviceManager.Post<T, Y>(url, model);
+        }
+
+        public RequestResponse<T> GetTaleplerSurecListesi<T, Y>(string url, Y model)
+        {
+            return _serviceManager.Post<T, Y>(url, model);
+        }
     }
 }

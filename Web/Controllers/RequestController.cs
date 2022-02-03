@@ -112,5 +112,13 @@ namespace Web.Controllers
             //var resp = _apiService.GetRequestList<ResponseSirketlerListesiDto, Re>(_serviceUrlList.GetSirketlerListesi);
             return View();
         }
+
+        public IActionResult GetRequestPeriodList()
+        {
+            //var req = new RequestDepartmanlarListesiDto();
+            //req.SirketSiraNo = 1;
+            //var resp = _apiService.GetSirketlerListesi<ResponseSirketlerListesiDto>(_serviceUrlList.GetSirketlerListesi););
+            return View();
+        }
     }
 }

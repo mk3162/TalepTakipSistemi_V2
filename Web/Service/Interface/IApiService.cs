@@ -25,6 +25,8 @@ namespace Web.Service.Interface
         RequestResponse<T> GetMasrafMerkezleriListesi<T, Y>(string url, Y model);
         RequestResponse<T> GetProjelerListesi<T, Y>(string url, Y model);
         RequestResponse<T> GetPersonellerListesi<T, Y>(string url, Y model);
+        RequestResponse<T> GetTaleplerIslemListesi<T, Y>(string url, Y model);
+        RequestResponse<T> GetTaleplerSurecListesi<T, Y>(string url, Y model);
 
     }
 }

@@ -23,6 +23,8 @@ namespace Web.Models
         public string GetMasrafMerkezleriListesi { get; set; }
         public string GetProjelerListesi { get; set; }
         public string GetPersonellerListesi { get; set; }
+        public string GetTaleplerIslemListesi { get; set; }
+        public string GetTaleplerSurecListesi { get; set; }
 
     }
 }
