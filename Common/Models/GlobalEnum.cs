@@ -38,6 +38,18 @@ namespace Common.Models
             BirimlerListesi,
             [Display(Name = "dbo")]
             KullanicilarListesi,
+            [Display(Name = "dbo")]
+            TaleplerGuncelle,
+            [Display(Name = "dbo")]
+            TaleplerIslemListesi,
+            [Display(Name = "dbo")]
+            TaleplerKarsilamaKaydet,
+            [Display(Name = "dbo")]
+            TaleplerKaydet,
+            [Display(Name = "dbo")]
+            TaleplerSurecIslem,
+            [Display(Name = "dbo")]
+            TaleplerSurecListesi,
             #endregion
 
         }
