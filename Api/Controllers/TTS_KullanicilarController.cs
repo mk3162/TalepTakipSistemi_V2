@@ -20,6 +20,6 @@ namespace Api.Controllers
 
         [HttpGet]
         [Route("GetKullanicilarListesi")]
-        public BaseResponseApi<ResponseKullanicilarListesi> GetKullanicilarListesi() => _dbService.ExecuteSqlQuery<ResponseKullanicilarListesi>(GlobalEnum.StoredProcedure.KullanicilarListesi, null);
+        public BaseResponseApi<ResponseKullanicilarListesiDto> GetKullanicilarListesi() => _dbService.ExecuteSqlQuery<ResponseKullanicilarListesiDto>(GlobalEnum.StoredProcedure.KullanicilarListesi, null);
     }
 }

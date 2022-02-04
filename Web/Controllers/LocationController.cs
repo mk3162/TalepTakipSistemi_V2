@@ -24,9 +24,9 @@ namespace Web.Controllers
         }
         public IActionResult Index()
         {
-            //var req = new RequestLokasyonlarListesiDto();
-            //req.SirketSiraNo = 1;
-            //var resp = _apiService.GetLokasyonlarListesi<ResponseLokasyonlarListesiDto, RequestLokasyonlarListesiDto>(_serviceUrlList.GetLokasyonlarListesi, req);
+            var req = new RequestLokasyonlarListesiDto();
+            req.SirketSiraNo = 1;
+            var resp = _apiService.GetLokasyonlarListesi<ResponseLokasyonlarListesiDto, RequestLokasyonlarListesiDto>(_serviceUrlList.GetLokasyonlarListesi, req);
             return View();
         }
     }

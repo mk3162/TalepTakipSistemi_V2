@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Common.Models.Response
 {
-    public class ResponseKullanicilarListesi
+    public class ResponseKullanicilarListesiDto
     {
         public string Kodu { get; set; }
         public string Sifre { get; set; }

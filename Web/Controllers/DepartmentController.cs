@@ -31,10 +31,10 @@ namespace Web.Controllers
 
         public IActionResult Index()
         {
-            //var req = new RequestDepartmanlarListesiDto();
-            //req.SirketSiraNo = 1;
-            //var resp = _apiService.GetDepartmanlarListesi<ResponseDepartmanlarListesiDto, RequestDepartmanlarListesiDto>(_serviceUrlList.GetDepartmanlarListesi, req);
-            return View();
+            var req = new RequestDepartmanlarListesiDto();
+            req.SirketSiraNo = 1;
+            var resp = _apiService.GetDepartmanlarListesi<ResponseDepartmanlarListesiDto, RequestDepartmanlarListesiDto>(_serviceUrlList.GetDepartmanlarListesi, req);
+            return View(resp);
         }  
     }
 }

@@ -19,15 +19,14 @@ namespace Web.Controllers
         private readonly DatabaseContext _context;
         private readonly IApiService _apiService;
         private readonly ServiceUrlList _serviceUrlList;
-        private readonly ILogger<RequestController> _logger;
 
-        public RequestController(DatabaseContext context, IApiService apiService, ServiceUrlList serviceUrlList, ILogger<RequestController> logger)
+        public RequestController(DatabaseContext context, IApiService apiService, ServiceUrlList serviceUrlList)
         {
             _context = context;
             _apiService = apiService;
             _serviceUrlList = serviceUrlList;
-            _logger = logger;
         }
+
         public IActionResult Index()
         {
             return View();
@@ -36,77 +35,77 @@ namespace Web.Controllers
         [HttpGet]
         public IActionResult GetCompany()
         {
-            var entity = _context.Sirketler.ToList();
-            return Json(entity);
+            //return Json(_context.Sirketler.ToList());
+            return Json(_apiService.GetSirketlerListesi<ResponseSirketlerListesiDto>(_serviceUrlList.GetSirketlerListesi).Data);
         }
 
         public IActionResult GetDepartments(int SiraNo)
         {
-            //_context.Configuration.ProxyCreationEnabled = false;
-            var entity = _context.Departmanlar.Where(a => a.SirketSiraNo == SiraNo).ToList();
-            return Json(entity);
+            //TODO : Get data from service
+            return Json(_context.Departmanlar.Where(a => a.SirketSiraNo == SiraNo).ToList());
         }
 
         public IActionResult GetLocations(int SiraNo)
         {
-            //_context.Configuration.ProxyCreationEnabled = false;
-            var entity = _context.Lokasyonlar.Where(a => a.SirketSiraNo == SiraNo).ToList();
-            return Json(entity);
+            //TODO : Get data from service
+            return Json(_context.Lokasyonlar.Where(a => a.SirketSiraNo == SiraNo).ToList());
         }
 
         public IActionResult GetProjects(int SiraNo)
         {
-            //_context.Configuration.ProxyCreationEnabled = false;
-            var entity = _context.Projeler.Where(a => a.SirketSiraNo == SiraNo).ToList();
-            return Json(entity);
+            //TODO : Get data from service
+            return Json(_context.Projeler.Where(a => a.SirketSiraNo == SiraNo).ToList());
         }
 
         public IActionResult GetExpenseCenters(int SiraNo)
         {
-            //_context.Configuration.ProxyCreationEnabled = false;
-            var entity = _context.MasrafMerkezleri.Where(a => a.SirketSiraNo == SiraNo).ToList();
-            return Json(entity);
+            //TODO : Get data from service
+            return Json(_context.MasrafMerkezleri.Where(a => a.SirketSiraNo == SiraNo).ToList());
         }
 
         public IActionResult GetServices(int SiraNo)
         {
-            //_context.Configuration.ProxyCreationEnabled = false;
-            var entity = _context.Servisler.Where(a => a.DepartmanSiraNo == SiraNo).ToList();
-            return Json(entity);
+            //TODO : Get data from service
+            return Json(_context.Servisler.Where(a => a.DepartmanSiraNo == SiraNo).ToList());
         }
 
         public IActionResult GetTypes()
         {
-            var entity = _context.Tipler.ToList();
-            return Json(entity);
+            //TODO : Get data from service
+            return Json(_context.Tipler.ToList());
+            //return Json(_apiService.GetTiplerListesi<ResponseTiplerListesiDto>(_serviceUrlList.GetTiplerListesi).Data);
         }
 
         public IActionResult GetProducts()
         {
-            var entity = _context.Urunler.ToList();
-            return Json(entity);
+            //TODO : Get data from service
+            return Json(_context.Urunler.ToList());
+            //return Json(_apiService.GetUrunlerListesi<ResponseUrunlerListesiDto>(_serviceUrlList.GetUrunlerListesi).Data);
         }
         public IActionResult GetUnits()
         {
-            var entity = _context.Birimler.ToList();
-            return Json(entity);
+            //TODO : Get data from service
+            return Json(_context.Birimler.ToList());
+            //return Json(_apiService.GetBirimlerListesi<ResponseBirimlerListesiDto>(_serviceUrlList.GetBirimlerListesi).Data);
         }
         public IActionResult GetSuppliers()
         {
-            var entity = _context.Tedarikciler.ToList();
-            return Json(entity);
+            //TODO : Get data from service
+            return Json(_context.Tedarikciler.ToList());
+            //return Json(_apiService.GetTedarikcilerListesi<ResponseTedarikcilerListesiDto>(_serviceUrlList.GetTedarikcilerListesi).Data);
         }
 
         public IActionResult GetCurrencies()
         {
-            var entity = _context.ParaBirimleri.ToList();
-            return Json(entity);
+            //TODO : Get data from service
+            return Json(_context.ParaBirimleri.ToList());
+            //return Json(_apiService.GetBirimlerListesi<ResponseBirimlerListesiDto>(_serviceUrlList.GetBirimlerListesi).Data);
         }
 
         public IActionResult GetRequestOwners()
-        {
-            var entity = _context.Personeller.ToList();
-            return Json(entity);
+        {            
+            //TODO : Get data from service
+            return Json(_context.Personeller.ToList());
         }
 
         public IActionResult GetRequestProcessList()
@@ -117,7 +116,6 @@ namespace Web.Controllers
 
             var resp = _apiService.GetTaleplerIslemListesi<ResponseTaleplerIslemListesiDto, RequestTaleplerIslemListesiDto>(_serviceUrlList.GetTaleplerIslemListesi, req);
             return Json(resp);
-
         }
 
         public IActionResult GetRequestPeriodList()
