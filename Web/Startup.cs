@@ -33,8 +33,6 @@ namespace Web
         {
             services.AddControllersWithViews();
 
-            services.AddAutoMapper(typeof(Startup));
-
             services.AddSingleton<ServiceUrlList>();
             services.AddSingleton<RequestParameter>();
             //services.AddScoped<RequestParameter>();

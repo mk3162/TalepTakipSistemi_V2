@@ -10,6 +10,7 @@ namespace Common.Models.Request
 
 		public int SiraNo { get; set; }
 		public string SahibiKodu { get; set; }
+		public int ServisSiraNo { get; set; }
 		public string UrunKodu { get; set; }
 		public int TipSiraNo { get; set; }
 		public int ProjeSiraNo { get; set; }

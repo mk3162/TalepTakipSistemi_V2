@@ -1,4 +1,5 @@
 ﻿using Common.Models;
+using Common.Models.Request;
 using Common.Models.Response;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -27,11 +28,12 @@ namespace Web.Controllers
 
         public IActionResult Index()
         {
-            //var req = new RequestDepartmanlarListesiDto();
-            //req.SirketSiraNo = 1;
-            //var resp = _apiService.GetSirketlerListesi<ResponseSirketlerListesiDto>(_serviceUrlList.GetSirketlerListesi);
-            return View();
+            var req = new RequestDepartmanlarListesiDto();
+            req.SirketSiraNo = 1;
+            var resp = _apiService.GetDepartmanlarListesi<ResponseDepartmanlarListesiDto, RequestDepartmanlarListesiDto>(_serviceUrlList.GetDepartmanlarListesi, req);
+            return View(resp);
         }
+
 
         //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         //public IActionResult Error()

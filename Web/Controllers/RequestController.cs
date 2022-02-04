@@ -1,5 +1,7 @@
-﻿using Common.Models.Response;
+﻿using Common.Models.Request;
+using Common.Models.Response;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -17,12 +19,14 @@ namespace Web.Controllers
         private readonly DatabaseContext _context;
         private readonly IApiService _apiService;
         private readonly ServiceUrlList _serviceUrlList;
+        private readonly ILogger<RequestController> _logger;
 
-        public RequestController(DatabaseContext context, IApiService apiService, ServiceUrlList serviceUrlList)
+        public RequestController(DatabaseContext context, IApiService apiService, ServiceUrlList serviceUrlList, ILogger<RequestController> logger)
         {
             _context = context;
             _apiService = apiService;
             _serviceUrlList = serviceUrlList;
+            _logger = logger;
         }
         public IActionResult Index()
         {
@@ -107,18 +111,22 @@ namespace Web.Controllers
 
         public IActionResult GetRequestProcessList()
         {
-            //var req = new();
-            //req.SirketSiraNo = 1;
-            //var resp = _apiService.GetRequestList<ResponseSirketlerListesiDto, Re>(_serviceUrlList.GetSirketlerListesi);
-            return View();
+            var req = new RequestTaleplerIslemListesiDto();
+            req.KullaniciKodu = 11111111111.ToString();
+            req.Yetki = 0;
+
+            var resp = _apiService.GetTaleplerIslemListesi<ResponseTaleplerIslemListesiDto, RequestTaleplerIslemListesiDto>(_serviceUrlList.GetTaleplerIslemListesi, req);
+            return Json(resp);
+
         }
 
         public IActionResult GetRequestPeriodList()
         {
-            //var req = new RequestDepartmanlarListesiDto();
-            //req.SirketSiraNo = 1;
-            //var resp = _apiService.GetSirketlerListesi<ResponseSirketlerListesiDto>(_serviceUrlList.GetSirketlerListesi););
-            return View();
+            var req = new RequestTaleplerSurecListesiDto();
+            req.TalepSiraNo = 8;
+
+            var resp = _apiService.GetTaleplerSurecListesi<ResponseTaleplerSurecListesiDto, RequestTaleplerSurecListesiDto>(_serviceUrlList.GetTaleplerSurecListesi, req);
+            return Json(resp);
         }
     }
 }

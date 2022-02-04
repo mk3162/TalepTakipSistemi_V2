@@ -11,6 +11,6 @@ namespace Web.Service.Interface
         RequestResponse<T> Get<T>(string url);
  
         RequestResponse<T> Delete<T, Y>(string url, Y model);
-        RequestResponse<T> Post<T, Y>(string url, Y modell);
+        RequestResponse<T> Post<T, Y>(string url, Y model);
     }
 }
