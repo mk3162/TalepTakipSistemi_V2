@@ -25,7 +25,7 @@ namespace Web.Controllers
             var req = new RequestMasrafMerkezleriListesiDto();
             req.SirketSiraNo = 1;
             var resp = _apiService.GetMasrafMerkezleriListesi<ResponseMasrafMerkezleriListesiDto, RequestMasrafMerkezleriListesiDto>(_serviceUrlList.GetMasrafMerkezleriListesi, req);
-            return View(resp);
+            return Json(resp);
         }
     }
 }

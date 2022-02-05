@@ -25,11 +25,11 @@ namespace Web.Controllers
         }
         public IActionResult Index()
         {
-            var req = new RequestLokasyonlarListesiDto();
-            req.SirketSiraNo = 1;
+            var req = new RequestServislerListesiDto();
+            req.DepartmanSiraNo = 1;
 
-            var resp = _apiService.GetLokasyonlarListesi<ResponseLokasyonlarListesiDto, RequestLokasyonlarListesiDto>(_serviceUrlList.GetLokasyonlarListesi, req);
-            return View(resp);
+            var resp = _apiService.GetLokasyonlarListesi<ResponseServislerListesiDto, RequestServislerListesiDto>(_serviceUrlList.GetServislerListesi, req);
+            return Json(resp);
         }
     }
 }
