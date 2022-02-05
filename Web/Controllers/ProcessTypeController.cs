@@ -29,8 +29,8 @@ namespace Web.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View(_context.IslemTipleri.FromSqlRaw(GlobalEnum.StoredProcedure.IslemTipleriListesi.ToString()).ToList());
-            //return Json(_apiService.GetIslemTipleriListesi<ResponseIslemTipleriDto>(_serviceUrlList.GetIslemTipleriListesi));
+            //return View(_context.IslemTipleri.FromSqlRaw(GlobalEnum.StoredProcedure.IslemTipleriListesi.ToString()).ToList());
+            return View(_apiService.GetIslemTipleriListesi<ResponseIslemTipleriDto>(_serviceUrlList.GetIslemTipleriListesi).Data);
         }
 
         [HttpGet]

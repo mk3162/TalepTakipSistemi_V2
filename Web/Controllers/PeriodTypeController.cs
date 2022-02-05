@@ -25,8 +25,8 @@ namespace Web.Controllers
         }
         public IActionResult Index()
         {
-            return View(_context.SurecTipler.FromSqlRaw(GlobalEnum.StoredProcedure.SurecTipleriListesi.ToString()).ToList());
-            //return Json(_apiService.GetSurecTipleriListesi<ResponseSurecTipleriDto>(_serviceUrlList.GetSurecTipleriListesi));
+            //return View(_context.SurecTipler.FromSqlRaw(GlobalEnum.StoredProcedure.SurecTipleriListesi.ToString()).ToList());
+            return View(_apiService.GetSurecTipleriListesi<ResponseSurecTipleriDto>(_serviceUrlList.GetSurecTipleriListesi).Data);
         }
     }
 }

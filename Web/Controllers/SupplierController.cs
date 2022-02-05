@@ -26,8 +26,8 @@ namespace Web.Controllers
         }
         public IActionResult Index()
         {
-            return View(_context.Tedarikciler.FromSqlRaw(GlobalEnum.StoredProcedure.TedarikcilerListesi.ToString()).ToList());
-            //return Json(_apiService.GetTedarikcilerListesi<ResponseTedarikcilerListesiDto>(_serviceUrlList.GetTedarikcilerListesi));
+            //return View(_context.Tedarikciler.FromSqlRaw(GlobalEnum.StoredProcedure.TedarikcilerListesi.ToString()).ToList());
+            return View(_apiService.GetTedarikcilerListesi<ResponseTedarikcilerListesiDto>(_serviceUrlList.GetTedarikcilerListesi).Data);
         }
 
         [HttpGet]

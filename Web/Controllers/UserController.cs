@@ -26,8 +26,8 @@ namespace Web.Controllers
         }
         public IActionResult Index()
         {
-            return View(_context.Kullanicilar.FromSqlRaw(GlobalEnum.StoredProcedure.KullanicilarListesi.ToString()).ToList());
-            //return Json(_apiService.GetKullanicilarListesi<ResponseKullanicilarListesiDto>(_serviceUrlList.GetKullanicilarListesi));
+            //return View(_context.Kullanicilar.FromSqlRaw(GlobalEnum.StoredProcedure.KullanicilarListesi.ToString()).ToList());
+            return View(_apiService.GetKullanicilarListesi<ResponseKullanicilarListesiDto>(_serviceUrlList.GetKullanicilarListesi).Data);
         }
 
         [HttpGet]

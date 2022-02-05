@@ -26,8 +26,8 @@ namespace Web.Controllers
         {
             var req = new RequestLokasyonlarListesiDto();
             req.SirketSiraNo = 1;
-            var resp = _apiService.GetLokasyonlarListesi<ResponseLokasyonlarListesiDto, RequestLokasyonlarListesiDto>(_serviceUrlList.GetLokasyonlarListesi, req);
-            return Json(resp);
+            var resp = _apiService.GetLokasyonlarListesi<ResponseLokasyonlarListesiDto, RequestLokasyonlarListesiDto>(_serviceUrlList.GetLokasyonlarListesi, req).Data;
+            return View(resp);
         }
     }
 }

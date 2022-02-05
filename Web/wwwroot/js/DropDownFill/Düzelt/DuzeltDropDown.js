@@ -75,7 +75,7 @@
             dataType: "json",
             success: function (response) {
                 $("#CostDuzelt").removeAttr('disabled');
-                $("#CostDuzelt").empty().append('<option value="0"> Departman Seçiniz </option>');
+                $("#CostDuzelt").empty().append('<option value="0"> Masraf Merkezi Seçiniz </option>');
 
                 for (let expense of response) {
                     $("#CostDuzelt").append('<option value="' + expense.siraNo + '"> ' + expense.tanimi + ' </option>');

@@ -27,8 +27,8 @@ namespace Web.Controllers
         }
         public IActionResult Index()
         {
-            return View(_context.Birimler.FromSqlRaw(GlobalEnum.StoredProcedure.BirimlerListesi.ToString()).ToList());
-            //return Json(_apiService.GetBirimlerListesi<ResponseBirimlerListesiDto>(_serviceUrlList.GetBirimlerListesi));
+            //return View(_context.Birimler.FromSqlRaw(GlobalEnum.StoredProcedure.BirimlerListesi.ToString()).ToList());
+            return View(_apiService.GetBirimlerListesi<ResponseBirimlerListesiDto>(_serviceUrlList.GetBirimlerListesi).Data);
         }
 
         [HttpGet]

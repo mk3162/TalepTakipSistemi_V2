@@ -33,8 +33,8 @@ namespace Web.Controllers
         {
             var req = new RequestDepartmanlarListesiDto();
             req.SirketSiraNo = 1;
-            var resp = _apiService.GetDepartmanlarListesi<ResponseDepartmanlarListesiDto, RequestDepartmanlarListesiDto>(_serviceUrlList.GetDepartmanlarListesi, req);
-            return Json(resp);
+            var resp = _apiService.GetDepartmanlarListesi<ResponseDepartmanlarListesiDto, RequestDepartmanlarListesiDto>(_serviceUrlList.GetDepartmanlarListesi, req).Data;
+            return View(resp);
         }  
     }
 }

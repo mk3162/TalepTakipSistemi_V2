@@ -26,8 +26,8 @@ namespace Web.Controllers
         }
         public IActionResult Index()
         {
-            return View(_context.Tipler.FromSqlRaw(GlobalEnum.StoredProcedure.TiplerListesi.ToString()).ToList());
-            //return Json(_apiService.GetTiplerListesi<ResponseTiplerListesiDto>(_serviceUrlList.GetTiplerListesi));
+            //return View(_context.Tipler.FromSqlRaw(GlobalEnum.StoredProcedure.TiplerListesi.ToString()).ToList());
+            return View(_apiService.GetTiplerListesi<ResponseTiplerListesiDto>(_serviceUrlList.GetTiplerListesi).Data);
         }
 
         [HttpGet]

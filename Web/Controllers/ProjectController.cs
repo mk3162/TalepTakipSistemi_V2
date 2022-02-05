@@ -24,8 +24,8 @@ namespace Web.Controllers
         {
             var req = new RequestProjelerListesiDto();
             req.SirketSiraNo = 1;
-            var resp = _apiService.GetProjelerListesi<ResponseProjelerListesiDto, RequestProjelerListesiDto>(_serviceUrlList.GetProjelerListesi, req);
-            return Json(resp);
+            var resp = _apiService.GetProjelerListesi<ResponseProjelerListesiDto, RequestProjelerListesiDto>(_serviceUrlList.GetProjelerListesi, req).Data;
+            return View(resp);
         }
     }
 }

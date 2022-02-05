@@ -26,8 +26,8 @@ namespace Web.Controllers
         }
         public IActionResult Index()
         {
-            return View(_context.Urunler.FromSqlRaw(GlobalEnum.StoredProcedure.UrunlerListesi.ToString()).ToList());
-            //return Json(_apiService.GetUrunlerListesi<ResponseUrunlerListesiDto>(_serviceUrlList.GetUrunlerListesi));
+            //return View(_context.Urunler.FromSqlRaw(GlobalEnum.StoredProcedure.UrunlerListesi.ToString()).ToList());
+            return View(_apiService.GetUrunlerListesi<ResponseUrunlerListesiDto>(_serviceUrlList.GetUrunlerListesi).Data);
         }
 
         [HttpGet]

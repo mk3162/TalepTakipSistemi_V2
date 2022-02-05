@@ -1,4 +1,5 @@
-﻿using Common.Models.Request;
+﻿using Common.Models;
+using Common.Models.Request;
 using Common.Models.Response;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -39,28 +40,37 @@ namespace Web.Controllers
             return Json(_apiService.GetSirketlerListesi<ResponseSirketlerListesiDto>(_serviceUrlList.GetSirketlerListesi).Data);
         }
 
-        public IActionResult GetDepartments(int SiraNo)
+        public IActionResult GetDepartments(int SiraNo = 1)
         {
-            //TODO : Get data from service
-            return Json(_context.Departmanlar.Where(a => a.SirketSiraNo == SiraNo).ToList());
+            //return Json(_context.Departmanlar.Where(a => a.SirketSiraNo == SiraNo).ToList());
+            var req = new RequestDepartmanlarListesiDto();
+            req.SirketSiraNo = SiraNo;
+            return Json(_apiService.GetDepartmanlarListesi<ResponseDepartmanlarListesiDto, RequestDepartmanlarListesiDto>(_serviceUrlList.GetDepartmanlarListesi, req).Data);
         }
 
-        public IActionResult GetLocations(int SiraNo)
+        public IActionResult GetLocations(int SiraNo = 1)
         {
-            //TODO : Get data from service
-            return Json(_context.Lokasyonlar.Where(a => a.SirketSiraNo == SiraNo).ToList());
+            //return Json(_context.Lokasyonlar.Where(a => a.SirketSiraNo == SiraNo).ToList());
+            var req = new RequestLokasyonlarListesiDto();
+            req.SirketSiraNo = SiraNo;
+            return Json(_apiService.GetLokasyonlarListesi<ResponseLokasyonlarListesiDto, RequestLokasyonlarListesiDto>(_serviceUrlList.GetLokasyonlarListesi, req).Data);
+
         }
 
-        public IActionResult GetProjects(int SiraNo)
+        public IActionResult GetProjects(int SiraNo = 1)
         {
-            //TODO : Get data from service
-            return Json(_context.Projeler.Where(a => a.SirketSiraNo == SiraNo).ToList());
+            //return Json(_context.Projeler.Where(a => a.SirketSiraNo == SiraNo).ToList());
+            var req = new RequestProjelerListesiDto();
+            req.SirketSiraNo = SiraNo;
+            return Json(_apiService.GetProjelerListesi<ResponseProjelerListesiDto, RequestProjelerListesiDto>(_serviceUrlList.GetProjelerListesi, req).Data);
         }
 
-        public IActionResult GetExpenseCenters(int SiraNo)
+        public IActionResult GetExpenseCenters(int SiraNo = 1)
         {
-            //TODO : Get data from service
-            return Json(_context.MasrafMerkezleri.Where(a => a.SirketSiraNo == SiraNo).ToList());
+            //return Json(_context.MasrafMerkezleri.Where(a => a.SirketSiraNo == SiraNo).ToList());
+            var req = new RequestMasrafMerkezleriListesiDto();
+            req.SirketSiraNo = SiraNo;
+            return Json(_apiService.GetMasrafMerkezleriListesi<ResponseMasrafMerkezleriListesiDto, RequestMasrafMerkezleriListesiDto>(_serviceUrlList.GetMasrafMerkezleriListesi, req).Data);
         }
 
         public IActionResult GetServices(int SiraNo)
