@@ -30,7 +30,7 @@ namespace Web.Controllers
         public IActionResult Index()
         {
             return View(_context.IslemTipleri.FromSqlRaw(GlobalEnum.StoredProcedure.IslemTipleriListesi.ToString()).ToList());
-           //return Json(_apiService.GetIslemTipleriListesi<ResponseIslemTipleriDto>(_serviceUrlList.GetIslemTipleriListesi));
+            //return Json(_apiService.GetIslemTipleriListesi<ResponseIslemTipleriDto>(_serviceUrlList.GetIslemTipleriListesi));
         }
 
         [HttpGet]

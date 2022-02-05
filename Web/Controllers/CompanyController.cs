@@ -32,8 +32,8 @@ namespace Web.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            //return View(_context.Sirketler.FromSqlRaw(GlobalEnum.StoredProcedure.SirketlerListesi.ToString()).ToList());
-            return Json(_apiService.GetSirketlerListesi<ResponseSirketlerListesiDto>(_serviceUrlList.GetSirketlerListesi));
+            return View(_context.Sirketler.FromSqlRaw(GlobalEnum.StoredProcedure.SirketlerListesi.ToString()).ToList());
+            //return Json(_apiService.GetSirketlerListesi<ResponseSirketlerListesiDto>(_serviceUrlList.GetSirketlerListesi));
         }
 
         [HttpGet]

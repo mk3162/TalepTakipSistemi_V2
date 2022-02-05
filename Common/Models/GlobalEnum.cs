@@ -52,6 +52,10 @@ namespace Common.Models
             TaleplerSurecIslem,
             [Display(Name = "dbo")]
             TaleplerSurecListesi,
+            [Display(Name = "dbo")]
+            ParaBirimleriListesi,
+            [Display(Name = "dbo")]
+            TalepSahibiListesi,
             #endregion
 
         }

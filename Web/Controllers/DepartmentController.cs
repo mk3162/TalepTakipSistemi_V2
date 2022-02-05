@@ -34,7 +34,7 @@ namespace Web.Controllers
             var req = new RequestDepartmanlarListesiDto();
             req.SirketSiraNo = 1;
             var resp = _apiService.GetDepartmanlarListesi<ResponseDepartmanlarListesiDto, RequestDepartmanlarListesiDto>(_serviceUrlList.GetDepartmanlarListesi, req);
-            return View(resp);
+            return Json(resp);
         }  
     }
 }

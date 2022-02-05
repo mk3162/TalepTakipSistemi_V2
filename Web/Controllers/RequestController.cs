@@ -71,45 +71,41 @@ namespace Web.Controllers
 
         public IActionResult GetTypes()
         {
-            //TODO : Get data from service
-            return Json(_context.Tipler.ToList());
-            //return Json(_apiService.GetTiplerListesi<ResponseTiplerListesiDto>(_serviceUrlList.GetTiplerListesi).Data);
+            //return Json(_context.Tipler.ToList());
+            return Json(_apiService.GetTiplerListesi<ResponseTiplerListesiDto>(_serviceUrlList.GetTiplerListesi).Data);
         }
 
         public IActionResult GetProducts()
         {
-            //TODO : Get data from service
-            return Json(_context.Urunler.ToList());
-            //return Json(_apiService.GetUrunlerListesi<ResponseUrunlerListesiDto>(_serviceUrlList.GetUrunlerListesi).Data);
+            //return Json(_context.Urunler.ToList());
+            return Json(_apiService.GetUrunlerListesi<ResponseUrunlerListesiDto>(_serviceUrlList.GetUrunlerListesi).Data);
         }
         public IActionResult GetUnits()
         {
-            //TODO : Get data from service
-            return Json(_context.Birimler.ToList());
-            //return Json(_apiService.GetBirimlerListesi<ResponseBirimlerListesiDto>(_serviceUrlList.GetBirimlerListesi).Data);
+            //return Json(_context.Birimler.ToList());
+            return Json(_apiService.GetBirimlerListesi<ResponseBirimlerListesiDto>(_serviceUrlList.GetBirimlerListesi).Data);
         }
         public IActionResult GetSuppliers()
         {
-            //TODO : Get data from service
-            return Json(_context.Tedarikciler.ToList());
-            //return Json(_apiService.GetTedarikcilerListesi<ResponseTedarikcilerListesiDto>(_serviceUrlList.GetTedarikcilerListesi).Data);
+            //return Json(_context.Tedarikciler.ToList());
+            return Json(_apiService.GetTedarikcilerListesi<ResponseTedarikcilerListesiDto>(_serviceUrlList.GetTedarikcilerListesi).Data);
         }
 
         public IActionResult GetCurrencies()
         {
-            //TODO : Get data from service
-            return Json(_context.ParaBirimleri.ToList());
-            //return Json(_apiService.GetBirimlerListesi<ResponseBirimlerListesiDto>(_serviceUrlList.GetBirimlerListesi).Data);
+            //return Json(_context.ParaBirimleri.ToList());
+            return Json(_apiService.GetParaBirimleriListesi<ResponseParaBirimleriListesiDto>(_serviceUrlList.GetParaBirimleriListesi).Data);
         }
 
         public IActionResult GetRequestOwners()
-        {            
-            //TODO : Get data from service
-            return Json(_context.Personeller.ToList());
+        {
+            //return Json(_context.Personeller.ToList());
+            return Json(_apiService.GetTalepSahibiListesi<ResponseTalepSahibiListesiDto>(_serviceUrlList.GetTalepSahibiListesi).Data);
         }
 
         public IActionResult GetRequestProcessList()
         {
+            //TODO
             var req = new RequestTaleplerIslemListesiDto();
             req.KullaniciKodu = 11111111111.ToString();
             req.Yetki = 0;
@@ -120,6 +116,7 @@ namespace Web.Controllers
 
         public IActionResult GetRequestPeriodList()
         {
+            //TODO
             var req = new RequestTaleplerSurecListesiDto();
             req.TalepSiraNo = 8;
 

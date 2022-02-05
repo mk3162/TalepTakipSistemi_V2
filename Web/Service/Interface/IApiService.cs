@@ -16,6 +16,8 @@ namespace Web.Service.Interface
         RequestResponse<T> GetIslemTipleriListesi<T>(string url);
         RequestResponse<T> GetSurecTipleriListesi<T>(string url);
         RequestResponse<T> GetKullanicilarListesi<T>(string url);
+        RequestResponse<T> GetParaBirimleriListesi<T>(string url);
+        RequestResponse<T> GetTalepSahibiListesi<T>(string url);
 
 
         RequestResponse<T> MetodPost<T, Y>(string url, Y model);

@@ -49,12 +49,22 @@ namespace Web.Service.Implementation
         {
             return _serviceManager.Get<T>(url);
         }
+        public RequestResponse<T> GetParaBirimleriListesi<T>(string url)
+        {
+            return _serviceManager.Get<T>(url);
+        }
+        public RequestResponse<T> GetTalepSahibiListesi<T>(string url)
+        {
+            return _serviceManager.Get<T>(url);
+        }
+
+
+
 
         public RequestResponse<T> MetodPost<T, Y>(string url, Y model)
         {
             return _serviceManager.Post<T, Y>(url, model);
         }
-
 
         public RequestResponse<T> GetDepartmanlarListesi<T, Y>(string url, Y model)
         {

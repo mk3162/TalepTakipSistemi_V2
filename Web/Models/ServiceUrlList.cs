@@ -16,6 +16,8 @@ namespace Web.Models
         public string GetIslemTipleriListesi { get; set; }
         public string GetSurecTipleriListesi { get; set; }
         public string GetKullanicilarListesi { get; set; }
+        public string GetParaBirimleriListesi { get; set; }
+        public string GetTalepSahibiListesi { get; set; }
 
         public string GetDepartmanlarListesi { get; set; }
         public string GetServislerListesi { get; set; }
