@@ -34,12 +34,15 @@ namespace Web
             services.AddControllersWithViews();
 
             services.AddSingleton<ServiceUrlList>();
-            services.AddSingleton<RequestParameter>();
-            //services.AddScoped<RequestParameter>();
-            services.AddSingleton<IServiceManager, ServiceManager>();
-            services.AddSingleton<IApiService, ApiService>();
+            //services.AddSingleton<RequestParameter>();
 
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<RequestParameter>();
+
+            services.AddScoped<IServiceManager, ServiceManager>();
+
+            services.AddTransient<IApiService, ApiService>();
+
+            services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IUserRepository, UserRepository>();
 
             services.AddSession(options =>
