@@ -529,21 +529,21 @@
                         <select style="width: 400px; display: inline-block; margin-left:95px;" class="form-control" id="ProductDuzelt" for="Regions">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:45px;">Miktar </label>
-                        <input type="text" class="form-control-sm" name="Amount" style="width:140px; margin-left:55px;" /> ,
+                        <input type="number" class="form-control-sm" name="Amount" style="width:140px; margin-left:55px;" /> ,
                         <select style="width: 140px; display: inline-block; margin-left:5px;" class="form-control" id="AmountDuzelt" for="Regions">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Birim Fiyat </label>
-                        <input type="text" class="form-control-sm" name="Price" style="width:150px; margin-left:50px;" />
+                        <input type="number" class="form-control-sm" name="Price" style="width:150px; margin-left:50px;" />
                         <select style="width: 150px; display: inline-block; margin-left:5px;" class="form-control" id="CurrencyDuzelt" for="Regions">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:135px;">Toplam Fiyat</label>
-                        <input type="text" class="form-control-sm" name="TotalPrice" style="width:140px; margin-left:12px;" disabled="disabled" />
+                        <input type="number" class="form-control-sm" name="TotalPrice" style="width:140px; margin-left:12px;" disabled="disabled" />
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Açıklama</label>
-                        <input type="text" class="form-control-sm" name="Description" style="width:860px; margin-left:63px;"/>
+                        <input type="text" class="form-control-sm" name="Description" style="width:860px; margin-left:63px;" />
                     </div>
                 </div>
                 <hr style="border-width:2.5px; color:darkgray;" />
@@ -774,28 +774,28 @@
                         <select style="width: 400px; display: inline-block; margin-left:95px;" class="form-control" id="ProductTalep">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:45px;">Miktar </label>
-                        <input type="text" class="form-control-sm" id="Amount" name="Amount" style="width:140px; margin-left:55px;" /> ,
+                        <input type="number" class="form-control-sm" id="Amount" name="Amount" style="width:140px; margin-left:55px;" /> ,
                         <select style="width: 140px; display: inline-block; margin-left:5px;" class="form-control" id="AmountTalep">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Birim Fiyat </label>
-                        <input type="text" class="form-control-sm" id="Price" name="Price" style="width:150px; margin-left:50px;" />
+                        <input type="number" class="form-control-sm" id="Price" name="Price" style="width:150px; margin-left:50px;" />
                         <select style="width: 150px; display: inline-block; margin-left:5px;" class="form-control" id="CurrencyTalep">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:135px;">Toplam Fiyat </label>
-                        <input type="text" class="form-control-sm" id="TotalPrice" name="TotalPrice" style="width:140px; margin-left:12px;" disabled="disabled" />
+                        <input type="number" class="form-control-sm" id="TotalPrice" name="TotalPrice" style="width:140px; margin-left:12px;" disabled="disabled" />
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Açıklama </label>
-                        <input type="text" class="form-control-sm" name="Description" style="width:800px; margin-left:63px;"/>
+                        <input type="text" class="form-control-sm" name="Description" style="width:800px; margin-left:63px;" />
                         <button type="submit" id="AddList" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:10px; width:150px; height:36px;">Listeye Ekle</button>
                     </div>
                 </div>
                 <hr style="border-width:2.5px; color:darkgray;" />
                 <div class="modal-body">
                     <div class="form-group">
-                        <table class="table table-hover table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
+                        <table id="ProductList" class="table table-hover table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
                             <thead style="background-color:burlywood; color:white;  ">
                                 <tr>
                                     <th style="width:30px;"></th>
@@ -811,13 +811,13 @@
                             <tbody>
                                 <tr>
                                     <td><button id="#" class="btn btn-danger">Sil</button></td>
-                                    <td>a</td>
-                                    <td>b</td>
-                                    <td>c</td>
-                                    <td>d</td>
-                                    <td>e</td>
-                                    <td>f</td>
-                                    <td>g</td>
+                                    <td id="Product"></td>
+                                    <td id="Amount"></td>
+                                    <td id="Unit"></td>
+                                    <td id="UnitPrice"></td>
+                                    <td id="Currency"></td>
+                                    <td id="TotalPrice"></td>
+                                    <td id="Description"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -834,7 +834,7 @@
                         <button type="submit" id="AddList" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:10px; width:150px; height:36px;">Listeye Ekle</button>
                     </div>
                     <div class="form-group">
-                        <table class="table table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
+                        <table id="FileList" class="table table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
                             <thead style="background-color:burlywood; color:white;">
                                 <tr>
                                     <th style="width:30px;"></th>
