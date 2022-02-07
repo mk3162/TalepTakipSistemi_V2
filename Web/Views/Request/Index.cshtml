@@ -10,8 +10,10 @@
     }
 </style>
 <partial name="_AddTopMenuPartialView" />
-
-<div class="panel-body">
+<div class="row col-lg-12">
+    <a href="#" id="NewRequest" class="btn btn-info btn-xs" tabindex="0" aria-controls="example1" type="button" data-toggle="modal" data-target=".bd-talep-modal-lg" style="margin-left:1120px;">Yeni Talep</a>
+</div>
+<div class="panel-body" style="margin-top:5px;">
     <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
         <thead>
             <tr role="row">
@@ -378,7 +380,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Birim Fiyat</label>
-                        <input type="text" name="UnitPrice" class="form-control-sm" style="width: 300px; margin-left:85px;" />
+                        <input type="number" name="UnitPrice" class="form-control-sm" style="width: 300px; margin-left:85px;" />
                         <select style="width:150px;display:inline-block; margin-left:10px;" class="form-control" id="CurrencyIslem"></select>
                     </div>
                     <div class="form-group">
@@ -729,23 +731,23 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Talep Sahibi</label>
-                        <select style="width:300px;display:inline-block; margin-left:43px;" class="form-control" id="RequestTalep" for="Regions">
+                        <select style="width:300px;display:inline-block; margin-left:43px;" class="form-control" id="RequestTalep">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Şirket</label>
-                        <select style="width:300px;display:inline-block; margin-left:90px;" class="form-control" id="CompaniesTalep" for="Regions">
+                        <select style="width:300px;display:inline-block; margin-left:90px;" class="form-control" id="CompaniesTalep">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Departman</label>
-                        <select style="width: 300px; display: inline-block; margin-left: 20px;" class="form-control" id="DepartmentTalep" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left: 20px;" class="form-control" id="DepartmentTalep">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Lokasyon</label>
-                        <select style="width: 300px; display: inline-block; margin-left:62px;" class="form-control" id="LocationTalep" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left:62px;" class="form-control" id="LocationTalep">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:145px;">Servis</label>
-                        <select style="width: 300px; display: inline-block; margin-left:55px;" class="form-control" id="ServiceTalep" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left:55px;" class="form-control" id="ServiceTalep">
                         </select>
                     </div>
                 </div>

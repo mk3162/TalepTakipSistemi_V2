@@ -56,6 +56,12 @@ namespace Common.Models
             ParaBirimleriListesi,
             [Display(Name = "dbo")]
             TalepSahibiListesi,
+            [Display(Name = "dbo")]
+            TaleplerEkDosyaKaydet,
+            [Display(Name = "dbo")]
+            TaleplerEkDosyaSil,
+            [Display(Name = "dbo")]
+            TaleplerEkDosyaListesi,
             #endregion
 
         }

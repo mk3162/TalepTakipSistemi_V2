@@ -22,7 +22,7 @@ namespace Web.Controllers
         private readonly DatabaseContext _context;
         private readonly IApiService _apiService;
         private readonly ServiceUrlList _serviceUrlList;
-        public DepartmentController(DatabaseContext context,IApiService apiService,ServiceUrlList serviceUrlList)
+        public DepartmentController(DatabaseContext context, IApiService apiService, ServiceUrlList serviceUrlList)
         {
             _context = context;
             _apiService = apiService;
@@ -35,6 +35,6 @@ namespace Web.Controllers
             req.SirketSiraNo = 1;
             var resp = _apiService.GetDepartmanlarListesi<ResponseDepartmanlarListesiDto, RequestDepartmanlarListesiDto>(_serviceUrlList.GetDepartmanlarListesi, req).Data;
             return View(resp);
-        }  
+        }
     }
 }
