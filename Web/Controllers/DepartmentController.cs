@@ -27,6 +27,7 @@ namespace Web.Controllers
             _context = context;
             _apiService = apiService;
             _serviceUrlList = serviceUrlList;
+
         }
 
         public IActionResult Index()
