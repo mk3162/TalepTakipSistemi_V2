@@ -19,7 +19,7 @@ namespace Web.Controllers
 
         public IActionResult Index()
         {
-            return View(_context.Personeller.Where(x => x.ServisSiraNo==2).ToList());
+            return View(_context.Personeller.Where(x => x.ServisSiraNo==1 && x.Oncelik<99).ToList());
         }
     }
 }
