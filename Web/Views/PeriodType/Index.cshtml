@@ -20,23 +20,14 @@
                                         <tr role="row">
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Sıra No</th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Tanımı</th>
-                                            @*<th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">İşlemler</th>*@
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach (var item in Model)
                                         {
                                             <tr>
-                                                @*<td class="dtr-control sorting_1 text-center" tabindex="0">
-                                                        @if (!String.IsNullOrWhiteSpace(item.Branch.Company.CompanyImageFile))
-                                                        {<img class="img-fluid" src="@item.Branch.Company.CompanyImageFile" style="width:100px;" />}
-                                                    </td>*@
                                                 <td class="dtr-control sorting_1" tabindex="0">@item.SiraNo</td>
                                                 <td class="dtr-control sorting_1" tabindex="0">@item.Tanimi</td>
-                                                @*<td>
-                                                        <a href="/ProcessType/GetProcessType/@item.SiraNo" class="btn btn-info fas fa-edit"></a>
-                                                        @Html.ActionLink(" ", "SoftDelete","ProcessType", new { siraNo = item.SiraNo }, new { @class = "btn btn-danger fas fa-trash-alt", onclick = "return confirm('Silmek İstiyor musunuz ? ');" })
-                                                    </td>*@
                                             </tr>
                                         }
                                     </tbody>

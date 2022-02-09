@@ -10,9 +10,11 @@
     }
 </style>
 <partial name="_AddTopMenuPartialView" />
+
 <div class="row col-lg-12">
     <a href="#" id="NewRequest" class="btn btn-info btn-xs" tabindex="0" aria-controls="example1" type="button" data-toggle="modal" data-target=".bd-talep-modal-lg" style="margin-left:1120px;">Yeni Talep</a>
 </div>
+
 <div class="panel-body" style="margin-top:5px;">
     <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
         <thead>
@@ -142,7 +144,6 @@
                     <button href="#" id="Process" class="btn btn-primary btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-islem-modal-lg" style="color:white;">İşlem</button>
                     <button data-toggle="collapse" data-target="#demo3" class="btn btn-warning btn-xs accordion-toggle" style="color: white; background-color: burlywood;">Süreç Gör</button>
                     <button href="#" id="Edit" class="btn btn-success btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-duzelt-modal-lg" style="color:white;">Düzelt</button>
-
                 </td>
                 <td>John</td>
                 <td>Doe</td>
@@ -550,7 +551,7 @@
                 </div>
                 <hr style="border-width:2.5px; color:darkgray;" />
             }
-            <button id="AddList" onclick="DuzeltAddFileFunc()" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:10px; width:150px; height:36px;">Listeye Ekle</button>
+            <button id="AddList" onclick="DuzeltAddFileFunc()" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:15px; width:150px; height:36px;">Listeye Ekle</button>
             @using (Html.BeginForm("EditRequest", "Request", FormMethod.Post))
             {
                 <div class="modal-body">
@@ -573,9 +574,6 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>@*<button id="#" class="btn btn-danger">Sil</button>*@</td>
-                                    <td></td>
-                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -614,112 +612,7 @@
     </div>
 </div>
 
-<ul id="liste" style="display:none;" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-    <li class="nav-item">
-        <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
-            <p class="intime-text-turquoise" style="color:cornflowerblue;">
-                AVANSLAR
-            </p>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
-            <p class="intime-text-turquoise" style="color:cornflowerblue;">
-                DİĞER
-            </p>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
-            <p class="intime-text-turquoise" style="color:cornflowerblue;">
-                FİNANSAL HİZMETLER
-            </p>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
-            <p class="intime-text-turquoise" style="color:cornflowerblue;">
-                HAYVANCILIK
-            </p>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
-            <p class="intime-text-turquoise" style="color:cornflowerblue;">
-                HİZMETLER
-            </p>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
-            <p class="intime-text-turquoise" style="color:cornflowerblue;">
-                İNSAN KAYNAKLARI
-            </p>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="#" class="nav-link" onclick="Gizle();">
-            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
-            <p class="intime-text-turquoise" style="color: cornflowerblue;">
-                MALZEME/EMTİA/DEMİRBAŞ
-            </p>
-        </a>
-        <ul class="nav nav-treeview" id="altListe">
-            <li class="nav-item">
-                <button class="btn btn-link buttons-copy buttons-html5 nav-link" tabindex="0" aria-controls="example1" type="button" data-toggle="modal" data-target=".bd-talep-modal-lg">
-                    <i class="far fa-file-archive nav-icon text-black"></i>
-                    <p class="intime-text-turquoise" style="color:black;">MALZEME/EMTİA DEMİRBAŞ TALEBİ</p>
-                </button>
-            </li>
-        </ul>
-    </li>
-    <li class="nav-item">
-        <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
-            <p class="intime-text-turquoise" style="color:cornflowerblue;">
-                MASRAFLAR
-            </p>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
-            <p class="intime-text-turquoise" style="color:cornflowerblue;">
-                PERSONEL DEPARTMANI ÖDEMELERİ
-            </p>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
-            <p class="intime-text-turquoise" style="color:cornflowerblue;">
-                PERSONEL İZİN
-            </p>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
-            <p class="intime-text-turquoise" style="color:cornflowerblue;">
-                PERSONEL ÖDEMELERİ
-            </p>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-palette intime-text-turquoise" style="color:cornflowerblue;"></i>
-            <p class="intime-text-turquoise" style="color:cornflowerblue;">
-                SEYAHAT TALEP FORMU
-            </p>
-        </a>
-    </li>
-</ul>
+<partial name="_AddNewRequestPage" />
 
 <div class="modal fade bd-talep-modal-lg" id="Request" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
@@ -781,13 +674,13 @@
                         <select style="width: 400px; display: inline-block; margin-left:95px;" class="form-control" id="ProductTalep">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:45px;">Miktar </label>
-                        <input type="number" class="form-control-sm" id="Amount" name="Amount" style="width:140px; margin-left:55px;" onblur="Multiplication();" /> ,
+                        <input type="number" class="form-control-sm" id="Amount" name="Amount" style="width:140px; margin-left:55px;" onkeyup="Calculate()" /> ,
                         <select style="width: 140px; display: inline-block; margin-left:5px;" class="form-control" id="AmountTalep">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Birim Fiyat </label>
-                        <input type="number" class="form-control-sm" id="UnitPrice" name="UnitPrice" style="width:150px; margin-left:50px;" onblur="Multiplication();" />
+                        <input type="number" class="form-control-sm" id="UnitPrice" name="UnitPrice" style="width:150px; margin-left:50px;" onkeyup="Calculate()" />
                         <select style="width: 150px; display: inline-block; margin-left:5px;" class="form-control" id="CurrencyTalep">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:135px;">Toplam Fiyat </label>
@@ -795,7 +688,7 @@
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Açıklama </label>
-                        <input type="text" class="form-control-sm" id="Description" name="Description" style="width:800px; margin-left:63px;" />
+                        <input type="text" class="form-control-sm" id="Description" name="Description" style="width:860px; margin-left:63px;" />
                     </div>
                 </div>
                 <hr style="border-width:3.5px; color:darkgray;" />
@@ -820,14 +713,6 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>@*<button id="#" class="btn btn-danger">Sil</button>*@</td>
-                                    <td id="Product"></td>
-                                    <td id="Amount"></td>
-                                    <td id="Unit"></td>
-                                    <td id="UnitPrice"></td>
-                                    <td id="Currency"></td>
-                                    <td id="TotalPrice"></td>
-                                    <td id="Description"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -835,7 +720,7 @@
                 </div>
                 <hr style="border-width:3.5px; color:darkgray;" />
             }
-            <button id="AddFile" onclick="TalepAddFileFunc()" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:20px; width:150px; height:36px;">Listeye Ekle</button>
+            <button id="AddFile" onclick="TalepAddFileFunc()" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:15px; width:150px; height:36px;">Listeye Ekle</button>
             @using (Html.BeginForm("AddRequest", "Request", FormMethod.Post))
             {
                 <div class="modal-body">
@@ -857,9 +742,6 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td id="Remove">@*<button id="#" class="btn btn-danger">Sil</button>*@</td>
-                                    <td></td>
-                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -883,7 +765,6 @@
 
 
 <script src="~/TalepWeb/plugins/jquery/jquery.min.js"></script>
-
 
 <script src="~/js/DropDownFill/Düzelt/DuzeltDropDown.js"></script>
 <script src="~/js/DropDownFill/Islem/IslemDropDown.js"></script>
@@ -910,16 +791,12 @@
 <script src="~/js/DropDownFill/Talep/TalepTalepDropdown.js"></script>
 <script src="~/js/DropDownFill/Islem/IslemKontrolYonlendirTalepDropDown.js"></script>
 
-
-
 <script src="~/js/AddListFunctions/Talep/TalepAddFileFunc.js"></script>
 <script src="~/js/AddListFunctions/Talep/TalepAddProductFunc.js"></script>
 
-
 <script src="~/js/AddListFunctions/Duzelt/DuzeltAddFileFunc.js"></script>
 
-
-
+<script src="~/js/DeleteListExtensions/DeleteFromTable.js"></script>
 
 <script>
     function Goster(id) {
@@ -938,17 +815,13 @@
         $("#altListe").hide();
     }
 
-    function Multiplication() {
+    function Calculate() {
         var a = document.getElementById('Amount').value;
         var b = document.getElementById('UnitPrice').value;
-        if (a == "")
-            a = 0;
-        if (b == "")
-            b = 0;
-
         var result = parseInt(a) * parseInt(b);
         if (!isNaN(result)) {
-            document.getElementById('TotalPrice').value = result + "TL";
+            document.getElementById('TotalPrice').value = result;
         }
     }
+
 </script>

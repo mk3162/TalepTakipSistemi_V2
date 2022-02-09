@@ -28,67 +28,12 @@
                                         @foreach (var item in Model)
                                         {
                                             <tr>
-                                                @*<td class="dtr-control sorting_1 text-center" tabindex="0">
-                                        @if (!String.IsNullOrWhiteSpace(item.Branch.Company.CompanyImageFile))
-                                        {<img class="img-fluid" src="@item.Branch.Company.CompanyImageFile" style="width:100px;" />}
-                                    </td>*@
-                                                @*<td class="dtr-control sorting_1" tabindex="0">@item.UrunId</td>*@
                                                 <td class="dtr-control sorting_1" tabindex="0">@item.TedarikciKodu</td>
                                                 <td class="dtr-control sorting_1" tabindex="0">@item.TedarikciUnvani</td>
-                                                @*<td>
-                                        <a href="/Product/GetProduct/@item.UrunId" class="btn btn-info fas fa-edit"></a>
-                                        @Html.ActionLink(" ", "SoftDelete", "Product", new { siraNo = item.UrunId }, new { @class = "btn btn-danger fas fa-trash-alt", onclick = "return confirm('Silmek İstiyor musunuz ? ');" })
-
-                                    </td>*@
                                             </tr>
                                         }
                                     </tbody>
                                 </table>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="Add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Ürün Bilgileri</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    @using (Html.BeginForm("AddSupplier", "Supplier", FormMethod.Post))
-                                    {
-                                        <div class="modal-body">
-                                            <div class="form-group">
-                                                <label for="message-text" class="col-form-label">Ürün Kodu :</label>
-                                                <input type="text" name="TedarikciKodu" placeholder="Adı" class="form-control" required />
-                                            </div>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="form-group">
-                                                <label for="message-text" class="col-form-label">Ürün Tanımı :</label>
-                                                <input type="text" name="TedarikciUnvani" placeholder="Adı" class="form-control" required />
-                                            </div>
-                                        </div>
-                                        @*<div class="form-group col-12">
-                                <label>Şube Bilgisi<span style="color:red">*</span></label>
-                                <select class="form-control" name="BranchId" id="Branches" for="Regions" required disabled>
-                                    <option>Bir Şube Seçiniz</option>
-                                </select>
-                            </div>
-                            <div class="modal-body">
-
-                                <div class="form-group">
-                                    <label for="message-text" class="col-form-label">Departman Adı :<span style="color:red">*</span></label>
-                                    <input type="text" name="DepartmentName" placeholder="Departman Adı" class="form-control" required />
-                                </div>
-
-                            </div>*@
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                                            <button type="submit" class="btn btn-primary">Ekle</button>
-                                        </div>
-                                    }
-                                </div>
                             </div>
                         </div>
                     </div>

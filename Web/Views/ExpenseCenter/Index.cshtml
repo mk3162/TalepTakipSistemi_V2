@@ -17,28 +17,16 @@
                                 <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
                                     <thead>
                                         <tr role="row">
-                                            @*<th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Ürün No</th>*@
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Sıra No</th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Masraf Merkezleri</th>
-                                            @*<th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">İşlemler</th>*@
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach (var item in Model)
                                         {
                                             <tr>
-                                                @*<td class="dtr-control sorting_1 text-center" tabindex="0">
-                                                        @if (!String.IsNullOrWhiteSpace(item.Branch.Company.CompanyImageFile))
-                                                        {<img class="img-fluid" src="@item.Branch.Company.CompanyImageFile" style="width:100px;" />}
-                                                    </td>*@
-                                                @*<td class="dtr-control sorting_1" tabindex="0">@item.UrunId</td>*@
                                                 <td class="dtr-control sorting_1" tabindex="0">@item.SiraNo</td>
                                                 <td class="dtr-control sorting_1" tabindex="0">@item.Tanimi</td>
-                                                @*<td>
-                                                        <a href="/Product/GetProduct/@item.UrunId" class="btn btn-info fas fa-edit"></a>
-                                                        @Html.ActionLink(" ", "SoftDelete", "Product", new { siraNo = item.UrunId }, new { @class = "btn btn-danger fas fa-trash-alt", onclick = "return confirm('Silmek İstiyor musunuz ? ');" })
-
-                                                    </td>*@
                                             </tr>
                                         }
                                     </tbody>

@@ -27,42 +27,12 @@
                                             <tr>
                                                 <td class="dtr-control sorting_1" tabindex="0">@item.SiraNo</td>
                                                 <td class="dtr-control sorting_1" tabindex="0">@item.Tanimi</td>
-                                                @*<td>
-                                                    <a href="/Company/GetCompany/@item.SiraNo" class="btn btn-info fas fa-edit"></a>
-                                                    @Html.ActionLink(" ", "SoftDelete", "Company", new { SiraNo = item.SiraNo }, new { @class = "btn btn-danger fas fa-trash-alt", onclick = "return confirm('Silmek İstiyor musunuz ? ');" })
-
-                                                </td>*@
                                             </tr>
                                         }
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        @*<div class="modal fade" id="Add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Şirket Bilgileri</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    @using (Html.BeginForm("AddCompany", "Company", FormMethod.Post))
-                                    {
-                                        <div class="modal-body">
-                                            <div class="form-group">
-                                                <label for="message-text" class="col-form-label">Şirket Bilgisi :</label>
-                                                <input type="text" name="Tanimi" placeholder="Adı" class="form-control" required />
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                                            <button type="submit" class="btn btn-primary">Ekle</button>
-                                        </div>
-                                    }
-                                </div>
-                            </div>
-                        </div>*@
                     </div>
                 </div>
             </div>
