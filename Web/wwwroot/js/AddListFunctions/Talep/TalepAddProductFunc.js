@@ -47,7 +47,7 @@
 }
 
 
-var btnUrun = document.createElement('button');
+var btnUrun = document.createElement("button");
 btnUrun.type = "submit";
 btnUrun.className = "btn btn-danger";
 btnUrun.value = "Sil";

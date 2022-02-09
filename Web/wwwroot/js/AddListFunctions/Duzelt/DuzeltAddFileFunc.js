@@ -20,7 +20,7 @@
         file.focus();
     }
 }
-var btnFile = document.createElement('input');
+var btnFile = document.createElement("button");
 btnFile.type = "button";
 btnFile.className = "btn btn-danger";
 btnFile.value = "Sil";

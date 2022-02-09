@@ -18,11 +18,15 @@
         description.value = "";
 
         file.focus();
+
     }
 }
+
 var btnFile = document.createElement('button');
 btnFile.type = "submit";
 btnFile.className = "btn btn-danger";
-btnFile.value = "Sil";
+btnFile.innerHTML = "Sil";
 btnFile.onclick = (function (Sil) { return function (Sil) { chooseUser(entry); } })(entry);
-td.appendChild(btnFile);
+document.getElementById("Remove").appendChild(btnFile);
+document.getElementById("Remove").innerText = btnFile.outerHTML;
+
