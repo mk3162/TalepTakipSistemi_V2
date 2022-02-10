@@ -21,27 +21,21 @@
 
     <link href="~/TalepWeb/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet">
 
-
-
     <link href="~/TalepWeb/plugins/jqvmap/jqvmap.min.css" rel="stylesheet">
-
 
     <link href="~/TalepWeb/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" rel="stylesheet">
 
-
     <link href="~/TalepWeb/plugins/summernote/summernote-bs4.min.css" rel="stylesheet">
-
 
     <link href="~/TalepWeb/plugins/select2/css/select2.css" rel="stylesheet">
 
-    @* <link href="~/Content/DataTables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />*@
-    @*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">*@
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 
     <link href="~/Content/buttons.css" rel="stylesheet">
 
+  
 
     @*@Styles.Render("../TalepWeb/custom.css")*@
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" asp-append-version="true" />
@@ -58,65 +52,21 @@
                         <i class="fas fa-bars"></i>
                     </a>
                 </li>
-                @*<li class="nav-item">
-                        <a class="btn-sm intime-bg-navy text-white" href="/User/UserDailyVisitPanel">
-                            <i class="fas fa-calendar-alt mr-1"></i> Günlük Ziyaret Takvimi
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn-sm intime-bg-turquoise text-white" href="/Visitor/DetailList">
-
-                            <i class="fas fa-door-open mr-1"></i>Ziyaret Giriş
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn-sm intime-bg-navy text-white" href="/Visitor/DetailList2">
-                            <i class="fas fa-door-closed mr-1"></i> Ziyaret Çıkış
-                        </a>
-                    </li>*@
-
             </ul>
             <ul class="navbar-nav ml-auto">
-
                 <li class="user-panel image">
                     <img src="~/TalepWeb/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
                 </li>
                 <li class="nav-item dropdown mr-1">
                     @if (Web.Session.SessionUserModel.CurrentUser != null)
                     {
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Web.Session.SessionUserModel.CurrentUser</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Web.Session.SessionUserModel.CurrentUser</a>
                     }
-
-
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/Profile/Index"><i class="fas fa-user mr-1"></i>Profil Bilgileri</a>
                         <a class="dropdown-item" href="/Login/Logout"><i class="fas fa-sign-out-alt mr-1"></i>Çıkış Yap</a>
                     </div>
                 </li>
-                @*<li class="nav-item">
-                        <a class="btn btn-sm intime-bg-navy text-white" href="/Login/LogOut">
-                            <i class="fas fa-sign-out-alt"></i>
-                            <span class="ml-1">Oturumu Kapat</span>
-                        </a>
-                    </li>*@
-
-                @*<li class="nav-item">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-info">Kullanıcı Paneli</button>
-                            <button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <div class="dropdown-menu" role="menu" style="">
-                                  <a class="dropdown-item" href="#">Çıkış Yap</a>
-                                <a class="dropdown-item" href="#">Kullanıcı Paneli</a>
-                            </div>
-                        </div>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown button
-                            </button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div>
-                        </div>
-                    </li>*@
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -130,19 +80,7 @@
 
             <!-- Sidebar -->
             <div class="sidebar" style="position:inherit; background-color:#1e271d;">
-                <!-- Sidebar user panel (optional) -->
-                @*<div class="user-panel">
-                        <div class="image">
-                            <img src="~/VisitorWeb/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-                        </div>
-                        <div class="info">
-                            @if (IntimeVisitor.WebUI.Session.SessionUserModel.CurrentUser != null)
-                            {
-                                <a href="#">@IntimeVisitor.WebUI.Session.SessionUserModel.CurrentUser.Name @IntimeVisitor.WebUI.Session.SessionUserModel.CurrentUser.Surname</a>
-                            }
-                        </div>
 
-                    </div>*@
                 <!-- SidebarSearch Form -->
                 <div class="form-inline mt-3">
                     <div class="input-group" data-widget="sidebar-search">
@@ -256,7 +194,6 @@
                                 </li>
                             </ul>
                         </li>
-
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-edit intime-text-turquoise" title="Tanımlama Yapılması Gereken Menulere Ait Liste" style="color:lightblue;"></i>
@@ -346,7 +283,6 @@
                                 <p class="intime-bg-turquoise" style="color:lightblue;">
                                     Kullanıcı
                                     <i class="fas fa-angle-left right"></i>
-                                    <!-- <span class="badge badge-info right">6</span> -->
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -366,7 +302,6 @@
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
-
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
@@ -393,45 +328,7 @@
                                 </p>
                             </a>
                         </li>
-                        <!-- <li class="nav-item">
-                          <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-table"></i>
-                            <p>
-                              Tables
-                              <i class="fas fa-angle-left right"></i>
-                            </p>
-                          </a>
-                          <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                              <a href="pages/tables/simple.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Simple Tables</p>
-                              </a>
-                            </li>
-                            <li class="nav-item">
-                              <a href="pages/tables/data.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>DataTables</p>
-                              </a>
-                            </li>
-                            <li class="nav-item">
-                              <a href="pages/tables/jsgrid.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>jsGrid</p>
-                              </a>
-                            </li>
-                          </ul>
-                        </li> -->
                         <li class="nav-header" style="font-weight: bold; background-color: #111513; color: bisque; ">Diğer</li>
-                        <!--<li class="nav-item">
-                        <a href="/Calendar/Calendar" class="nav-link">
-                            <i class="nav-icon far fa-calendar-alt" title="Takvim Bazında Ziyaretleri İzleyebilirsiniz"></i>
-                            <p>
-                                Takvim-Calender-->
-                        @*<span class="badge badge-info right">2</span>*@
-                        <!--</p>
-                            </a>
-                        </li>-->
                         <li class="nav-item">
                             <a href="/Login/Logout" class="nav-link">
                                 <i class="nav-icon fas fa-sign-out-alt" style="color:red;" title="Oturumunuzu buradan kapatabilirsiniz.."></i>
@@ -440,26 +337,6 @@
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
-                            @*<ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="/ComingSoon/Index" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Ranvevu Arama</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="/ComingSoon/Index" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Detaylı Arama</p>
-                                        </a>
-                                    </li>
-                                </ul>*@
-                            @*<li class="nav-item">
-                                    <a href="/Login/Logout" class="nav-link">
-                                        <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
-                                        <p>Çıkış Yap</p>
-                                    </a>
-                                </li>*@
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -475,25 +352,9 @@
             <!-- /.content -->
             @RenderBody()
         </div>
-
-
-
-
-        <!-- /.content-wrapper -->
-        <!-- Control Sidebar -->
-        @*<aside class="control-sidebar control-sidebar-dark" style="display: none;">
-             Control sidebar content goes here
-            <div class="p-3">
-                    <h5>Title</h5>
-                    <p>Sidebar content</p>
-                </div>
-            </aside>*@
-
         <footer class="main-footer">
-            TTS -- Talep Takip Sistemi
+            TTS -- Talep Takip Sistemi -- 2022
         </footer>
-
-        @*<div id="sidebar-overlay"></div>*@
     </div>
 
 
@@ -504,13 +365,7 @@
     <script src="~/TalepWeb/plugins/daterangepicker/daterangepicker.js"></script>
 
 
-
-    @*<script src="~/VisitorWeb/dist/js/pages/dashboard3.js"></script>
-        <script src="~/VisitorWeb/dist/js/pages/dashboard.js"></script>*@
-
-
     <script src="~/TalepWeb/plugins/sparklines/sparkline.js"></script>
-    @*<script src="~/visitorweb/plugins/chart.js/chart.min.js"></script>*@
     <script src="~/TalepWeb/plugins/jquery-ui/jquery-ui.min.js"></script>
 
     <script src="~/TalepWeb/plugins/jqvmap/jquery.vmap.min.js"></script>
@@ -540,8 +395,6 @@
 
     <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/jquery.table2excel.min.js"></script>
     <!-- AdminLTE App -->
-    @*<script src="~/VisitorWeb/dist/js/adminlte.min.js"></script>*@
-
     @*<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>*@
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
@@ -549,6 +402,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
     <script>
         $(document).ready(function () {
@@ -634,47 +495,45 @@
         }
     </script>
     <!-- Code injected by live-server -->
-
-    <script type="text/javascript">
-        // <![CDATA[  <-- For SVG support
-        if ('WebSocket' in window) {
-            (function () {
-                function refreshCSS() {
-                    var sheets = [].slice.call(document.getElementsByTagName("link"));
-                    var head = document.getElementsByTagName("head")[0];
-                    for (var i = 0; i < sheets.length; ++i) {
-                        var elem = sheets[i];
-                        var parent = elem.parentElement || head;
-                        parent.removeChild(elem);
-                        var rel = elem.rel;
-                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+    @*<script type="text/javascript">
+            // <![CDATA[  <-- For SVG support
+            if ('WebSocket' in window) {
+                (function () {
+                    function refreshCSS() {
+                        var sheets = [].slice.call(document.getElementsByTagName("link"));
+                        var head = document.getElementsByTagName("head")[0];
+                        for (var i = 0; i < sheets.length; ++i) {
+                            var elem = sheets[i];
+                            var parent = elem.parentElement || head;
+                            parent.removeChild(elem);
+                            var rel = elem.rel;
+                            if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                                elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                            }
+                            parent.appendChild(elem);
                         }
-                        parent.appendChild(elem);
                     }
-                }
-                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-                var address = protocol + window.location.host + window.location.pathname + '/ws';
-                var socket = new WebSocket(address);
-                socket.onmessage = function (msg) {
-                    if (msg.data == 'reload') window.location.reload();
-                    else if (msg.data == 'refreshcss') refreshCSS();
-                };
-                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-                    console.log('Live reload enabled.');
-                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-                }
-            })();
-        }
-        else {
-            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-        }
-        // ]]>
-    </script>
+                    var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                    var address = protocol + window.location.host + window.location.pathname + '/ws';
+                    var socket = new WebSocket(address);
+                    socket.onmessage = function (msg) {
+                        if (msg.data == 'reload') window.location.reload();
+                        else if (msg.data == 'refreshcss') refreshCSS();
+                    };
+                    if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                        console.log('Live reload enabled.');
+                        sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                    }
+                })();
+            }
+            else {
+                console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+            }
+            // ]]>
+        </script>*@
 
     @RenderSection("Scripts", false)
-
 
 
     <script>
@@ -683,19 +542,8 @@
 
     <script>
         $(document).ready(function () {
-            $('.select2').select2();
+            $('.select').select2();
         });
-    </script>
-
-    @*AutoComplate*@
-
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-h+k7u5cnxl1h5ywqfktsj8pcmon9aaq30gdh27xc0jk=" crossorigin="anonymous">
-    </script>
-
-    <script src="~/TalepWeb/AutoComplete/suggestions.js">
-    </script>
-
-    <script src="~/TalepWeb/AutoComplete/autocomplate.js">
     </script>
 </body>
 </html>

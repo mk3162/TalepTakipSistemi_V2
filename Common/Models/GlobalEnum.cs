@@ -62,6 +62,8 @@ namespace Common.Models
             TaleplerEkDosyaSil,
             [Display(Name = "dbo")]
             TaleplerEkDosyaListesi,
+            [Display(Name = "dbo")]
+            TaleplerIslemListesiGrup,
             #endregion
 
         }

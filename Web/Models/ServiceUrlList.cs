@@ -19,6 +19,7 @@ namespace Web.Models
         public string GetParaBirimleriListesi { get; set; }
         public string GetTalepSahibiListesi { get; set; }
 
+
         public string GetDepartmanlarListesi { get; set; }
         public string GetServislerListesi { get; set; }
         public string GetLokasyonlarListesi { get; set; }
@@ -27,6 +28,9 @@ namespace Web.Models
         public string GetPersonellerListesi { get; set; }
         public string GetTaleplerIslemListesi { get; set; }
         public string GetTaleplerSurecListesi { get; set; }
+        public string GetTaleplerEkDosyaListesi { get; set; }
+
+        public string PostTaleplerKaydet { get; set; }
 
     }
 }

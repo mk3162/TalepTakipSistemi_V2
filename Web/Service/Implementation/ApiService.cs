@@ -104,5 +104,16 @@ namespace Web.Service.Implementation
         {
             return _serviceManager.Post<T, Y>(url, model);
         }
+        public RequestResponse<T> GetTaleplerEkDosyaListesi<T, Y>(string url, Y model)
+        {
+            return _serviceManager.Post<T, Y>(url, model);
+        }
+
+
+        public RequestResponse<T> PostTaleplerKaydet<T, Y>(string url, Y model)
+        {
+            return _serviceManager.Post<T, Y>(url, model);
+        }
+
     }
 }

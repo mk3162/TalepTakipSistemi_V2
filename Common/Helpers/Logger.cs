@@ -39,12 +39,12 @@ namespace Common.Helpers
             {
                 string path = $"Log/InfoLog_" + DateTime.Now.ToString("dd-MM-yyyy") + ".txt";
 
-                if (!File.Exists(path))
-                {
-                    var file = File.CreateText(path);
-                    file.Close();
-                    file.Dispose();
-                }
+                //if (!File.Exists(path))
+                //{
+                //    var file = File.CreateText(path);
+                //    file.Close();
+                //    file.Dispose();
+                //}
 
                 //using (StreamWriter streamWriter = new StreamWriter(path, true))
                 //{

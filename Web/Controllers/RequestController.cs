@@ -113,25 +113,31 @@ namespace Web.Controllers
             return Json(_apiService.GetTalepSahibiListesi<ResponseTalepSahibiListesiDto>(_serviceUrlList.GetTalepSahibiListesi).Data);
         }
 
-        public IActionResult GetRequestProcessList()
-        {
-            //TODO
-            var req = new RequestTaleplerIslemListesiDto();
-            req.KullaniciKodu = 11111111111.ToString();
-            req.Yetki = 0;
+        //public IActionResult GetRequestProcessList()
+        //{
+        //    //TODO
+        //    var req = new RequestTaleplerIslemListesiDto();
+        //    req.KullaniciKodu = 11111111111.ToString();
+        //    req.Yetki = 0;
 
-            var resp = _apiService.GetTaleplerIslemListesi<ResponseTaleplerIslemListesiDto, RequestTaleplerIslemListesiDto>(_serviceUrlList.GetTaleplerIslemListesi, req);
-            return Json(resp);
-        }
+        //    var resp = _apiService.GetTaleplerIslemListesi<ResponseTaleplerIslemListesiDto, RequestTaleplerIslemListesiDto>(_serviceUrlList.GetTaleplerIslemListesi, req);
+        //    return Json(resp);
+        //}
 
         public IActionResult GetRequestPeriodList()
         {
-            //TODO
             var req = new RequestTaleplerSurecListesiDto();
             req.TalepSiraNo = 8;
 
             var resp = _apiService.GetTaleplerSurecListesi<ResponseTaleplerSurecListesiDto, RequestTaleplerSurecListesiDto>(_serviceUrlList.GetTaleplerSurecListesi, req);
             return Json(resp);
+        }
+
+        [HttpPost]
+        public IActionResult AddRequest()
+        {
+            var req = new RequestTaleplerKaydetDto();
+            return Json(_apiService.PostTaleplerKaydet<ResponseTaleplerKaydetDto,RequestTaleplerKaydetDto>(_serviceUrlList.PostTaleplerKaydet, req).Data);
         }
     }
 }

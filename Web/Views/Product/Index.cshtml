@@ -33,38 +33,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
-                        <div class="modal fade" id="Add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Ürün Bilgileri</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    @using (Html.BeginForm("AddProduct", "Product", FormMethod.Post))
-                                    {
-                                        <div class="modal-body">
-                                            <div class="form-group">
-                                                <label for="message-text" class="col-form-label">Ürün Kodu :</label>
-                                                <input type="text" name="UrunKodu" placeholder="Adı" class="form-control" required />
-                                            </div>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="form-group">
-                                                <label for="message-text" class="col-form-label">Ürün Tanımı :</label>
-                                                <input type="text" name="UrunTanimi" placeholder="Adı" class="form-control" required />
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                                            <button type="submit" class="btn btn-primary">Ekle</button>
-                                        </div>
-                                    }
-                                </div>
-                            </div>
-                        </div>
+                        </div>                   
                     </div>
                 </div>
             </div>

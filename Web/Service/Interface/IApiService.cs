@@ -29,6 +29,9 @@ namespace Web.Service.Interface
         RequestResponse<T> GetPersonellerListesi<T, Y>(string url, Y model);
         RequestResponse<T> GetTaleplerIslemListesi<T, Y>(string url, Y model);
         RequestResponse<T> GetTaleplerSurecListesi<T, Y>(string url, Y model);
+        RequestResponse<T> GetTaleplerEkDosyaListesi<T, Y>(string url, Y model);
+
+        RequestResponse<T> PostTaleplerKaydet<T, Y>(string url, Y model);
 
     }
 }
