@@ -30,7 +30,7 @@
                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Birim Fiyat</th>
             </tr>
         </thead>
-        <tbody id="bidders">
+        <tbody>
             <tr>
                 <td style="width:250px;">
                     <a href="#" id="Process" class="btn btn-primary btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-islem-modal-lg" style="color:white;">İşlem</a>
@@ -593,7 +593,7 @@
                 </button>
             </div>
 
-            @using (Html.BeginForm("AddRequest", "Request", FormMethod.Post))
+            @(Html.BeginForm("AddRequest", "Request", FormMethod.Post))
             {
                 <div class="modal-body">
                     <div class="form-group">
@@ -662,7 +662,6 @@
                 </div>
                 <hr style="border-width:3.5px; color:darkgray;" />
                 <button id="AddProduct" onclick="TalepAddProductFunc()" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:20px; width:150px; height:36px;">Listeye Ekle</button>
-
                 <div class="modal-body">
                     <div class="form-group">
                         <table id="ProductList" class="table table-hover table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
