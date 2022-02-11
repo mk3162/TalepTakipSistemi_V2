@@ -19,9 +19,9 @@ namespace Api.Controllers
             _dbService = dBService;
         }
 
+
         [HttpPost]
         [Route("PostTaleplerKaydet")]
         public BaseResponseApi<ResponseTaleplerKaydetDto> PostTaleplerKaydet([FromBody]RequestTaleplerKaydetDto model) => _dbService.ExecuteSqlQuery<ResponseTaleplerKaydetDto>(GlobalEnum.StoredProcedure.TaleplerKaydet, model);
-
     }
 }

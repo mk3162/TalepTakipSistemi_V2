@@ -124,20 +124,19 @@ namespace Web.Controllers
         //    return Json(resp);
         //}
 
-        public IActionResult GetRequestPeriodList()
-        {
-            var req = new RequestTaleplerSurecListesiDto();
-            req.TalepSiraNo = 8;
+        //public IActionResult GetRequestPeriodList()
+        //{
+        //    var req = new RequestTaleplerSurecListesiDto();
+        //    req.TalepSiraNo = 8;
 
-            var resp = _apiService.GetTaleplerSurecListesi<ResponseTaleplerSurecListesiDto, RequestTaleplerSurecListesiDto>(_serviceUrlList.GetTaleplerSurecListesi, req);
-            return Json(resp);
-        }
+        //    var resp = _apiService.GetTaleplerSurecListesi<ResponseTaleplerSurecListesiDto, RequestTaleplerSurecListesiDto>(_serviceUrlList.GetTaleplerSurecListesi, req).Data;
+        //    return Json(resp);
+        //}
 
         [HttpPost]
-        public IActionResult AddRequest()
+        public IActionResult AddRequest(RequestTaleplerKaydetDto model)
         {
-            var req = new RequestTaleplerKaydetDto();
-            return Json(_apiService.PostTaleplerKaydet<ResponseTaleplerKaydetDto,RequestTaleplerKaydetDto>(_serviceUrlList.PostTaleplerKaydet, req).Data);
+             return RedirectToAction("Index", "Request", Json(_apiService.PostTaleplerKaydet<ResponseTaleplerKaydetDto, RequestTaleplerKaydetDto>(_serviceUrlList.PostTaleplerKaydet, model).Data));
         }
     }
 }

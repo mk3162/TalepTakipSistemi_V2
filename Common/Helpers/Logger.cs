@@ -27,13 +27,13 @@ namespace Common.Helpers
                     file.Close();
                     file.Dispose();
                 }
-                using (StreamWriter streamWriter = new StreamWriter(path, true))
-                {
+                //using (StreamWriter streamWriter = new StreamWriter(path, true))
+                //{
 
-                    await streamWriter.WriteLineAsync($"Date Time : {DateTime.Now}  |  {formatter(state, exception)}");
-                    streamWriter.Close();
-                    await streamWriter.DisposeAsync();
-                }
+                //    await streamWriter.WriteLineAsync($"Date Time : {DateTime.Now}  |  {formatter(state, exception)}");
+                //    streamWriter.Close();
+                //    await streamWriter.DisposeAsync();
+                //}
             }
             if (LogLevel.Information == logLevel)
             {

@@ -26,7 +26,6 @@ namespace Common.Models.Request
         public string Aciklama { get; set; }
         public string TeslimYeri { get; set; }
         public string GenelAciklama { get; set; }
-        public string KaydiYapan { get; set; }
         public int Sonuc { get; set; }
     }
 }
