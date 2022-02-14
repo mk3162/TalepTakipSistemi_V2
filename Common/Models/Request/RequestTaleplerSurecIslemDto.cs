@@ -16,7 +16,5 @@ namespace Common.Models.Request
         public string SahibiKodu { get; set; }
         public string IslemYapacakKodu { get; set; }
         public int Sonuc { get; set; }
-
-
     }
 }

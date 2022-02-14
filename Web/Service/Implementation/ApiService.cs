@@ -24,7 +24,6 @@ namespace Web.Service.Implementation
 
             return _serviceManager.Get<T>(url);
         }
-
         public RequestResponse<T> GetTiplerListesi<T>(string url)
         {
             return _serviceManager.Get<T>(url);
@@ -100,7 +99,16 @@ namespace Web.Service.Implementation
             return _serviceManager.Post<T, Y>(url, model);
         }
 
+        public RequestResponse<T> GetTaleplerIslemListesiGrup<T, Y>(string url, Y model)
+        {
+            return _serviceManager.Post<T, Y>(url, model);
+        }
+
         public RequestResponse<T> GetTaleplerSurecListesi<T, Y>(string url, Y model)
+        {
+            return _serviceManager.Post<T, Y>(url, model);
+        }
+        public RequestResponse<T> GetTaleplerSurecIslem<T, Y>(string url, Y model)
         {
             return _serviceManager.Post<T, Y>(url, model);
         }
@@ -110,10 +118,35 @@ namespace Web.Service.Implementation
         }
 
 
+
         public RequestResponse<T> PostTaleplerKaydet<T, Y>(string url, Y model)
         {
             return _serviceManager.Post<T, Y>(url, model);
         }
 
+        public RequestResponse<T> PostTaleplerEkDosyaKaydet<T, Y>(string url, Y model)
+        {
+            return _serviceManager.Post<T, Y>(url, model);
+        }
+
+        public RequestResponse<T> PostTaleplerKarsilamaKaydet<T, Y>(string url, Y model)
+        {
+            return _serviceManager.Post<T, Y>(url, model);
+        }
+
+
+
+
+        public RequestResponse<T> PutTaleplerGuncelle<T, Y>(string url, Y model)
+        {
+            return _serviceManager.Put<T, Y>(url, model);
+        }
+
+
+
+        public RequestResponse<T> DeleteTaleplerEkDosyaSil<T, Y>(string url, Y model)
+        {
+            return _serviceManager.Delete<T, Y>(url, model);
+        }
     }
 }

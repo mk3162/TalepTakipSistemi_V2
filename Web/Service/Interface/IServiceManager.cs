@@ -9,8 +9,8 @@ namespace Web.Service.Interface
    public interface IServiceManager
     {
         RequestResponse<T> Get<T>(string url);
- 
-        RequestResponse<T> Delete<T, Y>(string url, Y model);
         RequestResponse<T> Post<T, Y>(string url, Y model);
+        RequestResponse<T> Put<T, Y>(string url, Y model);
+        RequestResponse<T> Delete<T, Y>(string url, Y model);
     }
 }

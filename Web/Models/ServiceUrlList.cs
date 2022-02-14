@@ -27,10 +27,19 @@ namespace Web.Models
         public string GetProjelerListesi { get; set; }
         public string GetPersonellerListesi { get; set; }
         public string GetTaleplerIslemListesi { get; set; }
+        public string GetTaleplerIslemListesiGrup { get; set; }
         public string GetTaleplerSurecListesi { get; set; }
+        public string GetTaleplerSurecIslem{ get; set; }
         public string GetTaleplerEkDosyaListesi { get; set; }
 
         public string PostTaleplerKaydet { get; set; }
+        public string PostTaleplerEkDosyaKaydet { get; set; }
+        public string PostTaleplerKarsilamaKaydet { get; set; }
+
+        public string PutTaleplerGuncelle { get; set; }
+
+
+        public string DeleteTaleplerEkDosyaSil { get; set; }
 
     }
 }

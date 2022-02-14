@@ -28,32 +28,10 @@ namespace Web.Service.Implementation
 
                 return jsonResult == null ? new RequestResponse<T>() : jsonResult;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
  
                 return new RequestResponse<T>();
-            }
-        }
-
-        public RequestResponse<T> Delete<T, Y>(string url, Y model)
-        {
-            // Delete metodunda PUT ??
-            try
-            {
-                _req.Url = url;
-
-
-                _req.Data = JsonConvert.SerializeObject(model);
-
-                //var response = RequestManager.PutMethod(_req).ToString();
-                var jsonResult = JsonConvert.DeserializeObject<RequestResponse<T>>(RequestManager.PutMethod(_req).ToString());
-                return jsonResult == null ? new RequestResponse<T>() : jsonResult;
-            }
-            catch (Exception ex)
-            {
-
-                return new RequestResponse<T>();
-
             }
         }
 
@@ -71,9 +49,53 @@ namespace Web.Service.Implementation
 
                 return jsonResult == null ? new RequestResponse<T>() : jsonResult;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
- 
+
+                return new RequestResponse<T>();
+
+            }
+        }
+
+        public RequestResponse<T> Put<T, Y>(string url, Y model)
+        {
+            // Delete metodunda PUT ??
+            try
+            {
+                _req.Url = url;
+
+
+                _req.Data = JsonConvert.SerializeObject(model);
+
+                //var response = RequestManager.PutMethod(_req).ToString();
+                var jsonResult = JsonConvert.DeserializeObject<RequestResponse<T>>(RequestManager.PutMethod(_req).ToString());
+                return jsonResult == null ? new RequestResponse<T>() : jsonResult;
+            }
+            catch (Exception)
+            {
+
+                return new RequestResponse<T>();
+
+            }
+        }
+
+        public RequestResponse<T> Delete<T, Y>(string url, Y model)
+        {
+
+            try
+            {
+                _req.Url = url;
+
+
+                _req.Data = JsonConvert.SerializeObject(model);
+
+                var jsonResult = JsonConvert.DeserializeObject<RequestResponse<T>>(RequestManager.DeleteMethod(_req).ToString());
+
+                return jsonResult == null ? new RequestResponse<T>() : jsonResult;
+            }
+            catch (Exception)
+            {
+
                 return new RequestResponse<T>();
 
             }

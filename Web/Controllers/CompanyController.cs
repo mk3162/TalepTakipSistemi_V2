@@ -1,6 +1,5 @@
 ﻿using Common.Models;
 using Common.Models.Response;
-using Intercom.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;

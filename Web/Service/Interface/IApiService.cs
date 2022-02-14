@@ -28,10 +28,28 @@ namespace Web.Service.Interface
         RequestResponse<T> GetProjelerListesi<T, Y>(string url, Y model);
         RequestResponse<T> GetPersonellerListesi<T, Y>(string url, Y model);
         RequestResponse<T> GetTaleplerIslemListesi<T, Y>(string url, Y model);
+        RequestResponse<T> GetTaleplerIslemListesiGrup<T, Y>(string url, Y model);
         RequestResponse<T> GetTaleplerSurecListesi<T, Y>(string url, Y model);
         RequestResponse<T> GetTaleplerEkDosyaListesi<T, Y>(string url, Y model);
+        RequestResponse<T> GetTaleplerSurecIslem<T, Y>(string url, Y model);
+
+
 
         RequestResponse<T> PostTaleplerKaydet<T, Y>(string url, Y model);
+        RequestResponse<T> PostTaleplerEkDosyaKaydet<T, Y>(string url, Y model);
+        RequestResponse<T> PostTaleplerKarsilamaKaydet<T, Y>(string url, Y model);
+
+
+        RequestResponse<T> PutTaleplerGuncelle<T, Y>(string url, Y model);
+
+
+
+        RequestResponse<T> DeleteTaleplerEkDosyaSil<T, Y>(string url, Y model);
+
+
+
+
+
 
     }
 }

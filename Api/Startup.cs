@@ -25,20 +25,20 @@ namespace Api
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        // Uygulamada kullanýlacak servisler buraya eklenir.
+        // Uygulamada kullanï¿½lacak servisler buraya eklenir.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
             services.AddSwaggerGen();
 
-            //Uygulamada DI yapýsý üzerinden eriþilen tüm IDBService nesne referanslarý bir DBService nesnesi olarak gelecek.
-            services.AddSingleton<IDBService, DBService>();
+            //Uygulamada DI yapï¿½sï¿½ ï¿½zerinden eriï¿½ilen tï¿½m IDBService nesne referanslarï¿½ bir DBService nesnesi olarak gelecek.
+            services.AddScoped<IDBService, DBService>();
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        // launchSettings.json dosyasýndaki bileþenlere eriþmek için yazýlan class’larýmýzý bu metot üzerinden DI yapýsýna enjekte edebiliyoruz.
-        // Servis ayarlarý yapýlýr.
+        // launchSettings.json dosyasï¿½ndaki bileï¿½enlere eriï¿½mek iï¿½in yazï¿½lan classï¿½larï¿½mï¿½zï¿½ bu metot ï¿½zerinden DI yapï¿½sï¿½na enjekte edebiliyoruz.
+        // Servis ayarlarï¿½ yapï¿½lï¿½r.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -51,8 +51,8 @@ namespace Api
                 c.SerializeAsV2 = true;
             });
 
-            //app.UseStaticFiles();   // Javascript,css,resim gibi dosyalarý kullanmak için
-            
+            //app.UseStaticFiles();   // Javascript,css,resim gibi dosyalarï¿½ kullanmak iï¿½in
+
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api");
