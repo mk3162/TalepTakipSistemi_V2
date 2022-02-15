@@ -1,11 +1,11 @@
-﻿@model Web.Entities.Kullanici
+﻿@model Web.ViewModels.KullaniciViewModel
 @{
     Layout = null;
 }
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>  
     <meta charset="UTF-8">
     <title>--TTS-- Giriş Sayfası</title>
 
@@ -131,7 +131,7 @@
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto mb-3 mt-10">
                 <div class="card card-signin">
                     <div class="card-body d-flex justify-content-center">
-                        <img src="~/images/tts_logo.png" width="300px" height="90px" alt="" />
+                        <img src="~/images/tts_logo.png" width="300px;" height="90px;" alt="" />
                     </div>
                 </div>
             </div>
@@ -154,27 +154,21 @@
                     {
                         <form class="form-signin">
                             <div class="form-label-group">
-                                <input type="text" id="inputEmail" class="form-control" placeholder="Kullanıcı Kodu" name="Kodu"
+                                <input type="text" id="txtKullaniciKodu" class="form-control" placeholder="Kullanıcı Kodu" name="Kodu"
                                        required autofocus>
                                 @*<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>*@
-                                <label for="inputEmail">Kullanıcı Kodu</label>
+                                <label for="lblKullaniciKodu">Kullanıcı Kodu</label>
                             </div>
-
                             <div class="form-label-group">
-                                <input type="password" id="inputPassword" class="form-control" placeholder="Şifre" name="Sifre"
+                                <input type="password" id="txtPassword" class="form-control" placeholder="Şifre" name="Sifre"
                                        required>
-                                <label for="inputPassword">Şifre</label>
+                                <label for="lblPassword">Şifre</label>
                             </div>
-
                             <h6 class="text-center">Lütfen Giriş Yapınız</h6>
 
-                            <button class="btn btn-lg btn-info btn-block  mt-3" type="submit">Giriş</button>
-                            @*<div class="d-flex justify-content-around mt-2 ">
-                    <a href="/Login/Index">Kayıt Ol</a>
-
-                    <a href="/Login/ForgotPassword">Şifremi Unuttum. </a>
-                </div>*@
-                        </form>}
+                            <button class="btn btn-lg btn-info btn-block mt-3" type="submit">Giriş</button>
+                        </form>
+                    }
                 </div>
             </div>
         </div>

@@ -1,9 +1,11 @@
+using Common.CrossCuttingConcern.Caching.Concrete.Microsoft;
 using Common.Models.Request;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -34,7 +36,6 @@ namespace Web
             services.AddControllersWithViews();
 
             services.AddSingleton<ServiceUrlList>();
-            //services.AddSingleton<RequestParameter>();
 
             services.AddScoped<RequestParameter>();
 
@@ -45,10 +46,23 @@ namespace Web
             services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IUserRepository, UserRepository>();
 
+
+            services.AddDistributedMemoryCache();
+
             services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.IdleTimeout = TimeSpan.FromMinutes(1);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
             });
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                 .AddCookie(options =>
+                 {
+                     options.Cookie.Name = "MySessionCookie";
+                     options.LoginPath = "/Login/Index";
+                     options.SlidingExpiration = true;
+                 });
 
             services.AddDbContext<DatabaseContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("Connection")));
@@ -63,7 +77,7 @@ namespace Web
 
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseDeveloperExceptionPage();    
             }
             else
             {
@@ -80,9 +94,19 @@ namespace Web
 
             app.UseRouting();
 
+            var cookiePolicyOptions = new CookiePolicyOptions
+            {
+                MinimumSameSitePolicy = SameSiteMode.Strict,
+                HttpOnly = Microsoft.AspNetCore.CookiePolicy.HttpOnlyPolicy.Always,
+                Secure = CookieSecurePolicy.None,
+            };
+            app.UseCookiePolicy(cookiePolicyOptions);
+
             app.UseAuthorization();
 
-            app.UseSession();
+            app.UseAuthentication();
+
+            app.UseSession();  
 
             app.UseEndpoints(endpoints =>
             {

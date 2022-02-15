@@ -1,11 +1,13 @@
 ﻿using Common.Models;
 using Common.Models.Request;
 using Common.Models.Response;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Web.Context;
@@ -20,17 +22,27 @@ namespace Web.Controllers
         private readonly DatabaseContext _context;
         private readonly IApiService _apiService;
         private readonly ServiceUrlList _serviceUrlList;
+        private readonly ILogger<RequestController> _logger;
 
-        public RequestController(DatabaseContext context, IApiService apiService, ServiceUrlList serviceUrlList)
+        public RequestController(DatabaseContext context, IApiService apiService, ServiceUrlList serviceUrlList, ILogger<RequestController> logger)
         {
             _context = context;
             _apiService = apiService;
             _serviceUrlList = serviceUrlList;
+            _logger = logger;
         }
 
+        //[Authorize]
         public IActionResult Index()
         {
             return View();
+        }
+
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new Common.Models.ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
         [HttpGet]
@@ -107,8 +119,8 @@ namespace Web.Controllers
         {
             //TODO
             var req = new RequestTaleplerIslemListesiDto();
-            req.KullaniciKodu = 26776912606.ToString();
-            req.Yetki = 1;
+            req.KullaniciKodu = 99999999999.ToString();
+            req.Yetki = 0;
 
             var resp = _apiService.GetTaleplerIslemListesi<ResponseTaleplerIslemListesiDto, RequestTaleplerIslemListesiDto>(_serviceUrlList.GetTaleplerIslemListesi, req);
             return Json(resp);
