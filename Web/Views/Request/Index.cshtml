@@ -453,28 +453,28 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            @using (Html.BeginForm("EditRequest", "Request", FormMethod.Post))
+            @using (Html.BeginForm("UpdateRequest", "Request", FormMethod.Post))
             {
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Talep Sahibi</label>
-                        <select style="width:300px;display:inline-block; margin-left:43px;" class="form-control" id="RequestDuzelt" for="Regions">
+                        <select style="width:300px;display:inline-block; margin-left:43px;" name="SahibiKodu" class="form-control" id="RequestDuzelt">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Şirket</label>
-                        <select style="width:300px;display:inline-block; margin-left:90px;" class="form-control" id="CompaniesDuzelt" for="Regions">
+                        <select style="width:300px;display:inline-block; margin-left:90px;" class="form-control" id="CompaniesDuzelt">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Departman</label>
-                        <select style="width: 300px; display: inline-block; margin-left: 20px;" class="form-control" id="DepartmentDuzelt" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left: 20px;" class="form-control" id="DepartmentDuzelt">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Lokasyon</label>
-                        <select style="width: 300px; display: inline-block; margin-left:62px;" class="form-control" id="LocationDuzelt" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left:62px;" name="LokasyonSiraNo" class="form-control" id="LocationDuzelt">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:145px;">Servis</label>
-                        <select style="width: 300px; display: inline-block; margin-left:55px;" class="form-control" id="ServiceDuzelt" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left:55px;" name="ServisSiraNo" class="form-control" id="ServiceDuzelt">
                         </select>
                     </div>
                 </div>
@@ -482,49 +482,46 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Masraf Merkezi</label>
-                        <select style="width:300px;display:inline-block; margin-left:20px;" class="form-control" id="CostDuzelt" for="Regions">
+                        <select style="width:300px;display:inline-block; margin-left:20px;" name="MasrafMerkeziSiraNo" class="form-control" id="CostDuzelt">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Tipi</label>
-                        <select style="width: 300px; display: inline-block; margin-left: 75px;" class="form-control" id="TypeDuzelt" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left: 75px;" name="TipSiraNo" class="form-control" id="TypeDuzelt">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Projesi</label>
-                        <select style="width: 300px; display: inline-block; margin-left:85px;" class="form-control" id="ProjectDuzelt" for="Regions">
+                        <select style="width: 300px; display: inline-block; margin-left:85px;" name="ProjeSiraNo" class="form-control" id="ProjectDuzelt">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Teslim Yeri</label>
-                        <input type="text" name="Delivery" class="form-control-sm" style="width: 300px; margin-left:25px;" />
+                        <input type="text" name="TeslimYeri" class="form-control-sm" style="width: 300px; margin-left:25px;" />
                     </div>
                 </div>
                 <hr style="border-width:2.5px; color:darkgray;" />
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Ürün</label>
-                        <select style="width: 400px; display: inline-block; margin-left:95px;" class="form-control" id="ProductDuzelt" for="Regions">
+                        <select style="width: 400px; display: inline-block; margin-left:95px;" name="UrunKodu" class="form-control" id="ProductDuzelt">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:45px;">Miktar </label>
-                        <input type="number" class="form-control-sm" name="Amount" style="width:140px; margin-left:55px;" /> ,
-                        <select style="width: 140px; display: inline-block; margin-left:5px;" class="form-control" id="AmountDuzelt" for="Regions">
+                        <input type="number" class="form-control-sm" name="Miktar" style="width:140px; margin-left:55px;" onkeyup="Calculate()" /> ,
+                        <select style="width: 140px; display: inline-block; margin-left:5px;" class="form-control" name="MiktarBirim" id="AmountDuzelt">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Birim Fiyat </label>
-                        <input type="number" class="form-control-sm" name="Price" style="width:150px; margin-left:50px;" />
-                        <select style="width: 150px; display: inline-block; margin-left:5px;" class="form-control" id="CurrencyDuzelt" for="Regions">
+                        <input type="number" class="form-control-sm" name="BirimFiyat" style="width:150px; margin-left:50px;" onkeyup="Calculate()" />
+                        <select style="width: 150px; display: inline-block; margin-left:5px;" name="ParaBirimi" class="form-control" id="CurrencyDuzelt">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:135px;">Toplam Fiyat</label>
-                        <input type="number" class="form-control-sm" name="TotalPrice" style="width:140px; margin-left:12px;" disabled="disabled" />
+                        <input type="number" class="form-control-sm" name="ToplamFiyat" style="width:140px; margin-left:12px;" disabled="disabled" />
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Açıklama</label>
-                        <input type="text" class="form-control-sm" name="Description" style="width:860px; margin-left:63px;" />
+                        <input type="text" class="form-control-sm" id="Description" name="Aciklama" style="width:860px; margin-left:63px;" />
                     </div>
                 </div>
                 <hr style="border-width:2.5px; color:darkgray;" />
-            }
-            <button id="AddList" onclick="DuzeltAddFileFunc()" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:15px; width:150px; height:36px;">Listeye Ekle</button>
-            @using (Html.BeginForm("EditRequest", "Request", FormMethod.Post))
-            {
+            <a id="AddList" onclick="DuzeltAddFileFunc()" class="btn btn-primary" style="background-color: #17a2b8; color:white; font-weight: bold; margin-left:15px; width:150px; height:36px;">Listeye Ekle</a>
                 <div class="modal-body">
                     <div class="form-group">
                         <input type="file" id="FileName" value="Dosya Seç" />
@@ -576,7 +573,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal" style="color: white; font-weight: bold; margin-right:880px;">Vazgeç</button>
-                    <button id="save" type="submit" class="btn btn-success" style="color:white; font-weight: bold; margin-right:30px;">Kaydet</button>
+                    <button id="Save" type="submit" class="btn btn-success" style="color:white; font-weight: bold; margin-right:30px;">Kaydet</button>
                 </div>
             }
         </div>
@@ -593,8 +590,9 @@
                 </button>
             </div>
 
-            @using(Html.BeginForm("AddRequest", "Request", FormMethod.Post))
+            @using (Html.BeginForm("AddRequest", "Request", FormMethod.Post))
             {
+                <input type="hidden" name="KaydiYapan" value="11111111112" />
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Talep Sahibi</label>
@@ -633,7 +631,7 @@
                         <select style="width: 300px; display: inline-block; margin-left:85px;" name="ProjeSiraNo" class="form-control" id="ProjectTalep">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:140px;">Teslim Yeri</label>
-                        <input type="text" name="TeslimYeri" class="form-control-sm" style="width: 300px; margin-left:25px;" />
+                        <input type="text" id="txtTeslimYeri" name="TeslimYeri" class="form-control-sm" style="width: 300px; margin-left:25px;" />
                     </div>
                 </div>
                 <hr style="border-width:3.5px; color:darkgray;" />
@@ -657,11 +655,11 @@
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Açıklama </label>
-                        <input type="text" class="form-control-sm" name="Aciklama" style="width:860px; margin-left:63px;" />
+                        <input type="text" class="form-control-sm" id="Description" name="Aciklama" style="width:860px; margin-left:63px;" />
                     </div>
                 </div>
                 <hr style="border-width:3.5px; color:darkgray;" />
-                <button id="AddProduct" onclick="TalepAddProductFunc()" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:20px; width:150px; height:36px;">Listeye Ekle</button>
+                <a id="AddProduct" onclick="TalepAddProductFunc()" class="btn btn-primary" style="background-color: #17a2b8; color:white; font-weight: bold; margin-left:20px; width:150px; height:36px;">Listeye Ekle</a>
                 <div class="modal-body">
                     <div class="form-group">
                         <table id="ProductList" class="table table-hover table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
@@ -685,7 +683,7 @@
                     </div>
                 </div>
                 <hr style="border-width:3.5px; color:darkgray;" />
-                <button id="AddFile" onclick="TalepAddFileFunc()" class="btn btn-primary" style="background-color: #17a2b8; font-weight: bold; margin-left:15px; width:150px; height:36px;">Listeye Ekle</button>
+                <a id="AddFile" onclick="TalepAddFileFunc()" class="btn btn-primary" style="background-color: #17a2b8; color: white; font-weight: bold; margin-left: 15px; width: 150px; height: 36px;">Listeye Ekle</a>
                 <div class="modal-body">
                     <div class="form-group">
                         <input type="file" id="File" class="file-selector-button" value="Dosya Seç" />
@@ -723,7 +721,6 @@
                 </div>
             }
         </div>
-
     </div>
 </div>
 
@@ -788,4 +785,6 @@
             document.getElementById('TotalPrice').value = result;
         }
     }
+
+
 </script>

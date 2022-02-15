@@ -103,16 +103,16 @@ namespace Web.Controllers
             return Json(_apiService.GetTalepSahibiListesi<ResponseTalepSahibiListesiDto>(_serviceUrlList.GetTalepSahibiListesi).Data);
         }
 
-        //public IActionResult GetRequestProcessList()
-        //{
-        //    //TODO
-        //    var req = new RequestTaleplerIslemListesiDto();
-        //    req.KullaniciKodu = 11111111111.ToString();
-        //    req.Yetki = 0;
+        public IActionResult GetRequestProcessList()
+        {
+            //TODO
+            var req = new RequestTaleplerIslemListesiDto();
+            req.KullaniciKodu = 26776912606.ToString();
+            req.Yetki = 1;
 
-        //    var resp = _apiService.GetTaleplerIslemListesi<ResponseTaleplerIslemListesiDto, RequestTaleplerIslemListesiDto>(_serviceUrlList.GetTaleplerIslemListesi, req);
-        //    return Json(resp);
-        //}
+            var resp = _apiService.GetTaleplerIslemListesi<ResponseTaleplerIslemListesiDto, RequestTaleplerIslemListesiDto>(_serviceUrlList.GetTaleplerIslemListesi, req);
+            return Json(resp);
+        }
 
         [HttpGet]
         public IActionResult GetRequestProcessListGroup()
@@ -154,7 +154,7 @@ namespace Web.Controllers
         [HttpPost]
         public IActionResult AddRequest(RequestTaleplerKaydetDto model)
         {
-             return RedirectToAction("Index", "Request", Json(_apiService.PostTaleplerKaydet<ResponseTaleplerKaydetDto, RequestTaleplerKaydetDto>(_serviceUrlList.PostTaleplerKaydet, model).Data));
+            return RedirectToAction("Index", "Request", Json(_apiService.PostTaleplerKaydet<ResponseTaleplerKaydetDto, RequestTaleplerKaydetDto>(_serviceUrlList.PostTaleplerKaydet, model).Data));
         }
 
         [HttpPost]
@@ -174,14 +174,14 @@ namespace Web.Controllers
         {
             var req = new RequestTaleplerEkDosyaListesiDto();
             req.GrupSiraNo = 2;
-            var resp = _apiService.GetTaleplerEkDosyaListesi<ResponseTaleplerEkDosyaListesiDto,RequestTaleplerEkDosyaListesiDto>(_serviceUrlList.GetTaleplerEkDosyaListesi,req).Data;
+            var resp = _apiService.GetTaleplerEkDosyaListesi<ResponseTaleplerEkDosyaListesiDto, RequestTaleplerEkDosyaListesiDto>(_serviceUrlList.GetTaleplerEkDosyaListesi, req).Data;
             return Json(resp);
         }
 
         [HttpPost]
         public IActionResult AddRequestFile(RequestTaleplerEkDosyaKaydetDto model)
         {
-            return Json(_apiService.PostTaleplerEkDosyaKaydet<ResponseTaleplerEkDosyaKaydetDto,RequestTaleplerEkDosyaKaydetDto>(_serviceUrlList.PostTaleplerEkDosyaKaydet,model).Data);
+            return Json(_apiService.PostTaleplerEkDosyaKaydet<ResponseTaleplerEkDosyaKaydetDto, RequestTaleplerEkDosyaKaydetDto>(_serviceUrlList.PostTaleplerEkDosyaKaydet, model).Data);
         }
 
         [HttpDelete]

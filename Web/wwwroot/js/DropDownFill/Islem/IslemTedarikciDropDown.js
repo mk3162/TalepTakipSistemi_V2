@@ -4,7 +4,7 @@
         url: "/Request/GetSuppliers",
         dataType: "json",
         success: function (response) {
-            $("#SupplierIslem").empty().append('<option value="0"> Tedarikçi Seçiniz </option>');
+            $("#SupplierIslem").empty().append('<option value="0"> --Tedarikçi Seçiniz-- </option>');
             for (let supplier of response) {
                 $("#SupplierIslem").append('<option value="' + supplier.tedarikciKodu + '"> ' + supplier.tedarikciUnvani + ' </option>');
             }

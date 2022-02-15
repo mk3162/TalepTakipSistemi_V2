@@ -15,7 +15,7 @@ namespace Web.Service.Implementation
         private readonly RequestParameter _req;
         public ServiceManager(RequestParameter req)
         {
-            _req = req;
+            _req = req;                                                                                                                                    
         }
 
         public RequestResponse<T> Get<T>(string url)
