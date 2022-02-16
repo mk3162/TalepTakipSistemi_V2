@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Web.Context;
 using Web.Entities;
@@ -33,8 +34,12 @@ namespace Web.Controllers
         }
 
         //[Authorize]
+        [AllowAnonymous]
         public IActionResult Index()
         {
+            var name = User.Claims.Where(x => x.Type == ClaimTypes.Name)
+                 .Select(x => x.Value).SingleOrDefault();
+
             return View();
         }
 

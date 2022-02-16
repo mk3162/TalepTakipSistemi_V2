@@ -1,8 +1,79 @@
-﻿
+﻿@model List<Common.Models.Response.ResponseServislerListesiDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/_AdminLayout.cshtml";
 }
 
-<h1>Index</h1>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 mx-auto ">
+                <partial name="_AddExportPartialView" />
+                <br />
+                <div class="form-group">
+                    <label for="message-text" class="col-form-label" style="margin-left:20px;">Departmanlar</label>
+                    <select style="width:250px;display:inline-block; margin-left:30px;" class="form-control" id="DepartmanList">
+                    </select>
+                </div>
+                <div class="card-body ">
+                    <div id="example1_wrapper " class="dataTables_wrapper dt-bootstrap4 ">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table id="serviceTable" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+                                    <thead>
+                                        <tr role="row">
+                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Sıra No</th>
+                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Servis Adı</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td class="dtr-control sorting_1" tabindex="0">@item.SiraNo</td>
+                                                <td class="dtr-control sorting_1" tabindex="0">@item.Tanimi</td>
+                                            </tr>
+                                        }
 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/TalepWeb/plugins/jquery/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "/Service/GetDepartments",
+            dataType: "json",
+            success: function (response) {
+                for (let departman of response) {
+                    $("#DepartmanList").append('<option value="' + departman.siraNo + '"> ' + departman.tanimi + ' </option>');
+                }
+            }
+        })
+    });
+
+    //    $('#DepartmanList').change(function () {
+    //    let siraNo = $(this).val();
+    //    $.ajax({
+    //        type: "POST",
+    //        url: "/Service/Index",
+    //        data: { SiraNo: siraNo },
+    //        dataType: "json",
+    //        success: function (response) {
+    //            alert("başaarılı");
+    //            //for (let service of response) {
+    //            //    $(".dtr-control sorting_1").appendChild(service.tanimi);
+    //            }
+    //        },
+    //    });
+    //});
+</script>

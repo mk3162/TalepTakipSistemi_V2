@@ -26,46 +26,7 @@ namespace Web.Controllers
         }
         public IActionResult Index()
         {
-            //return View(_context.Kullanicilar.FromSqlRaw(GlobalEnum.StoredProcedure.KullanicilarListesi.ToString()).ToList());
             return View(_apiService.GetKullanicilarListesi<ResponseKullanicilarListesiDto>(_serviceUrlList.GetKullanicilarListesi).Data);
         }
-
-        [HttpGet]
-        public IActionResult GetUser(int SiraNo)
-        {
-            var user = _context.Kullanicilar.Find(SiraNo);
-            return View("GetUser", user);
-        }
-
-        [HttpPost]
-        public IActionResult AddUser(Kullanici kullanici)
-        {
-            try
-            {
-                _context.Kullanicilar.Add(kullanici);
-                _context.SaveChanges();
-            }
-            catch (Exception)
-            {
-                return RedirectToAction("Index");
-            }
-            return RedirectToAction("Index");
-        }
-
-        [HttpPost]
-        public IActionResult UpdateUser(Kullanici kullanici)
-        {
-            _context.Kullanicilar.Update(kullanici);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        //public IActionResult SoftDelete(int siraNo)
-        //{
-        //    var deletedUser = _context.Kullanicilar.FirstOrDefault(x => x.UserId == siraNo);
-        //    _context.Kullanicilar.Remove(deletedUser);
-        //    _context.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
     }
 }

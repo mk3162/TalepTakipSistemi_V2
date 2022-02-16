@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -19,26 +20,30 @@ namespace Web.Controllers
     public class LoginController : Controller
     {
         private readonly DatabaseContext _context;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public LoginController(DatabaseContext context)
+        public LoginController(DatabaseContext context, IHttpContextAccessor httpContextAccessor)
         {
             _context = context;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(string returnUrl = "")
         {
-            return View();
+            var model = new UserViewModel { ReturnUrl = returnUrl };
+            return View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index([Bind]KullaniciViewModel user)
+        public async Task<IActionResult> Index([Bind]UserViewModel user)
         {
-            if ((!string.IsNullOrEmpty(user.Kodu)) && (!string.IsNullOrEmpty(user.Sifre)))
+             if ((!string.IsNullOrEmpty(user.Kodu)) && (!string.IsNullOrEmpty(user.Sifre)))
             {
                 var log = _context.Kullanicilar.FirstOrDefault(x => x.Kodu == user.Kodu && x.Sifre == user.Sifre);
                 if (log != null)
-                {       
+                {
+                    _httpContextAccessor.HttpContext.Session.SetString("AdiSoyadi", log.AdiSoyadi);
                     var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, user.Kodu),
@@ -73,6 +78,7 @@ namespace Web.Controllers
         [HttpGet]
         public async Task<ActionResult> Logout()
         {
+            _httpContextAccessor.HttpContext.Session.Clear();
             await HttpContext.SignOutAsync(
                  CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Index","Login");

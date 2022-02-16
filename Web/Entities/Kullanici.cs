@@ -20,8 +20,8 @@ namespace Web.Entities
 
         public enum Aut 
         { 
-            Admin,
-            Kullanici
+            Kullanıcı,
+            Admin
         }
     }
 }

@@ -28,8 +28,17 @@ namespace Web.Controllers
             var req = new RequestServislerListesiDto();
             req.DepartmanSiraNo = 1;
 
-            var resp = _apiService.GetLokasyonlarListesi<ResponseServislerListesiDto, RequestServislerListesiDto>(_serviceUrlList.GetServislerListesi, req);
-            return Json(resp);
+            var resp = _apiService.GetServislerListesi<ResponseServislerListesiDto, RequestServislerListesiDto>(_serviceUrlList.GetServislerListesi, req).Data;
+            return View(resp);
+        }
+
+        public IActionResult GetDepartments()
+        {
+            var req2 = new RequestDepartmanlarListesiDto();
+            req2.SirketSiraNo = 1;
+
+            var resp2 = _apiService.GetDepartmanlarListesi<ResponseDepartmanlarListesiDto, RequestDepartmanlarListesiDto>(_serviceUrlList.GetDepartmanlarListesi, req2).Data;
+            return Json(resp2);
         }
     }
 }

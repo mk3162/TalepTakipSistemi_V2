@@ -1,4 +1,6 @@
-﻿
+﻿@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@using Web.Session
 @{ Layout = null; }
 
 <html lang="en" style="height: auto;">
@@ -33,7 +35,7 @@
 
     <link href="~/Content/buttons.css" rel="stylesheet">
 
-  
+
 
     @*@Styles.Render("../TalepWeb/custom.css")*@
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" asp-append-version="true" />
@@ -58,7 +60,7 @@
                 <li class="nav-item dropdown mr-1">
                     @if (Web.Session.SessionUserModel.CurrentUser != null)
                     {
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Web.Session.SessionUserModel.CurrentUser</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@HttpContextAccessor.HttpContext.Session.GetString("AdiSoyadi")</a>
                     }
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/Profile/Index"><i class="fas fa-user mr-1"></i>Profil Bilgileri</a>
