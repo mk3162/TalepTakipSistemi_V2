@@ -1,6 +1,8 @@
-﻿
+﻿@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@model List<Common.Models.Response.ResponseTaleplerIslemListesiDto>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "GetRequestProcessList";
     Layout = "~/Views/_AdminLayout.cshtml";
 }
 
@@ -31,19 +33,25 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td style="width:250px;">
-                    <a href="#" id="Process" class="btn btn-primary btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-islem-modal-lg" style="color:white;">İşlem</a>
-                    <a data-toggle="collapse" data-target="#demo1" class="btn btn-default btn-xs accordion-toggle" style="color:white; background-color:burlywood;">Süreç Gör</a>
-                    <a href="#" id="Edit" class="btn btn-success btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-duzelt-modal-lg" style="color:white;">Düzelt</a>
-                </td>
-                <td>Carlos</td>
-                <td>Mathias</td>
-                <td>Leme</td>
-                <td>SP</td>
-                <td>new</td>
-                <td>new</td>
-            </tr>
+            @if (Model.Any())
+            {
+                @foreach (var item in Model)
+                {
+                    <tr role="row">
+                        <td style="width:250px;">
+                            <a href="#" id="Process" class="btn btn-primary btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-islem-modal-lg" style="color:white;">İşlem</a>
+                            <a data-toggle="collapse" data-target="#demo1" class="btn btn-default btn-xs accordion-toggle" style="color:white; background-color:burlywood;">Süreç Gör</a>
+                            <a href="#" id="Edit" class="btn btn-success btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-duzelt-modal-lg" style="color:white;">Düzelt</a>
+                        </td>
+                        <td>@item.TalepSiraNo</td>
+                        <td>@item.TalepSahibiAdi</td>
+                        <td>@item.UrunTanimi</td>
+                        <td>@item.Miktar</td>
+                        <td>@item.MiktarBirim</td>
+                        <td>@item.BirimFiyat</td>
+                    </tr>
+                }
+            }
             <tr>
                 <td colspan="12" class="hiddenRow">
                     <div class="accordian-body collapse" id="demo1">
@@ -58,113 +66,17 @@
                             </thead>
                             <tbody>
                                 <tr data-toggle="collapse" class="accordion-toggle" data-target="#demo10">
-                                    <td>Enginner Software</td>
-                                    <td>Google</td>
-                                    <td>U$8.00000 </td>
-                                    <td>2016/09/27</td>
-                                </tr>
-                                <tr>
-                                    <td>Scrum Master</td>
-                                    <td>Google</td>
-                                    <td>U$8.00000 </td>
-                                    <td>2016/09/27</td>
-                                </tr>
-                                <tr>
-                                    <td>Back-end</td>
-                                    <td>Google</td>
-                                    <td>U$8.00000 </td>
-                                    <td>2016/09/27</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <button href="#" id="Process" class="btn btn-primary btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-islem-modal-lg" style="color:white;">İşlem</button>
-                    <button data-toggle="collapse" data-target="#demo2" class="btn btn-warning btn-xs accordion-toggle" style="color: white; background-color: burlywood;">Süreç Gör</button>
-                    @*<button href="#" id="Edit" class="btn btn-success btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-duzelt-modal-lg" style="color:white;">Düzelt</button>*@
-                </td>
-                <td>Silvio</td>
-                <td>Santos</td>
-                <td>São Paulo</td>
-                <td>SP</td>
-                <td>new</td>
-                <td>new</td>
-            </tr>
-            <tr>
-                <td colspan="12" class="hiddenRow">
-                    <div class="accordian-body collapse" id="demo2">
-                        <table class="table table-striped dataTable dtr-inline" style="width:1600px;">
-                            <thead style="background-color:burlywood; color:white;">
-                                <tr class="info">
-                                    <th style="width:300px;">Zaman</th>
-                                    <th style="width:300px;">İşlem Yapan</th>
-                                    <th style="width:300px;">Yapılan İşlem</th>
-                                    <th style="width:700px;">Açıklama/Yorum</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr data-toggle="collapse" class="accordion-toggle" data-target="#demo10">
-                                    <td>Enginner Software</td>
-                                    <td>Google</td>
-                                    <td>U$8.00000 </td>
-                                    <td>2016/09/27</td>
-                                </tr>
-                                <tr>
-                                    <td>Scrum Master</td>
-                                    <td>Google</td>
-                                    <td>U$8.00000 </td>
-                                    <td>2016/09/27</td>
-                                </tr>
-                                <tr>
-                                    <td>Back-end</td>
-                                    <td>Google</td>
-                                    <td>U$8.00000 </td>
-                                    <td>2016/09/27</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="12" class="hiddenRow">
-                    <div class="accordian-body collapse" id="demo3">
-                        <table class="table table-striped dataTable dtr-inline" style="width:1600px;">
-                            <thead style="background-color:burlywood; color:white;">
-                                <tr class="info">
-                                    <th style="width:300px;">Zaman</th>
-                                    <th style="width:300px;">İşlem Yapan</th>
-                                    <th style="width:300px;">Yapılan İşlem</th>
-                                    <th style="width:700px;">Açıklama/Yorum</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr data-toggle="collapse" class="accordion-toggle" data-target="#demo10">
-                                    <td>Enginner Software</td>
-                                    <td>Google</td>
-                                    <td>U$8.00000 </td>
-                                    <td>2016/09/27</td>
-                                </tr>
-                                <tr>
-                                    <td>Scrum Master</td>
-                                    <td>Google</td>
-                                    <td>U$8.00000 </td>
-                                    <td>2016/09/27</td>
-                                </tr>
-                                <tr>
-                                    <td>Back-end</td>
-                                    <td>Google</td>
-                                    <td>U$8.00000 </td>
-                                    <td>2016/09/27</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </td>
-            </tr>
+        </tbody>
     </table>
 </div>
 
@@ -521,7 +433,7 @@
                     </div>
                 </div>
                 <hr style="border-width:2.5px; color:darkgray;" />
-            <a id="AddList" onclick="DuzeltAddFileFunc()" class="btn btn-primary" style="background-color: #17a2b8; color:white; font-weight: bold; margin-left:15px; width:150px; height:36px;">Listeye Ekle</a>
+                <a id="AddList" onclick="DuzeltAddFileFunc()" class="btn btn-primary" style="background-color: #17a2b8; color:white; font-weight: bold; margin-left:15px; width:150px; height:36px;">Listeye Ekle</a>
                 <div class="modal-body">
                     <div class="form-group">
                         <input type="file" id="FileName" value="Dosya Seç" />
@@ -592,7 +504,7 @@
 
             @using (Html.BeginForm("AddRequest", "Request", FormMethod.Post))
             {
-                <input type="hidden" name="KaydiYapan" value="11111111112" />
+                <input type="hidden" name="KaydiYapan" value="26776912606" />
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Talep Sahibi</label>
@@ -727,30 +639,30 @@
 
 <script src="~/TalepWeb/plugins/jquery/jquery.min.js"></script>
 
-<script src="~/js/DropDownFill/Düzelt/DuzeltDropDown.js"></script>
-<script src="~/js/DropDownFill/Islem/IslemDropDown.js"></script>
-<script src="~/js/DropDownFill/Talep/TalepDropDown.js"></script>
+<script src="~/js/DropDownFillFunc/Düzelt/DuzeltDropDown.js"></script>
+<script src="~/js/DropDownFillFunc/Islem/IslemDropDown.js"></script>
+<script src="~/js/DropDownFillFunc/Talep/TalepDropDown.js"></script>
 
-<script src="~/js/DropDownFill/Düzelt/DuzeltTipDropDown.js"></script>
-<script src="~/js/DropDownFill/Islem/IslemTipDropDown.js"></script>
-<script src="~/js/DropDownFill/Talep/TalepTipDropDown.js"></script>
+<script src="~/js/DropDownFillFunc/Düzelt/DuzeltTipDropDown.js"></script>
+<script src="~/js/DropDownFillFunc/Islem/IslemTipDropDown.js"></script>
+<script src="~/js/DropDownFillFunc/Talep/TalepTipDropDown.js"></script>
 
-<script src="~/js/DropDownFill/Düzelt/DuzeltUrunDropDown.js"></script>
-<script src="~/js/DropDownFill/Talep/TalepUrunDropDown.js"></script>
+<script src="~/js/DropDownFillFunc/Düzelt/DuzeltUrunDropDown.js"></script>
+<script src="~/js/DropDownFillFunc/Talep/TalepUrunDropDown.js"></script>
 
-<script src="~/js/DropDownFill/Düzelt/DuzeltParaBirimDropDown.js"></script>
-<script src="~/js/DropDownFill/Islem/IslemParaBirimDropDown.js"></script>
-<script src="~/js/DropDownFill/Talep/TalepParaBirimDropDown.js"></script>
+<script src="~/js/DropDownFillFunc/Düzelt/DuzeltParaBirimDropDown.js"></script>
+<script src="~/js/DropDownFillFunc/Islem/IslemParaBirimDropDown.js"></script>
+<script src="~/js/DropDownFillFunc/Talep/TalepParaBirimDropDown.js"></script>
 
-<script src="~/js/DropDownFill/Düzelt/DuzeltBirimDropDown.js"></script>
-<script src="~/js/DropDownFill/Talep/TalepBirimDropDown.js"></script>
+<script src="~/js/DropDownFillFunc/Düzelt/DuzeltBirimDropDown.js"></script>
+<script src="~/js/DropDownFillFunc/Talep/TalepBirimDropDown.js"></script>
 
-<script src="~/js/DropDownFill/Islem/IslemTedarikciDropDown.js"></script>
+<script src="~/js/DropDownFillFunc/Islem/IslemTedarikciDropDown.js"></script>
 
-<script src="~/js/DropDownFill/Düzelt/DuzeltTalepDropDown.js"></script>
-<script src="~/js/DropDownFill/Islem/IslemTalepDropDown.js"></script>
-<script src="~/js/DropDownFill/Talep/TalepTalepDropdown.js"></script>
-<script src="~/js/DropDownFill/Islem/IslemKontrolYonlendirTalepDropDown.js"></script>
+<script src="~/js/DropDownFillFunc/Düzelt/DuzeltTalepDropDown.js"></script>
+<script src="~/js/DropDownFillFunc/Islem/IslemTalepDropDown.js"></script>
+<script src="~/js/DropDownFillFunc/Talep/TalepTalepDropdown.js"></script>
+<script src="~/js/DropDownFillFunc/Islem/IslemKontrolYonlendirTalepDropDown.js"></script>
 
 <script src="~/js/AddListFunctions/Talep/TalepAddFileFunc.js"></script>
 <script src="~/js/AddListFunctions/Talep/TalepAddProductFunc.js"></script>

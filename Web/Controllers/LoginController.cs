@@ -54,7 +54,7 @@ namespace Web.Controllers
 
                     var authProperties = new AuthenticationProperties
                     {
-                        ExpiresUtc = DateTime.Now.AddMinutes(1),
+                        ExpiresUtc = DateTime.Now.AddMinutes(30),
                     };
 
                     await HttpContext.SignInAsync(
@@ -63,7 +63,7 @@ namespace Web.Controllers
                     authProperties);
 
                     ViewBag.Login = "Giriş Başarılı Yönlendiriliyorsunuz...";
-                    return RedirectToAction("Index", "Request");
+                    return RedirectToAction("GetRequestProcessList", "Request");
 
                 }
                 else

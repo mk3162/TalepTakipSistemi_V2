@@ -15,6 +15,7 @@ using Web.Context;
 using Web.Entities;
 using Web.Models;
 using Web.Service.Interface;
+using Web.ViewModels;
 
 namespace Web.Controllers
 {
@@ -35,19 +36,24 @@ namespace Web.Controllers
 
         //[Authorize]
         [AllowAnonymous]
-        public IActionResult Index()
+        public IActionResult GetRequestProcessList()
         {
             var name = User.Claims.Where(x => x.Type == ClaimTypes.Name)
                  .Select(x => x.Value).SingleOrDefault();
 
-            return View();
+            var req = new RequestTaleplerIslemListesiDto();
+            req.KullaniciKodu = "26776912606";
+            req.Yetki = 0;
+
+            var resp = _apiService.GetTaleplerIslemListesi<ResponseTaleplerIslemListesiDto, RequestTaleplerIslemListesiDto>(_serviceUrlList.GetTaleplerIslemListesi, req).Data;
+            return View(resp);
         }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new Common.Models.ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
         [HttpGet]
@@ -118,17 +124,6 @@ namespace Web.Controllers
         public IActionResult GetRequestOwners()
         {
             return Json(_apiService.GetTalepSahibiListesi<ResponseTalepSahibiListesiDto>(_serviceUrlList.GetTalepSahibiListesi).Data);
-        }
-
-        public IActionResult GetRequestProcessList()
-        {
-            //TODO
-            var req = new RequestTaleplerIslemListesiDto();
-            req.KullaniciKodu = 99999999999.ToString();
-            req.Yetki = 0;
-
-            var resp = _apiService.GetTaleplerIslemListesi<ResponseTaleplerIslemListesiDto, RequestTaleplerIslemListesiDto>(_serviceUrlList.GetTaleplerIslemListesi, req);
-            return Json(resp);
         }
 
         [HttpGet]
