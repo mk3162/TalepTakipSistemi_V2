@@ -36,17 +36,9 @@ namespace Web.Controllers
 
         //[Authorize]
         [AllowAnonymous]
-        public IActionResult GetRequestProcessList()
+        public IActionResult Index()
         {
-            var name = User.Claims.Where(x => x.Type == ClaimTypes.Name)
-                 .Select(x => x.Value).SingleOrDefault();
-
-            var req = new RequestTaleplerIslemListesiDto();
-            req.KullaniciKodu = "26776912606";
-            req.Yetki = 0;
-
-            var resp = _apiService.GetTaleplerIslemListesi<ResponseTaleplerIslemListesiDto, RequestTaleplerIslemListesiDto>(_serviceUrlList.GetTaleplerIslemListesi, req).Data;
-            return View(resp);
+            return View();
         }
 
 
@@ -74,7 +66,6 @@ namespace Web.Controllers
             var req = new RequestLokasyonlarListesiDto();
             req.SirketSiraNo = SiraNo;
             return Json(_apiService.GetLokasyonlarListesi<ResponseLokasyonlarListesiDto, RequestLokasyonlarListesiDto>(_serviceUrlList.GetLokasyonlarListesi, req).Data);
-
         }
 
         public IActionResult GetProjects(int SiraNo)
@@ -126,6 +117,19 @@ namespace Web.Controllers
             return Json(_apiService.GetTalepSahibiListesi<ResponseTalepSahibiListesiDto>(_serviceUrlList.GetTalepSahibiListesi).Data);
         }
 
+        public IActionResult GetRequestProcessList()
+        {
+            var name = User.Claims.Where(x => x.Type == ClaimTypes.Name)
+        .Select(x => x.Value).SingleOrDefault();
+
+            var req = new RequestTaleplerIslemListesiDto();
+            req.KullaniciKodu = name;
+            req.Yetki = 0;
+
+            var resp = _apiService.GetTaleplerIslemListesi<ResponseTaleplerIslemListesiDto, RequestTaleplerIslemListesiDto>(_serviceUrlList.GetTaleplerIslemListesi, req).Data;
+            return Json(resp);
+        }
+
         [HttpGet]
         public IActionResult GetRequestProcessListGroup()
         {
@@ -166,20 +170,20 @@ namespace Web.Controllers
         [HttpPost]
         public IActionResult AddRequest(RequestTaleplerKaydetDto model)
         {
-            return RedirectToAction("Index", "Request", Json(_apiService.PostTaleplerKaydet<ResponseTaleplerKaydetDto, RequestTaleplerKaydetDto>(_serviceUrlList.PostTaleplerKaydet, model).Data));
+            return RedirectToAction("GetRequestProcessList", "Request", Json(_apiService.PostTaleplerKaydet<ResponseTaleplerKaydetDto, RequestTaleplerKaydetDto>(_serviceUrlList.PostTaleplerKaydet, model).Data));
         }
 
-        [HttpPost]
-        public IActionResult AddRequestSupply(RequestTaleplerKarsilamaKaydetDto model)
-        {
-            return RedirectToAction("Index", "Request", Json(_apiService.PostTaleplerKarsilamaKaydet<ResponseTaleplerKarsilamaKaydetDto, RequestTaleplerKarsilamaKaydetDto>(_serviceUrlList.PostTaleplerKarsilamaKaydet, model).Data));
-        }
+        //[HttpPost]
+        //public IActionResult AddRequestSupply(RequestTaleplerKarsilamaKaydetDto model)
+        //{
+        //    return RedirectToAction("GetRequestProcessList", "Request", Json(_apiService.PostTaleplerKarsilamaKaydet<ResponseTaleplerKarsilamaKaydetDto, RequestTaleplerKarsilamaKaydetDto>(_serviceUrlList.PostTaleplerKarsilamaKaydet, model).Data));
+        //}
 
-        [HttpPut]
-        public IActionResult UpdateRequest(RequestTaleplerGuncelleDto model)
-        {
-            return Json(_apiService.PutTaleplerGuncelle<ResponseTaleplerGuncelleDto, RequestTaleplerGuncelleDto>(_serviceUrlList.PutTaleplerGuncelle, model).Data);
-        }
+        //[HttpPut]
+        //public IActionResult UpdateRequest(RequestTaleplerGuncelleDto model)
+        //{
+        //    return RedirectToAction("GetRequestProcessList", "Request", Json(_apiService.PutTaleplerGuncelle<ResponseTaleplerGuncelleDto, RequestTaleplerGuncelleDto>(_serviceUrlList.PutTaleplerGuncelle, model).Data));
+        //}
 
         [HttpGet]
         public IActionResult GetRequestFileList()

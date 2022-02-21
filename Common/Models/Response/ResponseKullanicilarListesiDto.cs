@@ -11,5 +11,10 @@ namespace Common.Models.Response
         public string Sifre { get; set; }
         public string AdiSoyadi { get; set; }
         public int Yetki { get; set; }
+        public string Rol { get; set; }
+        public enum Roles
+        {
+            AD, YU, AŞY, YM, PM, ÜKM, AM, GM, SM, GMA, SU
+        }
     }
 }

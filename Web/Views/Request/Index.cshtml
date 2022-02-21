@@ -1,11 +1,11 @@
 ﻿@using Microsoft.AspNetCore.Http
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
-@model List<Common.Models.Response.ResponseTaleplerIslemListesiDto>
+@*@model IEnumerable<Common.Models.Response.ResponseTaleplerIslemListesiDto>*@
+@model Common.Models.Response.ResponseKullanicilarListesiDto 
 @{
-    ViewData["Title"] = "GetRequestProcessList";
+    ViewData["Title"] = "Index";
     Layout = "~/Views/_AdminLayout.cshtml";
 }
-
 <style>
     .form-group {
         margin-bottom: 0.5rem;
@@ -20,65 +20,36 @@
 </div>
 
 <div class="panel-body" style="margin-top:5px;">
-    <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+    <table id="example" class="table table-bordered table-striped dataTable dtr-inline display" cellspacing="0" width="100%">
         <thead>
-            <tr role="row">
+            <tr>
                 <th></th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Talep No</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Talep Sahibi</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Ürün</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Miktar</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Birim</th>
-                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Birim Fiyat</th>
+                <th>Talep No</th>
+                <th>Talep Sahibi</th>
+                <th>Ürün</th>
+                <th>Miktar</th>
+                <th>Birim</th>
+                <th>Birim Fiyat</th>
             </tr>
         </thead>
-        <tbody>
-            @if (Model.Any())
-            {
-                @foreach (var item in Model)
-                {
-                    <tr role="row">
-                        <td style="width:250px;">
-                            <a href="#" id="Process" class="btn btn-primary btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-islem-modal-lg" style="color:white;">İşlem</a>
-                            <a data-toggle="collapse" data-target="#demo1" class="btn btn-default btn-xs accordion-toggle" style="color:white; background-color:burlywood;">Süreç Gör</a>
-                            <a href="#" id="Edit" class="btn btn-success btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-duzelt-modal-lg" style="color:white;">Düzelt</a>
-                        </td>
-                        <td>@item.TalepSiraNo</td>
-                        <td>@item.TalepSahibiAdi</td>
-                        <td>@item.UrunTanimi</td>
-                        <td>@item.Miktar</td>
-                        <td>@item.MiktarBirim</td>
-                        <td>@item.BirimFiyat</td>
-                    </tr>
-                }
-            }
-            <tr>
-                <td colspan="12" class="hiddenRow">
-                    <div class="accordian-body collapse" id="demo1">
-                        <table class="table table-striped dataTable dtr-inline" style="width:1600px;">
-                            <thead style="background-color:burlywood; color:white;">
-                                <tr class="info">
-                                    <th style="width:300px;">Zaman</th>
-                                    <th style="width:300px;">İşlem Yapan</th>
-                                    <th style="width:300px;">Yapılan İşlem</th>
-                                    <th style="width:700px;">Açıklama/Yorum</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr data-toggle="collapse" class="accordion-toggle" data-target="#demo10">
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </td>
-            </tr>
+        <tbody id="ProcessTable">
         </tbody>
     </table>
+    @*<table id="example" class="display" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Talep No</th>
+                    <th>Talep Sahibi</th>
+                    <th>Ürün</th>
+                    <th>Miktar</th>
+                    <th>Birim</th>
+                    <th>Birim Fiyat</th>
+                </tr>
+            </thead>
+        </table>*@
 </div>
+
 
 <div class="modal fade bd-islem-modal-lg" id="Process" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
@@ -89,7 +60,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            @using (Html.BeginForm("AddRequest", "Request", FormMethod.Post))
+            @using (Html.BeginForm("", "Request", FormMethod.Post))
             {
                 <div class="modal-body">
                     <div class="form-group">
@@ -367,6 +338,7 @@
             </div>
             @using (Html.BeginForm("UpdateRequest", "Request", FormMethod.Post))
             {
+                <input type="hidden" name="SiraNo" value="2040" />
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Talep Sahibi</label>
@@ -485,7 +457,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal" style="color: white; font-weight: bold; margin-right:880px;">Vazgeç</button>
-                    <button id="Save" type="submit" class="btn btn-success" style="color:white; font-weight: bold; margin-right:30px;">Kaydet</button>
+                    <button id="Edit" type="submit" class="btn btn-success" style="color:white; font-weight: bold; margin-right:30px;">Kaydet</button>
                 </div>
             }
         </div>
@@ -501,7 +473,6 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
             @using (Html.BeginForm("AddRequest", "Request", FormMethod.Post))
             {
                 <input type="hidden" name="KaydiYapan" value="26776912606" />
@@ -636,7 +607,6 @@
     </div>
 </div>
 
-
 <script src="~/TalepWeb/plugins/jquery/jquery.min.js"></script>
 
 <script src="~/js/DropDownFillFunc/Düzelt/DuzeltDropDown.js"></script>
@@ -697,4 +667,87 @@
             document.getElementById('TotalPrice').value = result;
         }
     }
+
+    function format(d) {
+        // `d` is the original data object for the row
+        return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
+            '<thead style="background-color:burlywood; color:white;">' +
+            '<tr class="info">' +
+            '<th style="width:300px;">Zaman</th>' +
+            '<th style="width:300px;">İşlem Yapan</th>' +
+            '<th style="width:300px;">Yapılan İşlem</th>' +
+            '<th style="width:700px;">Açıklama/Yorum</th>' +
+            '</tr>' +
+            '</thead>' +
+            '<tr>' +
+            '<td>' + d.islemZamani + '</td>' +
+            '<td>' + d.islemYapanAdi + '</td>' +
+            '<td>' + d.yapilanIslem + '</td>' +
+            '<td>' + d.Aciklama + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td>' + d.islemZamani + '</td>' +
+            '<td>' + d.islemYapanAdi + '</td>' +
+            '<td>' + d.yapilanIslem + '</td>' +
+            '<td>' + d.Aciklama + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td>' + d.islemZamani + '</td>' +
+            '<td>' + d.islemYapanAdi + '</td>' +
+            '<td>' + d.yapilanIslem + '</td>' +
+            '<td>' + d.Aciklama + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td>' + d.islemZamani + '</td>' +
+            '<td>' + d.islemYapanAdi + '</td>' +
+            '<td>' + d.yapilanIslem + '</td>' +
+            '<td>' + d.Aciklama + '</td>' +
+            '</tr>' +
+            '</table>';
+    }
+
+
+    $(document).ready(function () {
+        var table = $('#example').DataTable({
+            ajax: {
+                url: "/Request/GetRequestProcessList",
+                dataSrc: ""
+            },
+            columns: [
+                {
+                    'className': 'details-control',
+                    'orderable': false,
+                    'data': null,
+                     "render": function (data, type, row) {
+    var url = '@Url.Action("GetRequestPeriodList", "Request")/' + row.talepSiraNo;
+                         return '<a href="#" id="Process" class="btn btn-primary btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-islem-modal-lg" style="color:white;">İşlem</a>' + "<a href='" + url + "' class='btn btn-default btn-xs' id='Period' style='color:white; background-color:burlywood;'>Süreç Gör</a> " + '<a href="#" id="Edit" class="btn btn-success btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-duzelt-modal-lg" style="color:white;">Düzelt</a>';
+},
+                    'defaultContent': ''
+                },
+                { "data": 'talepSiraNo' },
+                { "data": 'talepSahibiAdi' },
+                { "data": 'urunTanimi' },
+                { "data": 'miktar' },
+                { "data": 'miktarBirim' },
+                { "data": 'birimFiyat' }
+            ],
+            'order': [[1, 'asc']]
+        });
+
+        // Add event listener for opening and closing details
+        $('#example tbody').on('click', 'td.details-control', function () {
+            var tr = $(this).closest('tr');
+            var row = table.row(tr);
+
+            if (row.child.isShown()) {
+                // This row is already open - close it
+                row.child.hide();
+                tr.removeClass('shown');
+            } else {
+                // Open this row
+                row.child(format(row.data())).show();
+                tr.addClass('shown');
+            }
+        })
+    });
 </script>

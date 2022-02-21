@@ -63,8 +63,7 @@ namespace Web.Controllers
                     authProperties);
 
                     ViewBag.Login = "Giriş Başarılı Yönlendiriliyorsunuz...";
-                    return RedirectToAction("GetRequestProcessList", "Request");
-
+                    return RedirectToAction("Index", "Request");
                 }
                 else
                 {

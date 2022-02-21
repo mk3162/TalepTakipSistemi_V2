@@ -6,7 +6,7 @@
         success: function (response) {
             $("#AmountDuzelt").empty().append('<option value="0"> --Birim Seçiniz-- </option>');
             for (let unit of response) {
-                $("#AmountDuzelt").append('<option value="' + unit.siraNo + '"> ' + unit.tanimi + ' </option>');
+                $("#AmountDuzelt").append('<option value="' + unit.tanimi + '"> ' + unit.tanimi + ' </option>');
             }
         }
     })

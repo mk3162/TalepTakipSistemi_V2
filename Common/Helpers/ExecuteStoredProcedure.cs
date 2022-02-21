@@ -375,8 +375,8 @@ namespace Common.Helpers
 
                             if (members.Any(m => string.Equals(m.Name, fieldName, StringComparison.OrdinalIgnoreCase)))
                             {
-                                var ss = convertFromDBVal(rd.GetValue(i));
-                                //accessor[t, fieldName] = ss;
+                                    var ss = convertFromDBVal(rd.GetValue(i));
+                                    accessor[t, fieldName] = ss;
                             }
                         }
                         response.Add(t);

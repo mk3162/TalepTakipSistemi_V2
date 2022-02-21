@@ -113,7 +113,7 @@ namespace Web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Request}/{action=GetRequestProcessList}/{SiraNo?}");
+                    pattern: "{controller=Request}/{action=Index}/{SiraNo?}");
             });
         }
     }

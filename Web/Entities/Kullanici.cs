@@ -18,10 +18,17 @@ namespace Web.Entities
         [Required]
         public int Yetki { get; set; }
 
+        [StringLength(5)]
+        public string Rol { get; set; }
         public enum Aut 
         { 
             Kullanıcı,
             Admin
+        }
+
+        public enum Roles
+        {
+            AD,YU,AŞY,YM,PM,ÜKM,AM,GM,SM,GMA,SU
         }
     }
 }
