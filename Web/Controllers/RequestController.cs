@@ -170,7 +170,7 @@ namespace Web.Controllers
         [HttpPost]
         public IActionResult AddRequest(RequestTaleplerKaydetDto model)
         {
-            return RedirectToAction("GetRequestProcessList", "Request", Json(_apiService.PostTaleplerKaydet<ResponseTaleplerKaydetDto, RequestTaleplerKaydetDto>(_serviceUrlList.PostTaleplerKaydet, model).Data));
+            return RedirectToAction("Index", "Request", Json(_apiService.PostTaleplerKaydet<ResponseTaleplerKaydetDto, RequestTaleplerKaydetDto>(_serviceUrlList.PostTaleplerKaydet, model).Data));
         }
 
         //[HttpPost]
@@ -179,11 +179,15 @@ namespace Web.Controllers
         //    return RedirectToAction("GetRequestProcessList", "Request", Json(_apiService.PostTaleplerKarsilamaKaydet<ResponseTaleplerKarsilamaKaydetDto, RequestTaleplerKarsilamaKaydetDto>(_serviceUrlList.PostTaleplerKarsilamaKaydet, model).Data));
         //}
 
-        //[HttpPut]
-        //public IActionResult UpdateRequest(RequestTaleplerGuncelleDto model)
-        //{
-        //    return RedirectToAction("GetRequestProcessList", "Request", Json(_apiService.PutTaleplerGuncelle<ResponseTaleplerGuncelleDto, RequestTaleplerGuncelleDto>(_serviceUrlList.PutTaleplerGuncelle, model).Data));
-        //}
+        [HttpPost]
+        public IActionResult UpdateRequest(RequestTaleplerGuncelleDto model)
+        {
+            model.GuncellemeTipi = 2;
+            model.HedefTeslimTarihi = DateTime.Now;
+            model.TedarikciKodu = "NULL";
+
+            return RedirectToAction("Index", "Request", Json(_apiService.PutTaleplerGuncelle<ResponseTaleplerGuncelleDto, RequestTaleplerGuncelleDto>(_serviceUrlList.PutTaleplerGuncelle, model).Data));
+        }
 
         [HttpGet]
         public IActionResult GetRequestFileList()

@@ -337,6 +337,7 @@ namespace Common.Helpers
 
                     foreach (PropertyInfo info in infos)
                     {
+                        // TODO Null olan alanlar spye parametre olarak gecilmiyor. Bu fixlenmeli !!!
                         if (info.GetValue(model, null) != null)
                             prm.Add(":" + info.Name);
                     }
