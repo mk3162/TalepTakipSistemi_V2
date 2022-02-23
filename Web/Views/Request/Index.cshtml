@@ -1,7 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Http
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 @*@model IEnumerable<Common.Models.Response.ResponseTaleplerIslemListesiDto>*@
-@model Common.Models.Response.ResponseKullanicilarListesiDto 
+@model Common.Models.Response.ResponseKullanicilarListesiDto
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/_AdminLayout.cshtml";
@@ -18,6 +18,7 @@
 <div class="row col-lg-12">
     <a href="#" id="NewRequest" class="btn btn-info btn-xs" tabindex="0" aria-controls="example1" type="button" data-toggle="modal" data-target=".bd-talep-modal-lg" style="margin-left:1120px;">Yeni Talep</a>
 </div>
+
 
 <div class="panel-body" style="margin-top:5px;">
     <table id="example" class="table table-bordered table-striped dataTable dtr-inline display" cellspacing="0" width="100%">
@@ -98,71 +99,77 @@
                 </div>
                 <hr style="border-width:2.5px; color:darkgray;" />
                 <div class="modal-body">
-                    <div class="form-group">
-                        <table id="table2" class="table table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
-                            <thead style="background-color:burlywood; color:white;">
-                                <tr>
-                                    <th></th>
-                                    <th style="width:150px;">Ürün</th>
-                                    <th>Miktar</th>
-                                    <th>Birim</th>
-                                    <th>Birim Fiyat</th>
-                                    <th style="width:50px;">Para Birimi</th>
-                                    <th>Toplam Fiyat</th>
-                                    <th>Tedarikçi</th>
-                                    <th>Hedef Teslim Tarihi</th>
-                                    <th>Açıklama</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><button id="Price" type="button" class="btn btn-success btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-fiyat-modal-lg" style="color:white; width:100px;">Fiyat Gir</button></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Bağlı Olan Diğer Talepler</label>
-                        <table id="table0" class="table table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
-                            <thead style="background-color:burlywood; color:white;">
-                                <tr>
-                                    <th></th>
-                                    <th style="width:175px;">Ürün</th>
-                                    <th>Miktar</th>
-                                    <th>Birim</th>
-                                    <th>Birim Fiyat</th>
-                                    <th style="width:50px;">Para Birimi</th>
-                                    <th>Toplam Fiyat</th>
-                                    <th>Tedarikçi</th>
-                                    <th>Hedef Teslim Tarihi</th>
-                                    <th>Açıklama</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><input type="checkbox" class="form-control-lg" style="width:20px;" id="chkOtherRequest" /></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    @if (HttpContextAccessor.HttpContext.Session.GetString("AdiSoyadi") == "Kadir Eren SATIR")
+                    {
+                        <div class="form-group">
+                            <table id="table2" class="table table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
+                                <thead style="background-color:burlywood; color:white;">
+                                    <tr>
+                                        <th></th>
+                                        <th style="width:150px;">Ürün</th>
+                                        <th>Miktar</th>
+                                        <th>Birim</th>
+                                        <th>Birim Fiyat</th>
+                                        <th style="width:50px;">Para Birimi</th>
+                                        <th>Toplam Fiyat</th>
+                                        <th>Tedarikçi</th>
+                                        <th>Hedef Teslim Tarihi</th>
+                                        <th>Açıklama</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><button id="Price" type="button" class="btn btn-success btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-fiyat-modal-lg" style="color:white; width:100px;">Fiyat Gir</button></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    @if (HttpContextAccessor.HttpContext.Session.GetString("AdiSoyadi") != "Kadir Eren SATIR")
+                    {
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Bağlı Olan Diğer Talepler</label>
+                            <table id="table0" class="table table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
+                                <thead style="background-color:burlywood; color:white;">
+                                    <tr>
+                                        <th></th>
+                                        <th style="width:175px;">Ürün</th>
+                                        <th>Miktar</th>
+                                        <th>Birim</th>
+                                        <th>Birim Fiyat</th>
+                                        <th style="width:50px;">Para Birimi</th>
+                                        <th>Toplam Fiyat</th>
+                                        <th>Tedarikçi</th>
+                                        <th>Hedef Teslim Tarihi</th>
+                                        <th>Açıklama</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" class="form-control-lg" style="width:20px;" id="chkOtherRequest" /></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    }
                     @*<div class="modal-body">*@
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Eklenmiş Dosyalar</label>
@@ -198,10 +205,10 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Test</td>
-                                    <td>Test</td>
-                                    <td>Test</td>
-                                    <td>Test</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -216,6 +223,8 @@
                         </div>
                     </div>
                 </div>
+
+
             }
         </div>
     </div>
@@ -327,7 +336,7 @@
     </div>
 </div>
 
-<div class="modal fade bd-duzelt-modal-lg" id="Edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade bd-duzelt-modal-lg" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -342,7 +351,7 @@
 
                 <input type="hidden" name="KaydiYapan" value="99999999999" />
                 //TODO - VAlue değeri tablodan gelicek
-                <input type="hidden" name="SiraNo" value="2040" />
+                <input type="hidden" name="SiraNo" value="" />
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="message-text" class="col-form-label" required="required">Talep Sahibi</label>
@@ -391,17 +400,17 @@
                         <select style="width: 400px; display: inline-block; margin-left:95px;" name="UrunKodu" class="form-control" id="ProductDuzelt">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:45px;">Miktar </label>
-                        <input type="number" class="form-control-sm" id="Amount" name="Miktar" style="width:140px; margin-left:55px;" onkeyup="Calculate()" /> ,
+                        <input type="number" class="form-control-sm" id="AmountEdit" name="Miktar" style="width:140px; margin-left:55px;" onkeyup="CalculateDuzelt()" /> ,
                         <select style="width: 140px; display: inline-block; margin-left:5px;" class="form-control" name="MiktarBirim" id="AmountDuzelt">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Birim Fiyat </label>
-                        <input type="number" class="form-control-sm" id="UnitPrice" name="BirimFiyat" style="width:150px; margin-left:50px;" onkeyup="Calculate()" />
+                        <input type="number" class="form-control-sm" id="UnitPriceEdit" name="BirimFiyat" style="width:150px; margin-left:50px;" onkeyup="CalculateDuzelt()" />
                         <select style="width: 150px; display: inline-block; margin-left:5px;" name="ParaBirimi" class="form-control" id="CurrencyDuzelt">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:135px;">Toplam Fiyat</label>
-                        <input type="number" class="form-control-sm" id="TotalPrice" name="ToplamFiyat" style="width:140px; margin-left:12px;" disabled="disabled" />
+                        <input type="number" class="form-control-sm" id="TotalPriceEdit" name="ToplamFiyat" style="width:140px; margin-left:12px;" disabled="disabled" />
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Açıklama</label>
@@ -409,7 +418,7 @@
                     </div>
                 </div>
                 <hr style="border-width:2.5px; color:darkgray;" />
-                
+
                 <div class="modal-body">
                     <div class="form-group">
                         <input type="file" id="FileName" value="Dosya Seç" />
@@ -529,17 +538,17 @@
                         <select style="width: 400px; display: inline-block; margin-left:95px;" name="UrunKodu" class="form-control" id="ProductTalep">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:45px;">Miktar </label>
-                        <input type="number" class="form-control-sm" id="Amount" name="Miktar" style="width:140px; margin-left:55px;" onkeyup="Calculate()" /> ,
+                        <input type="number" class="form-control-sm" id="AmountRequest" name="Miktar" style="width:140px; margin-left:55px;" onkeyup="CalculateTalep()" /> ,
                         <select style="width: 140px; display: inline-block; margin-left:5px;" name="MiktarBirim" class="form-control" id="AmountTalep">
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Birim Fiyat </label>
-                        <input type="number" class="form-control-sm" id="UnitPrice" name="BirimFiyat" style="width:150px; margin-left:50px;" onkeyup="Calculate()" />
+                        <input type="number" class="form-control-sm" id="UnitPriceRequest" name="BirimFiyat" style="width:150px; margin-left:50px;" onkeyup="CalculateTalep()" />
                         <select style="width: 150px; display: inline-block; margin-left:5px;" name="ParaBirimi" class="form-control" id="CurrencyTalep">
                         </select>
                         <label for="message-text" class="col-form-label" style="margin-left:135px;">Toplam Fiyat </label>
-                        <input type="number" class="form-control-sm" id="TotalPrice" name="ToplamFiyat" style="width:140px; margin-left:12px;" />
+                        <input type="number" class="form-control-sm" id="TotalPriceRequest" name="ToplamFiyat" style="width:140px; margin-left:12px;" />
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Açıklama </label>
@@ -548,7 +557,7 @@
                     </div>
                 </div>
                 <hr style="border-width:3.5px; color:darkgray;" />
-                
+
                 <div class="modal-body">
                     <div class="form-group">
                         <table id="ProductList" class="table table-hover table-striped table-bordered table-responsive dataTable dtr-inline" style="width:1100px;">
@@ -572,7 +581,7 @@
                     </div>
                 </div>
                 <hr style="border-width:3.5px; color:darkgray;" />
-               
+
                 <div class="modal-body">
                     <div class="form-group">
                         <input type="file" id="File" class="file-selector-button" value="Dosya Seç" />
@@ -650,6 +659,8 @@
 
 
 <script>
+
+
     function Goster(id) {
         var secilenID = document.getElementById(id);
         if (secilenID.style.display == "none") {
@@ -666,12 +677,21 @@
         $("#altListe").hide();
     }
 
-    function Calculate() {
-        var a = document.getElementById('Amount').value;
-        var b = document.getElementById('UnitPrice').value;
+    function CalculateTalep() {
+        var a = document.getElementById('AmountRequest').value;
+        var b = document.getElementById('UnitPriceRequest').value;
         var result = parseFloat(a) * parseFloat(b);
         if (!isNaN(result)) {
-            document.getElementById('TotalPrice').value = result;
+            document.getElementById('TotalPriceRequest').value = result;
+        }
+    }
+
+    function CalculateDuzelt() {
+        var a = document.getElementById('AmountEdit').value;
+        var b = document.getElementById('UnitPriceEdit').value;
+        var result = parseFloat(a) * parseFloat(b);
+        if (!isNaN(result)) {
+            document.getElementById('TotalPriceEdit').value = result;
         }
     }
 
@@ -725,10 +745,12 @@
                     'className': 'details-control',
                     'orderable': false,
                     'data': null,
-                     "render": function (data, type, row) {
+                    "render": function (data, type, row) {
                          let url = '@Url.Action("GetRequestPeriodList", "Request")/' + row.talepSiraNo;
                          let url2 = '@Url.Action("UpdateRequest", "Request")/' + row.talepSiraNo;
-                         return '<a href="#" id="Process" class="btn btn-primary btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-islem-modal-lg" style="color:white;">İşlem</a>' + "<a href='" + url + "' class='btn btn-default btn-xs' id='Period' style='color:white; background-color:burlywood;'>Süreç Gör</a> " + "<a href='" + url2 + "' id = 'Edit' class='btn btn-success btn-xs' tabindex = '0' aria-controls='example1' data-toggle='modal' data-target='.bd-duzelt-modal-lg' style = 'color:white;'> Düzelt</a> ";
+                         return '<a href="#" id="Process" class="btn btn-primary btn-xs" tabindex="0" aria-controls="example1" data-toggle="modal" data-target=".bd-islem-modal-lg" style="color:white;">İşlem</a>' + "<a href='" + url + "' class='btn btn-default btn-xs' id='Period' style='color:white; background-color:burlywood;'>Süreç Gör</a> " +
+
+                            "<a  id='Edit' onclick='DuzeltModalShow(" + row.talepSiraNo + ")' class='btn btn-success btn-xs'> Düzelt</a> ";
 },
                     'defaultContent': ''
                 },
@@ -779,8 +801,6 @@
             var tr = $(this).closest('tr');
             var row = table.row(tr);
 
-
-
             if (row.child.isShown()) {
                 // This row is already open - close it
                 row.child.hide();
@@ -791,5 +811,15 @@
                 tr.addClass('shown');
             }
         })
+
+
+       
+
     });
+    function DuzeltModalShow(id) {
+
+ 
+        $('#EditModal').modal('show');
+
+    }
 </script>

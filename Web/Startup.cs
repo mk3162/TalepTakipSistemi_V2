@@ -65,10 +65,10 @@ namespace Web
                      options.SlidingExpiration = true;
                  });
 
-            services.AddDbContext<DatabaseContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("Connection")));
+            //services.AddDbContext<DatabaseContext>(options =>
+            //options.UseSqlServer(Configuration.GetConnectionString("Connection")));
 
-            services.AddScoped<DatabaseContext>();
+            //services.AddScoped<DatabaseContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -42,7 +42,6 @@ namespace Web.Service.Implementation
             {
                 _req.Url = url;
 
-
                 _req.Data = JsonConvert.SerializeObject(model);
 
                 var jsonResult = JsonConvert.DeserializeObject<RequestResponse<T>>(RequestManager.PostMethod(_req).ToString());

@@ -9,11 +9,11 @@
 
     var ptable = document.getElementById("ProductList");
     var product = document.getElementById("ProductTalep");
-    var amount = document.getElementById("Amount");
+    var amount = document.getElementById("AmountRequest");
     var amountunit = document.getElementById("AmountTalep");
-    var unitprice = document.getElementById("UnitPrice");
+    var unitprice = document.getElementById("UnitPriceRequest");
     var currency = document.getElementById("CurrencyTalep");
-    var totalprice = document.getElementById("TotalPrice");
+    var totalprice = document.getElementById("TotalPriceRequest");
     var description = document.getElementById("Description");
 
 
