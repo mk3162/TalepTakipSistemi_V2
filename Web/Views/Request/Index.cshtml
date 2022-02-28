@@ -11,7 +11,6 @@
         margin-bottom: 0.5rem;
     }
 </style>
-<partial name="_AddTopMenuPartialView" />
 
 <div class="row col-lg-12">
     <a href="#" id="NewRequest" class="btn btn-info btn-xs" tabindex="0" aria-controls="example1" type="button" data-toggle="modal" data-target=".bd-talep-modal-lg" style="margin-left:1120px;">Yeni Talep</a>
@@ -38,114 +37,16 @@
 
 <partial name="_ProcessModalPartialView" />
 
-<div class="modal fade bd-fiyat-modal-lg" id="PriceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            @using (Html.BeginForm("AddRequest", "Request", FormMethod.Post))
-            {
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label" required="required">Birim Fiyat</label>
-                        <input type="number" name="UnitPrice" class="form-control-sm" style="width: 300px; margin-left:85px;" />
-                        <select style="width:150px;display:inline-block; margin-left:10px;" class="form-control" id="CurrencyIslem"></select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label" required="required">Toplam Fiyat</label>
-                        <input type="text" name="TotalPrice" class="form-control-sm" style="width: 300px; margin-left:70px;" disabled="disabled" />
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Tedarikçi</label>
-                        <select style="width:460px; display: inline-block; margin-left:100px;" class="form-control" id="SupplierIslem"></select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Hedef Teslim Tarihi</label>
-                        <input type="date" name="DeliveryDate" class="form-control-sm" style="width: 300px; margin-left:25px;" />
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="form-group">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" style="color: white; font-weight: bold; margin-right:380px;">Vazgeç</button>
-                        <button id="Send" type="submit" class="btn btn-success" style="color:white; font-weight: bold; margin-right:475px;">Kaydet</button>
-                    </div>
-                </div>
-            }
-        </div>
-    </div>
-</div>
+<partial name="_PriceModalPartialView" />
 
-<div class="modal fade bd-yorum-modal-lg" id="CommentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            @using (Html.BeginForm("AddRequest", "Request", FormMethod.Post))
-            {
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label" required="required">İşlem Yapacak</label>
-                        <select style="width:450px;display:inline-block; margin-left:10px;" class="form-control" id="ProcessorIslem"></select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label" required="required">Yorumunuz</label>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control-lg" name="Comment" id="Comment" style="width:570px; height:50px;"></textarea>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="form-group">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" style="color: white; font-weight: bold; margin-right:380px;">Vazgeç</button>
-                        <button id="Send" type="submit" class="btn btn-success" style="color:white; font-weight: bold; margin-right:535px;">Tamam</button>
-                    </div>
-                </div>
-            }
-        </div>
-    </div>
-</div>
+<partial name="_CommentModalPartialView" />
 
-<div class="modal fade bd-onayred-modal-lg" id="ApproveRejectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            @using (Html.BeginForm("AddRequest", "Request", FormMethod.Post))
-            {
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label" required="required">Yorumunuz</label>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control-lg" name="Comment" id="Comment" style="width:570px; height:50px;"></textarea>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="form-group">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" style="color: white; font-weight: bold; margin-right:380px;">Vazgeç</button>
-                        <button id="Send" type="submit" class="btn btn-success" style="color:white; font-weight: bold; margin-right:535px;">Tamam</button>
-                    </div>
-
-                </div>
-            }
-        </div>
-    </div>
-</div>
+<partial name="_ApproveRejectModalPartialView" />
 
 <partial name="_EditModalPartialView" />
+
 <partial name="_RequestModalPartialView" />
+
 
 <script src="~/TalepWeb/plugins/jquery/jquery.min.js"></script>
 
@@ -182,27 +83,24 @@
 <script src="~/js/DeleteListExtensions/DeleteFromTable.js"></script>
 
 
+<script src="~/js/Calculate/CalculateTalep.js"></script>
+<script src="~/js/Calculate/CalculateDuzelt.js"></script>
+
 <script>
-    function Gizle() {
-        $("#altListe").hide();
-    }
-
-    function CalculateTalep() {
-        var a = document.getElementById('AmountRequest').value;
-        var b = document.getElementById('UnitPriceRequest').value;
-        var result = parseFloat(a) * parseFloat(b);
-        if (!isNaN(result)) {
-            document.getElementById('TotalPriceRequest').value = result;
-        }
-    }
-
-    function CalculateDuzelt() {
-        var a = document.getElementById('AmountEdit').value;
-        var b = document.getElementById('UnitPriceEdit').value;
-        var result = parseFloat(a) * parseFloat(b);
-        if (!isNaN(result)) {
-            document.getElementById('TotalPriceEdit').value = result;
-        }
+    function Alert(d) {
+        $('#example').DataTable({
+            ajax: {
+                url: "/Request/GetRequestPeriodList",
+                dataSrc: ""
+            },
+            columns: [
+                { "data": 'islemZamani' },
+                { "data": 'islemYapanAdi' },
+                { "data": 'yapilanIslem' },
+                { "data": 'aciklama' }
+            ],
+            "bDestroy": true,
+        })
     }
 
     function format(d) {
@@ -259,7 +157,7 @@
                          let url = '@Url.Action("GetRequestPeriodList", "Request")/' + row.talepSiraNo;
                          let url2 = '@Url.Action("UpdateRequest", "Request")/' + row.talepSiraNo;
                         return '<a id="Process" onclick="IslemModalShow(' + row.talepSiraNo + ')" class="btn btn-primary btn-xs" style="color:white;">İşlem</a>' +
-                            "<a href='" + url + "' class='btn btn-default btn-xs' id='Period' style='color:white; background-color:burlywood;'>Süreç Gör</a> " +
+                            "<a class='btn btn-default btn-xs' id='Period' onclick=''SurecGorShow(" + row.talepSiraNo + ")' style='color:white; background-color:burlywood;'>Süreç Gör</a> " +
 
                             "<a id='Edit' onclick='DuzeltModalShow(" + row.talepSiraNo + ")' class='btn btn-success btn-xs'> Düzelt</a> ";
 },
@@ -323,6 +221,9 @@
             }
         })
     });
+
+
+
     function DuzeltModalShow(id) {
         $('#EditModal').modal('show');
     }
@@ -330,4 +231,11 @@
     function IslemModalShow(id) {
         $('#ProcessModal').modal('show');
     }
+
+    function SurecGorShow(id) {
+        //console.log("dsad")
+    }
+
+
+
 </script>

@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
     $.ajax({
         type: "GET",
-        url: "/Request/GetCompany",
+        url: "/Company/GetCompanyList",
         dataType: "json",
         success: function (response) {
             $("#CompaniesDuzelt").empty().append('<option value="0"> --Şirket Seçiniz-- </option>');

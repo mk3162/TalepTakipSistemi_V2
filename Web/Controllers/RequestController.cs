@@ -41,11 +41,7 @@ namespace Web.Controllers
             return View();
         }
 
-        [HttpGet]
-        public IActionResult GetCompany()
-        {
-            return Json(_apiService.GetSirketlerListesi<ResponseSirketlerListesiDto>(_serviceUrlList.GetSirketlerListesi).Data);
-        }
+
 
         public IActionResult GetDepartments(int SiraNo)
         {

@@ -36,41 +36,10 @@ namespace Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetCompany(int SiraNo)
+        public IActionResult GetCompanyList()
         {
-            var company = _context.Sirketler.Find(SiraNo);
-            return View("GetCompany", company);
+            return Json(_apiService.GetSirketlerListesi<ResponseSirketlerListesiDto>(_serviceUrlList.GetSirketlerListesi).Data);
         }
 
-        [HttpPost]
-        public IActionResult AddCompany(Sirket sirket)
-        {
-            try
-            {
-                _context.Sirketler.Add(sirket);
-                _context.SaveChanges();
-            }
-            catch (Exception)
-            {
-                return RedirectToAction("Index");
-            }
-            return RedirectToAction("Index");
-        }
-
-        [HttpPost]
-        public IActionResult UpdateCompany(Sirket sirket)
-        {
-            _context.Sirketler.Update(sirket);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        public IActionResult SoftDelete(int siraNo)
-        {
-            var deletedCompany = _context.Sirketler.FirstOrDefault(x => x.SiraNo == siraNo);
-            _context.Sirketler.Remove(deletedCompany);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
-        }
     }
 }
